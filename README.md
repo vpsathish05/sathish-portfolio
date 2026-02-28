@@ -2,7 +2,7 @@
 
 Modern, responsive portfolio website showcasing my experience as a Full-Stack Developer & Data Engineer.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
@@ -12,19 +12,19 @@ Modern, responsive portfolio website showcasing my experience as a Full-Stack De
 - **Forms**: React Hook Form + Zod
 - **Icons**: Lucide React
 
-## ✨ Features
+## Features
 
-- 🌓 Dark/Light mode toggle
-- ✨ Animated background with twinkling stars
-- 📱 Fully responsive design
-- ⚡ Optimized performance with Next.js 15
-- 🎨 Modern UI with shadcn/ui components
-- 📧 Contact form with validation
-- 🔍 SEO optimized (sitemap, robots.txt, structured data)
-- 🛡️ Error boundaries and loading states
-- 🤖 Portfolio automation agent included
+- Dark/Light mode toggle
+- Animated background with twinkling stars
+- Fully responsive design
+- Optimized performance with Next.js 15
+- Modern UI with shadcn/ui components
+- Contact form with validation
+- SEO optimized (sitemap, robots.txt, structured data)
+- Error boundaries and loading states
+- Portfolio automation agent included
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -52,7 +52,7 @@ src/
     └── structured-data.ts
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -75,7 +75,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-## 📝 Available Scripts
+## Available Scripts
 
 ```bash
 npm run dev          # Start development server (with Turbopack)
@@ -84,7 +84,7 @@ npm run start        # Start production server
 npm run lint         # Run ESLint
 ```
 
-## 🤖 Portfolio Automation Agent
+## Portfolio Automation Agent
 
 This project includes an automation agent for easy portfolio updates:
 
@@ -117,7 +117,7 @@ node .kiro/portfolio-agent.js list-experiences
 
 See `.kiro/README.md` for full documentation.
 
-## 📊 Portfolio Sections
+## Portfolio Sections
 
 - **Personal Info**: Name, title, contact details, social links
 - **About**: Professional summary and background
@@ -127,7 +127,7 @@ See `.kiro/README.md` for full documentation.
 - **Projects**: Featured projects with tech stacks
 - **Contact**: Contact form with validation
 
-## 🎨 Customization
+## Customization
 
 All portfolio content is centralized in `src/data/portfolio.ts`. Update this file to modify:
 
@@ -137,7 +137,7 @@ All portfolio content is centralized in `src/data/portfolio.ts`. Update this fil
 - Skills
 - Education
 
-## 🚢 Deployment
+## Deployment
 
 ### Deploy on Vercel
 
@@ -152,18 +152,18 @@ npm run start
 
 The build output is optimized for production deployment.
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 👤 Author
+## Author
 
 **Sathish Kumar V**
 - GitHub: [@vpsathish05](https://github.com/vpsathish05)
 - LinkedIn: [Sathish Kumar](https://www.linkedin.com/in/sathish-kumar-310976153/)
 - Email: sathishkumar05@gmail.com
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [Next.js](https://nextjs.org/)
 - UI components from [shadcn/ui](https://ui.shadcn.com/)
