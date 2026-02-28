@@ -1,21 +1,24 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { LinkedinIcon, GithubIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { FaReddit, FaMedium } from "react-icons/fa";
 import { TechBadge } from "@/components/TechBadge";
 import { personalInfo } from "@/data/portfolio";
-import { SiNextdotjs, SiNodedotjs, SiAngular, SiCsharp, SiMicrosoftazure } from 'react-icons/si';
-import { FaDatabase, FaAws } from 'react-icons/fa';
+import { SiPython, SiOpenai, SiMicrosoftazure, SiAmazon, SiDatabricks } from 'react-icons/si';
+import { FaBrain, FaRobot } from 'react-icons/fa';
 
 const mainTechStack = [
-  { icon: SiNextdotjs, name: "Next.js", color: "#000000" },
-  { icon: SiNodedotjs, name: "Node.js", color: "#339933" },
-  { icon: SiAngular, name: "Angular", color: "#DD0031" },
-  { icon: SiCsharp, name: "C#", color: "#239120" },
-  { icon: FaDatabase, name: "dbt", color: "#FF694B" },
-  { icon: SiMicrosoftazure, name: "ADF", color: "#0089D6" },
-  { icon: FaAws, name: "AWS", color: "#FF9900" }
+  { icon: SiPython, name: "Python", color: "#3776AB" },
+  { icon: SiOpenai, name: "LLMs", color: "#412991" },
+  { icon: FaBrain, name: "RAG", color: "#FF6B6B" },
+  { icon: SiMicrosoftazure, name: "Azure AI Foundry", color: "#0089D6" },
+  { icon: SiAmazon, name: "AWS Bedrock", color: "#FF9900" },
+  { icon: SiDatabricks, name: "Databricks", color: "#FF3621" },
+  { icon: FaRobot, name: "LangChain", color: "#1C3C3C" }
 ];
 
 export const PersonalInfoSection = () => (
@@ -58,6 +61,16 @@ export const PersonalInfoSection = () => (
             <a href={personalInfo.github} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
                 <GithubIcon className="w-4 h-4" />
+              </Button>
+            </a>
+            <a href={personalInfo.reddit} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
+                <FaReddit className="w-4 h-4" />
+              </Button>
+            </a>
+            <a href={personalInfo.medium} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
+                <FaMedium className="w-4 h-4" />
               </Button>
             </a>
           </div>

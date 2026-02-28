@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { TechBadge } from "@/components/TechBadge";
@@ -5,9 +7,9 @@ import { BotIcon, CodeIcon, BriefcaseIcon } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
 const projectIcons = {
+  "contract-extraction": BriefcaseIcon,
   "ai-chatbot": BotIcon,
-  "data-platform": CodeIcon,
-  "ai-readiness": BriefcaseIcon
+  "data-platform": CodeIcon
 };
 
 export const ProjectsSection = () => (
