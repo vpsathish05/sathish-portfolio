@@ -5,8 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TechBadge } from "@/components/TechBadge";
 import { skills } from "@/data/portfolio";
-import { SiCsharp, SiPython, SiJavascript, SiTypescript, SiAngular, SiNextdotjs, SiReact, SiNodedotjs, SiNestjs, SiDotnet, SiMicrosoftsqlserver, SiPostgresql, SiAmazonredshift, SiMicrosoftazure } from 'react-icons/si';
-import { FaDatabase } from 'react-icons/fa';
+import { SiCsharp, SiPython, SiJavascript, SiTypescript, SiAngular, SiNextdotjs, SiReact, SiNodedotjs, SiNestjs, SiDotnet, SiMicrosoftsqlserver, SiPostgresql, SiAmazonredshift, SiMicrosoftazure, SiOpenai, SiDatabricks, SiAmazon } from 'react-icons/si';
+import { FaDatabase, FaBrain, FaRobot } from 'react-icons/fa';
 
 const iconMap: Record<string, React.ElementType> = {
   "C#": SiCsharp,
@@ -18,14 +18,21 @@ const iconMap: Record<string, React.ElementType> = {
   "React": SiReact,
   "Node.js": SiNodedotjs,
   "NestJS": SiNestjs,
+  "FastAPI": FaDatabase,
   ".NET Core": SiDotnet,
-  ".NET Framework": SiDotnet,
   "dbt": FaDatabase,
   "Azure Data Factory": SiMicrosoftazure,
-  "Matillion ETL": FaDatabase,
   "SQL Server": SiMicrosoftsqlserver,
   "PostgreSQL": SiPostgresql,
-  "Amazon Redshift": SiAmazonredshift
+  "Amazon Redshift": SiAmazonredshift,
+  "LangChain": FaRobot,
+  "OpenAI API": SiOpenai,
+  "RAG": FaBrain,
+  "Azure AI Foundry": SiMicrosoftazure,
+  "AWS Bedrock": SiAmazon,
+  "PaddleOCR": FaDatabase,
+  "Vector Databases": FaDatabase,
+  "Databricks": SiDatabricks
 };
 
 export const SkillsSection = () => (
@@ -35,29 +42,29 @@ export const SkillsSection = () => (
         <CardTitle>Skills</CardTitle>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="programming" className="w-full">
+        <Tabs defaultValue="ai" className="w-full">
           <div className="grid grid-cols-2 gap-2 mb-4">
             <div className="space-y-2">
+              <TabsList className="w-full">
+                <TabsTrigger value="ai" className="w-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  AI
+                </TabsTrigger>
+              </TabsList>
               <TabsList className="w-full">
                 <TabsTrigger value="programming" className="w-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                   Programming
                 </TabsTrigger>
               </TabsList>
-              <TabsList className="w-full">
-                <TabsTrigger value="backend" className="w-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                  Backend
-                </TabsTrigger>
-              </TabsList>
             </div>
             <div className="space-y-2">
               <TabsList className="w-full">
-                <TabsTrigger value="frontend" className="w-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                  Frontend
+                <TabsTrigger value="data" className="w-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  Data
                 </TabsTrigger>
               </TabsList>
               <TabsList className="w-full">
-                <TabsTrigger value="data" className="w-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                  Data
+                <TabsTrigger value="fullstack" className="w-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  Full Stack
                 </TabsTrigger>
               </TabsList>
             </div>
