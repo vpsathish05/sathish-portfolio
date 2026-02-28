@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Sathish Kumar V",
-  title: "AI Engineer | Data Engineer",
+  title: "AI Engineer | Building Production LLM Systems & RAG Architectures | Azure AI Foundry | AWS Bedrock | Python | Data Engineer",
   description: "Specialized in building production-grade AI systems and intelligent automation solutions. Expert in LLMs, RAG architectures, and OCR pipelines that deliver measurable business impact.",
   email: "sathishkumar05@gmail.com",
   phone: "+91 8056770991",
@@ -31,23 +31,24 @@ export const skills = {
     { name: "JavaScript", color: "#F7DF1E" },
     { name: "C#", color: "#239120" }
   ],
-  frontend: [
-    { name: "Next.js", color: "#000000" },
-    { name: "React", color: "#61DAFB" },
-    { name: "Angular", color: "#DD0031" }
-  ],
-  backend: [
-    { name: "Node.js", color: "#339933" },
-    { name: "NestJS", color: "#E0234E" },
-    { name: "FastAPI", color: "#009688" },
-    { name: ".NET Core", color: "#512BD4" }
-  ],
   ai: [
     { name: "LangChain", color: "#1C3C3C" },
     { name: "OpenAI API", color: "#412991" },
     { name: "RAG", color: "#FF6B6B" },
+    { name: "Azure AI Foundry", color: "#0089D6" },
+    { name: "AWS Bedrock", color: "#FF9900" },
     { name: "PaddleOCR", color: "#0052CC" },
-    { name: "Vector Databases", color: "#00ADEF" }
+    { name: "Vector Databases", color: "#00ADEF" },
+    { name: "Databricks", color: "#FF3621" }
+  ],
+  fullstack: [
+    { name: "Next.js", color: "#000000" },
+    { name: "React", color: "#61DAFB" },
+    { name: "Angular", color: "#DD0031" },
+    { name: "Node.js", color: "#339933" },
+    { name: "NestJS", color: "#E0234E" },
+    { name: "FastAPI", color: "#009688" },
+    { name: ".NET Core", color: "#512BD4" }
   ],
   data: [
     { name: "dbt", color: "#FF694B" },

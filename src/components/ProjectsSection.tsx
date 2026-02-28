@@ -19,7 +19,7 @@ export const ProjectsSection = () => (
         <CardTitle>Projects</CardTitle>
       </CardHeader>
       <CardContent>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full" defaultValue="contract-extraction">
           {projects.map((project) => {
             const IconComponent = projectIcons[project.id as keyof typeof projectIcons];
             return (
