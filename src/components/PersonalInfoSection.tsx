@@ -44,6 +44,10 @@ export const PersonalInfoSection = () => (
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
+            <a href={personalInfo.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <GithubIcon className="w-4 h-4" />
+              Portfolio
+            </a>
             <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 hover:text-primary transition-colors">
               <MailIcon className="w-4 h-4" />
               {personalInfo.email}
