@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { LinkedinIcon, GithubIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { LinkedinIcon, GithubIcon, MailIcon, PhoneIcon, Globe } from "lucide-react";
 import { FaReddit, FaMedium } from "react-icons/fa";
 import { TechBadge } from "@/components/TechBadge";
 import { personalInfo } from "@/data/portfolio";
@@ -44,10 +44,6 @@ export const PersonalInfoSection = () => (
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={personalInfo.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <GithubIcon className="w-4 h-4" />
-              Portfolio
-            </a>
             <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-2 hover:text-primary transition-colors">
               <MailIcon className="w-4 h-4" />
               {personalInfo.email}
@@ -76,6 +72,11 @@ export const PersonalInfoSection = () => (
             <a href={personalInfo.medium} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
                 <FaMedium className="w-4 h-4" />
+              </Button>
+            </a>
+            <a href={personalInfo.website} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Globe className="w-4 h-4" />
               </Button>
             </a>
           </div>
