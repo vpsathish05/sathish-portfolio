@@ -16,21 +16,24 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sathish Kumar V - Full-Stack Developer & Data Engineer",
-  description: "5+ years experienced Full-Stack Developer & Data Engineer specializing in Next.js, Node.js, Python, AI/ML, and data platforms. Available for hire.",
-  keywords: "Full-Stack Developer, Data Engineer, Next.js, Node.js, Python, AI, Machine Learning, Chennai",
+  title: "Sathish Kumar V - AI Engineer | Data Engineer",
+  description: "AI Engineer with 5+ years building production-grade intelligent systems. Expert in LLMs, RAG architectures, Azure AI Foundry, AWS Bedrock, and data engineering.",
+  keywords: "AI Engineer, Data Engineer, LLMs, RAG, Azure AI Foundry, AWS Bedrock, Python, Next.js, Chennai",
   authors: [{ name: "Sathish Kumar V" }],
+  icons: {
+    icon: '/favicon.svg',
+  },
   openGraph: {
-    title: "Sathish Kumar V - Full-Stack Developer & Data Engineer",
-    description: "5+ years experienced developer specializing in modern web technologies and data engineering",
-    url: "https://sathishkumar.dev",
+    title: "Sathish Kumar V - AI Engineer | Data Engineer",
+    description: "AI Engineer building production-grade intelligent systems with LLMs and RAG architectures",
+    url: "https://vpsathish05.github.io/sathish-portfolio",
     siteName: "Sathish Kumar Portfolio",
     images: [
       {
         url: "/sathish-teams-img.png",
         width: 1200,
         height: 630,
-        alt: "Sathish Kumar V - Full-Stack Developer",
+        alt: "Sathish Kumar V - AI Engineer",
       },
     ],
     locale: "en_US",
@@ -38,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sathish Kumar V - Full-Stack Developer & Data Engineer",
-    description: "5+ years experienced developer specializing in modern web technologies and data engineering",
+    title: "Sathish Kumar V - AI Engineer | Data Engineer",
+    description: "AI Engineer building production-grade intelligent systems with LLMs and RAG architectures",
     images: ["/sathish-teams-img.png"],
   },
   robots: {
