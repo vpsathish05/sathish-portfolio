@@ -1,11 +1,11 @@
 export const personalInfo = {
-  name: "SATHISH KUMAR V",
+  name: "Sathish Kumar V",
   title: "Full-Stack Developer & Data Engineer",
-  description: "Passionate about building scalable applications and leveraging data for insights.",
+  description: "I build AI-powered applications and data platforms that solve real business problems. 5+ years turning complex requirements into elegant solutions.",
   email: "sathishkumar05@gmail.com",
   phone: "+91 8056770991",
   linkedin: "https://www.linkedin.com/in/sathish-kumar-310976153/",
-  github: "https://github.com/sk8105",
+  github: "https://github.com/vpsathish05",
   avatar: "/sathish-teams-img.png",
   location: "Chennai, India"
 };
