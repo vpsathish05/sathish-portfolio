@@ -8,6 +8,7 @@ import { LinkedinIcon, GithubIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { FaReddit, FaMedium } from "react-icons/fa";
 import { TechBadge } from "@/components/TechBadge";
 import { personalInfo } from "@/data/portfolio";
+import { getAssetPath } from "@/lib/basePath";
 import { SiPython, SiOpenai, SiMicrosoftazure, SiAmazon, SiDatabricks } from 'react-icons/si';
 import { FaBrain, FaRobot } from 'react-icons/fa';
 
@@ -30,7 +31,7 @@ export const PersonalInfoSection = () => (
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Avatar className="w-40 h-40 mb-4 md:mb-0 md:mr-6">
-            <AvatarImage src={personalInfo.avatar} alt={personalInfo.name} className="object-cover" />
+            <AvatarImage src={getAssetPath(personalInfo.avatar)} alt={personalInfo.name} className="object-cover" />
             <AvatarFallback>SK</AvatarFallback>
           </Avatar>
         </motion.div>

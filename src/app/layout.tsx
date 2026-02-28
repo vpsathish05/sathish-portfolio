@@ -21,7 +21,10 @@ export const metadata: Metadata = {
   keywords: "AI Engineer, Data Engineer, LLMs, RAG, Azure AI Foundry, AWS Bedrock, Python, Next.js, Chennai",
   authors: [{ name: "Sathish Kumar V" }],
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
   },
   openGraph: {
     title: "Sathish Kumar V - AI Engineer | Data Engineer",
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Sathish Kumar Portfolio",
     images: [
       {
-        url: "/sathish-teams-img.png",
+        url: "/sathish-portfolio/sathish-teams-img.png",
         width: 1200,
         height: 630,
         alt: "Sathish Kumar V - AI Engineer",
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sathish Kumar V - AI Engineer | Data Engineer",
     description: "AI Engineer building production-grade intelligent systems with LLMs and RAG architectures",
-    images: ["/sathish-teams-img.png"],
+    images: ["/sathish-portfolio/sathish-teams-img.png"],
   },
   robots: {
     index: true,
