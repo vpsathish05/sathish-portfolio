@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Sathish Kumar V",
-  title: "AI Engineer | Building Production LLM Systems & RAG Architectures | Azure AI Foundry | AWS Bedrock | Python | Data Engineer",
+  title: "AI Architect | Building Production LLM Systems & RAG Architectures | Azure AI Foundry | AWS Bedrock | Python | Data Engineer",
   description: "Specialized in building production-grade AI systems and intelligent automation solutions. Expert in LLMs, RAG architectures, and OCR pipelines that deliver measurable business impact.",
   email: "sathishkumar05@gmail.com",
   phone: "+91 8056770991",
