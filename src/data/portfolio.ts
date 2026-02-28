@@ -4,6 +4,7 @@ export const personalInfo = {
   description: "Specialized in building production-grade AI systems and intelligent automation solutions. Expert in LLMs, RAG architectures, and OCR pipelines that deliver measurable business impact.",
   email: "sathishkumar05@gmail.com",
   phone: "+91 8056770991",
+  website: "https://vpsathish05.github.io/sathish-portfolio/",
   linkedin: "https://www.linkedin.com/in/sathish-kumar-310976153/",
   github: "https://github.com/vpsathish05",
   reddit: "https://www.reddit.com/user/vpsr05/",

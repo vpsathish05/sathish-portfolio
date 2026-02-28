@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Sathish Kumar V" }],
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' }
+      { url: '/sathish-portfolio/favicon.svg', type: 'image/svg+xml' },
+      { url: '/sathish-portfolio/favicon.ico', sizes: 'any' }
     ],
   },
   openGraph: {
