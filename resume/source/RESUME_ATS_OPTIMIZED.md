@@ -142,4 +142,4 @@ Enterprise systems development using C#, .NET, SQL Server for retail and service
 
 ---
 
-**Availability:** Immediate · **Work Authorization:** Open to sponsored work visa
+**Notice Period:** 60–90 days · **Work Authorisation:** Open to UK/US sponsored visa

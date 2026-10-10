@@ -320,10 +320,41 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Hackathons Section */}
+      <section className="stack">
+        <SectionHeader
+          index="05"
+          label="Proof of concepts"
+          title="Hackathon"
+          accent="projects."
+          lede="Side projects that demonstrate how I think about hard problems — from talent matching to sales intelligence."
+        />
+
+        <div className="sg-grid-2">
+          <ProjectCard
+            featured
+            index="/01"
+            kind="AI POC"
+            title="SapienSync | Talent Recommendation"
+            summary="AI engine ranking best-fit employees for open roles. 6-step pipeline: intake normalization, COE detection, semantic skill matching (1536-dim embeddings, pgvector), weighted scoring, GPT-4o rationale generation, knowledge-base validation."
+            outcome="Weighted scoring across Skill (40%), Competency (25%), Availability (25%), Productivity (10%). Parallel GPT-4o enrichment using asyncio.gather(). 5 forecasting models achieving 4.4% MAPE."
+            tags={["GPT-4o", "pgvector", "Holt-Winters", "asyncio"]}
+          />
+
+          <ProjectCard
+            index="/02"
+            kind="HACKATHON 2024"
+            title="UK PE Lead Generation Network"
+            summary="Sales intelligence pipeline targeting UK Private Equity firms. Medallion Architecture (Bronze/Silver/Gold) with Companies House, FCA Register, web scraping. GPT-4o-mini enrichment, weighted lead scoring, Power BI dashboards."
+            tags={["Medallion", "GPT-4o-mini", "Power BI", "CRM"]}
+          />
+        </div>
+      </section>
+
       {/* Path Section */}
       <section id="path" className="stack">
         <SectionHeader
-          index="05"
+          index="06"
           label="Path"
           title="How I"
           accent="got here."
@@ -434,10 +465,10 @@ export default function Portfolio() {
       {/* Contact Section */}
       <div id="contact">
         <ContactBand
-          eyebrow="06 — LET&apos;S TALK"
+          eyebrow="07 — LET&apos;S TALK"
           title="Looking for someone who"
           accent="ships?"
-          lede="I&apos;m exploring remote roles with UK or US companies. If you need someone who builds AI systems that run in production — not just demo well — let&apos;s talk."
+          lede="I&apos;m exploring remote roles with UK or US companies (60-90 day notice). If you need someone who builds AI systems that run in production — not just demo well — let&apos;s talk."
           email="sathishkumar05@gmail.com"
           links={[
             { label: "LinkedIn", href: "https://www.linkedin.com/in/sathish-kumar-310976153/" },
