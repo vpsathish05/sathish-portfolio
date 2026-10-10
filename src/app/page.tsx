@@ -383,6 +383,30 @@ export default function Portfolio() {
           title="The path"
           accent="so far."
         />
+        
+        {/* Profile with Photo */}
+        <div className="about-intro">
+          <div className="about-photo">
+            <img 
+              src="/sathish-portfolio/sathish-teams-img.png" 
+              alt="Sathish Kumar V" 
+              className="profile-img"
+            />
+          </div>
+          <div className="about-text">
+            <p className="about-statement">
+              I&apos;m an AI architect who believes production systems should be boring — 
+              predictable, observable, and easy to fix at 3am. The interesting part is 
+              getting them there.
+            </p>
+            <p className="about-detail">
+              Based in Chennai, working with UK and US clients remotely. I lead a team of 7, 
+              own the technical direction for our AI practice, and still write code every day. 
+              Looking for my next role where I can keep shipping AI that actually runs in production.
+            </p>
+          </div>
+        </div>
+
         <Timeline
           items={[
             {
@@ -548,6 +572,57 @@ export default function Portfolio() {
         @media print { 
           .tools { display: none; } 
           body { background: #fff; } 
+        }
+        
+        /* About section with photo */
+        .about-intro {
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          gap: var(--space-6);
+          align-items: start;
+        }
+        .about-photo {
+          position: relative;
+        }
+        .profile-img {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: var(--radius-md);
+          border: 1px solid var(--line);
+          filter: saturate(0.85) contrast(1.05);
+        }
+        .about-text {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-4);
+        }
+        .about-statement {
+          font-family: var(--font-display);
+          font-size: 24px;
+          line-height: 1.4;
+          color: var(--ink);
+          margin: 0;
+        }
+        .about-detail {
+          font-size: 16px;
+          line-height: 1.65;
+          color: var(--ink-muted);
+          margin: 0;
+          max-width: 60ch;
+        }
+        @media (max-width: 640px) {
+          .about-intro {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+          .about-photo {
+            justify-self: center;
+          }
+          .profile-img {
+            width: 160px;
+            height: 160px;
+          }
         }
       `}</style>
     </div>
