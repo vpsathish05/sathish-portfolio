@@ -13,36 +13,37 @@
 
         body {
             font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #1a1a1a;
             max-width: 800px;
             margin: 0 auto;
-            padding: 48px 56px;
-            font-size: 11px;
+            padding: 40px 48px;
+            font-size: 10.5px;
         }
 
         .header {
-            margin-bottom: 24px;
-            padding-bottom: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
             border-bottom: 2px solid #1a1a1a;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 600;
             letter-spacing: -0.5px;
             margin-bottom: 4px;
         }
 
         .tagline {
-            font-size: 13px;
-            color: #444;
-            margin-bottom: 12px;
+            font-size: 12px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
 
         .contact {
             font-size: 10px;
-            color: #666;
+            color: #555;
         }
 
         .contact a {
@@ -51,87 +52,94 @@
         }
 
         h2 {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #1a1a1a;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            padding-bottom: 4px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            padding-bottom: 3px;
             border-bottom: 1px solid #ddd;
         }
 
-        .intro {
-            font-size: 11px;
-            line-height: 1.7;
+        .summary {
+            font-size: 10.5px;
+            line-height: 1.6;
             color: #333;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .job {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .job-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
         }
 
         .job-date {
-            font-size: 10px;
+            font-size: 9.5px;
             color: #666;
         }
 
         .job-company {
-            font-size: 10px;
+            font-size: 9.5px;
             color: #666;
             margin-bottom: 6px;
         }
 
-        .achievement {
-            margin-bottom: 8px;
-            padding-left: 12px;
-            border-left: 2px solid #e0e0e0;
-        }
-
-        .achievement-title {
+        .job-section-title {
             font-weight: 600;
             font-size: 10px;
             color: #333;
+            margin-top: 6px;
+            margin-bottom: 3px;
         }
 
-        .achievement p {
+        .job-bullets {
+            padding-left: 14px;
+            margin-bottom: 4px;
+        }
+
+        .job-bullets li {
             font-size: 10px;
-            color: #444;
-            margin-top: 2px;
+            color: #333;
+            margin-bottom: 2px;
         }
 
-        .project {
-            margin-bottom: 12px;
+        .job-text {
+            font-size: 10px;
+            color: #333;
+            margin-bottom: 4px;
         }
 
-        .project-title {
+        .highlight {
+            background: #fffde7;
+            padding: 8px 10px;
+            border-left: 3px solid #f9a825;
+            margin: 8px 0;
+            font-size: 10px;
+        }
+
+        .highlight-title {
             font-weight: 600;
-            font-size: 11px;
-        }
-
-        .project-detail {
-            font-size: 10px;
-            color: #444;
+            color: #333;
+            margin-bottom: 2px;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: 100px 1fr;
-            gap: 4px 12px;
+            grid-template-columns: 80px 1fr;
+            gap: 3px 10px;
             font-size: 10px;
         }
 
@@ -145,20 +153,44 @@
 
         .education-item {
             font-size: 10px;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .closing {
-            margin-top: 20px;
-            padding-top: 12px;
+            margin-top: 14px;
+            padding-top: 10px;
             border-top: 1px solid #ddd;
-            font-size: 10px;
+            font-size: 9.5px;
+            color: #666;
+        }
+
+        .metrics-row {
+            display: flex;
+            gap: 16px;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .metric-label {
+            font-size: 9px;
             color: #666;
         }
 
         @media print {
             body {
-                padding: 24px 32px;
+                padding: 20px 28px;
             }
         }
     </style>
@@ -167,7 +199,7 @@
 <body>
     <div class="header">
         <h1>Sathish Kumar V</h1>
-        <div class="tagline">AI Engineer · Building systems that ship, not just demo</div>
+        <div class="tagline">AI Team Lead · 7 engineers · 15 products · 13 client projects</div>
         <div class="contact">
             Chennai, India · Open to UK/US Remote<br>
             +91 8056770991 · sathishkumar05@gmail.com · 
@@ -177,13 +209,33 @@
         </div>
     </div>
 
-    <h2>In Short</h2>
-    <p class="intro">
-        I lead a team of AI engineers at a consulting firm. We build systems that help enterprises make sense of their documents, data, and decisions. My work has saved clients thousands of hours of manual work. The contract extraction project I led reduced processing time from 260 hours to 26 minutes — and turned a 4-week proof of concept into a 6-month engagement because it actually worked.
+    <h2>Summary</h2>
+    <p class="summary">
+        AI Team Lead running a cluster of 7 engineers at a consulting firm. I own 15 internal AI products, have delivered 13 client projects, and won 5 deals through solution architecture and pre-sales. My work ships to production — the contract extraction system I built reduced processing from 260 hours to 26 minutes and turned a 4-week PoC into a 6-month engagement.
     </p>
-    <p class="intro">
-        I'm looking for a remote role with a UK or US company where I can build AI that ships to production, not just presentations.
-    </p>
+
+    <div class="metrics-row">
+        <div class="metric">
+            <div class="metric-value">13</div>
+            <div class="metric-label">Client Projects</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">15</div>
+            <div class="metric-label">Products Owned</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">7</div>
+            <div class="metric-label">Engineers Led</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Deals Won</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">99%</div>
+            <div class="metric-label">Time Saved</div>
+        </div>
+    </div>
 
     <h2>Experience</h2>
 
@@ -192,22 +244,31 @@
             <span class="job-title">AI Team Lead</span>
             <span class="job-date">Oct 2025 – Present</span>
         </div>
-        <div class="job-company">Consulting Firm · Chennai</div>
+        <div class="job-company">Consulting Firm · Chennai (Remote UK/US clients)</div>
         
-        <div class="achievement">
-            <div class="achievement-title">Enterprise AI Platform</div>
-            <p>Built private ChatGPT alternative for 200+ users. Connected to SharePoint, Power BI, CRM. Solved the "consultants using public AI with client data" compliance problem.</p>
-        </div>
+        <p class="job-text">Leading Cluster 5 (7 engineers) in AI Center of Excellence. Own internal AI products, architect client solutions, do pre-sales.</p>
         
-        <div class="achievement">
-            <div class="achievement-title">Sales Impact</div>
-            <p>Won 5+ opportunities through solution architecture and pre-sales. If clients ask "how would this work?", I'm usually the one answering.</p>
-        </div>
-        
-        <div class="achievement">
-            <div class="achievement-title">Team Leadership</div>
-            <p>Managing 6-7 engineers across multiple projects. Own technical direction and AI Playbook (internal knowledge base for production AI patterns).</p>
-        </div>
+        <div class="job-section-title">Team & Scope</div>
+        <ul class="job-bullets">
+            <li>Manage 7 engineers across 4 concurrent client projects (PE firms, manufacturing, SaaS)</li>
+            <li>Technical direction for internal AI platform stack (enterprise chat, backend engine, consulting agent)</li>
+            <li>Hiring (16 interviews conducted), performance reviews for 4 direct reports</li>
+        </ul>
+
+        <div class="job-section-title">Products I Own (15 total)</div>
+        <ul class="job-bullets">
+            <li><strong>Enterprise AI Assistant</strong> — Chat platform for 200+ users (SharePoint, Power BI, CRM). I'm product owner.</li>
+            <li><strong>AI Backend Platform</strong> — Multi-LLM, multi-workspace, governed. I own architecture.</li>
+            <li><strong>Consulting Agent</strong> — Memory-driven assistant (LangGraph, MCP, Teams/SharePoint/DevOps)</li>
+            <li><strong>Fabric MCP Server</strong> — Custom MCP extending Fabric with Excel export, dashboard generation</li>
+            <li>Plus: AI Playbook, Power BI Semantic Assistant, MCP Integrations, AI Data Dictionary, AI Proposal Writer</li>
+        </ul>
+
+        <div class="job-section-title">Pre-Sales Impact</div>
+        <ul class="job-bullets">
+            <li>Won 5 deals through solution architecture and technical pre-sales</li>
+            <li>Created proposals/SOWs for PE firms, manufacturing, SaaS clients. When client asks "how would this work?" — I answer.</li>
+        </ul>
     </div>
 
     <div class="job">
@@ -217,15 +278,19 @@
         </div>
         <div class="job-company">Same Firm</div>
         
-        <div class="achievement">
-            <div class="achievement-title">Contract Extraction (my best work)</div>
-            <p>Client spent 260 hours extracting data from 200-page contracts. Built pipeline with PaddleOCR + Qwen 7B. Chose small model over GPT-4 because it was accurate enough and 15x cheaper. Result: 26 minutes, 85% automation. 4-week PoC became 6-month engagement.</p>
+        <div class="highlight">
+            <div class="highlight-title">Contract Extraction — My Biggest Reference</div>
+            <strong>Problem:</strong> 200-page contracts, pricing in nested tables, 260 hours manual extraction per batch. Previous OCR failed.<br>
+            <strong>Solution:</strong> PaddleOCR (table detection) + Qwen 7B (extraction) + confidence-based human routing.<br>
+            <strong>Why not GPT-4?</strong> $0.03/page × scale = budget rejected. Small model was accurate enough, 15x cheaper.<br>
+            <strong>Result:</strong> 260h → 26min. 85% straight-through automation. 4-week PoC → 6-month engagement.
         </div>
-        
-        <div class="achievement">
-            <div class="achievement-title">PE Firm Context Layer</div>
-            <p>AI architecture for investment workflows using Claude Enterprise and MCP. "Devil's Advocate" feature that challenges assumptions became their favorite part.</p>
-        </div>
+
+        <ul class="job-bullets">
+            <li>AI architecture for PE firm investment workflows (Claude Enterprise + MCP)</li>
+            <li>Contract insights chatbot for waste management company</li>
+            <li>Launched enterprise chat platform core epic (Nov 2024), built AI backend architecture</li>
+        </ul>
     </div>
 
     <div class="job">
@@ -234,7 +299,11 @@
             <span class="job-date">Apr 2023 – Apr 2024</span>
         </div>
         <div class="job-company">Same Firm</div>
-        <p style="font-size: 10px; color: #444;">Built data foundations for AI: medallion architecture (5M+ daily records), dbt models, SCD Type 2, data quality monitoring. Learned that AI without clean data is just expensive guessing.</p>
+        <ul class="job-bullets">
+            <li>Medallion architecture: 5M+ records/day (dbt, Redshift, Azure Data Factory)</li>
+            <li>SCD Type 2 across 20+ entities, data quality monitoring</li>
+            <li>First client delivery work. Learned: AI without clean data is expensive guessing.</li>
+        </ul>
     </div>
 
     <div class="job">
@@ -243,7 +312,7 @@
             <span class="job-date">Feb 2022 – Apr 2023</span>
         </div>
         <div class="job-company">Same Firm</div>
-        <p style="font-size: 10px; color: #444;">APIs (Node.js, FastAPI), ETL pipelines (1M+ records/day), Docker deployments (60% faster releases).</p>
+        <p class="job-text">APIs (Node.js, NestJS, FastAPI), ETL pipelines (1M+ records/day), Docker deployments (60% faster releases).</p>
     </div>
 
     <div class="job">
@@ -252,41 +321,21 @@
             <span class="job-date">2017 – 2022</span>
         </div>
         <div class="job-company">Various Companies · Chennai</div>
-        <p style="font-size: 10px; color: #444;">C#, .NET, SQL Server. Enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.</p>
-    </div>
-
-    <h2>Projects That Show How I Think</h2>
-
-    <div class="project">
-        <div class="project-title">Contract Intelligence Platform</div>
-        <div class="project-detail">
-            <strong>Problem:</strong> 260 hours manual extraction. 
-            <strong>What I tried:</strong> GPT-4 Vision (too expensive), commercial OCR (failed on nested tables). 
-            <strong>What worked:</strong> PaddleOCR + Qwen 7B + human review for low-confidence fields. 
-            <strong>Result:</strong> 26 min, 85% automation, 15x cheaper than GPT-4. 
-            <strong>What broke:</strong> Multi-currency tables caused hallucinations — fixed with explicit currency detection.
-        </div>
-    </div>
-
-    <div class="project">
-        <div class="project-title">Enterprise AI Platform</div>
-        <div class="project-detail">
-            <strong>Problem:</strong> Consultants using ChatGPT with client data. 
-            <strong>Solution:</strong> Private AI with SharePoint, Power BI, CRM integration. 
-            <strong>Impact:</strong> Compliance risk eliminated, knowledge searchable, new hires productive faster.
-        </div>
+        <p class="job-text">C#, .NET, SQL Server. Enterprise systems for retail and services.</p>
     </div>
 
     <h2>Skills</h2>
     <div class="skills-grid">
-        <strong>Languages:</strong>
-        <span>Python (daily), TypeScript (often), SQL (constantly), C# (past life)</span>
         <strong>AI/ML:</strong>
-        <span>LangChain, LangGraph, RAG, PaddleOCR, Azure AI, AWS Bedrock, Claude, OpenAI</span>
+        <span>LangChain, LangGraph, RAG, Agents, MCP, Azure OpenAI, Claude/Anthropic, AWS Bedrock, PaddleOCR</span>
+        <strong>Platform:</strong>
+        <span>Azure AI Foundry, Microsoft Fabric, Copilot Studio, Docker, Terraform, GitHub Actions</span>
+        <strong>Languages:</strong>
+        <span>Python, TypeScript, SQL, C#</span>
         <strong>Data:</strong>
-        <span>dbt, PostgreSQL, Redshift, Azure Data Factory, Power BI</span>
-        <strong>Infrastructure:</strong>
-        <span>Docker, Azure, AWS, Terraform, GitHub Actions</span>
+        <span>dbt, PostgreSQL, Redshift, Power BI, Azure Data Factory</span>
+        <strong>Enterprise:</strong>
+        <span>SharePoint, Salesforce, Azure DevOps</span>
     </div>
 
     <h2>Education</h2>
@@ -296,6 +345,7 @@
     <div class="closing">
         <strong>Availability:</strong> Immediate · 
         <strong>Work preference:</strong> Remote, UK/US timezone overlap · 
+        <strong>Recognition:</strong> Performance bonus FY24-25, 2× hackathon 3rd place ·
         <strong>Published:</strong> "Contract Intelligence at Scale" on Medium
     </div>
 </body>

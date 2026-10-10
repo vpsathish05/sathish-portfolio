@@ -1,6 +1,6 @@
 # SATHISH KUMAR V
 
-**AI Engineer · Building systems that ship, not just demo**
+**AI Team Lead · 7 engineers · 15 products · 13 client projects**
 
 Chennai, India · Open to UK/US Remote  
 +91 8056770991 · sathishkumar05@gmail.com  
@@ -8,25 +8,11 @@ Chennai, India · Open to UK/US Remote
 
 ---
 
-## In short
+## Summary
 
-I lead a team of AI engineers at a consulting firm. We build systems that help enterprises make sense of their documents, data, and decisions.
+AI Team Lead running a cluster of 7 engineers at a consulting firm. I own 15 internal AI products, have delivered 13 client projects, and won 5 deals through solution architecture and pre-sales. My work ships to production — the contract extraction system I built reduced processing from 260 hours to 26 minutes and turned a 4-week PoC into a 6-month engagement.
 
-My work has saved clients thousands of hours of manual work. The contract extraction project I led reduced processing time from 260 hours to 26 minutes — and turned a 4-week proof of concept into a 6-month engagement because it actually worked.
-
-I'm looking for a remote role with a UK or US company where I can build AI that ships to production, not just presentations.
-
----
-
-## What I'm good at
-
-**Building AI that works in the real world** — Not demos, but production systems with messy data, edge cases, and users who don't read documentation.
-
-**Making trade-offs** — Chose a 7B parameter model over GPT-4 because it was 15x cheaper and accurate enough. That's the kind of decision I make.
-
-**Leading without micromanaging** — My team of 6-7 engineers ships because I give them context and get out of the way.
-
-**Talking to clients** — I do pre-sales, run workshops, and explain technical decisions to non-technical people. If I help win a deal, I usually end up building it.
+Looking for a remote role with a UK or US company building AI that runs in production, not just demos well.
 
 ---
 
@@ -34,93 +20,93 @@ I'm looking for a remote role with a UK or US company where I can build AI that 
 
 ### AI Team Lead · Consulting Firm · Oct 2025 – Present
 
-Leading a team that builds AI systems for enterprise clients. I own the technical direction, do pre-sales, and still write code when it matters.
+Leading Cluster 5 (7 engineers) in the AI Center of Excellence. I own internal AI products, architect client solutions, and do pre-sales. When we win the deal, I build it.
 
-**What I've shipped:**
-- **Enterprise AI platform** serving 200+ internal users — private alternative to ChatGPT that connects to SharePoint, Power BI, and CRM. Solved the "consultants using public AI with client data" problem.
-- **Custom MCP server for Microsoft Fabric** — extended Fabric's capabilities to export to Excel and generate charts. Built because the native tool only answered questions, couldn't DO anything.
-- Won 5+ sales opportunities through solution architecture and technical pre-sales. If the client says "how would this actually work?", I'm usually the one answering.
+**Team & Scope:**
+- Manage 7 engineers across 4 concurrent client projects (PE firms, manufacturing, SaaS)
+- Technical direction for our internal AI platform stack (enterprise chat, backend engine, consulting agent)
+- Hiring: conducted 16 candidate interviews; performance reviews for 4 direct reports
 
-**What I manage:**
-- Team of 6-7 engineers across multiple client projects
-- Technical direction for AI products and client engagements
-- AI Playbook — internal knowledge base covering RAG, agents, MCP, evaluation, and production patterns
+**Products I Own (15 total):**
+- **Enterprise AI Assistant** — Chat platform for 200+ internal users. Connects SharePoint, Power BI, CRM. I'm the product owner.
+- **AI Backend Platform** — Multi-LLM, multi-workspace, governed. I own the architecture.
+- **Consulting Agent** — Memory-driven assistant. LangGraph, MCP, Teams/SharePoint/DevOps integration.
+- **Fabric MCP Server** — Custom MCP server extending Microsoft Fabric with Excel export, dashboard generation.
+- **AI Playbook** — MDX knowledge base: RAG, agents, MCP, LLMOps, production patterns. I'm the author.
+- Plus: Power BI Semantic Assistant, AI Data Dictionary, MCP Integrations Accelerator, AI Proposal Writer, Power BI Grading Tool
+
+**Client Delivery (5 active engagements):**
+- PE firm context layer: AI investment assistant with Claude Enterprise + MCP
+- Manufacturing BOM automation: OCR + LLM extraction, 95% field accuracy target
+- SaaS natural language BI: Made Power BI semantic models AI-queryable
+- DTaaS operational intelligence: Data pipelines + dashboards for parking operations
+
+**Pre-Sales Impact:**
+- Won 5 deals through solution architecture and technical pre-sales
+- Created proposals, SOWs, architecture decks for PE firms, manufacturing, SaaS clients
+- If the client asks "how would this actually work?" — I'm usually the one answering
 
 ---
 
 ### AI Engineer → Product Lead · Same Firm · Apr 2024 – Oct 2025
 
-This is when I stopped being an "AI resource" and started owning outcomes.
+Transitioned from execution to ownership. Started building products, not just features.
 
-**The contract extraction project** (the one I'm most proud of):
-- Client had 200-page contracts with pricing buried in nested tables. Their team spent 260 hours manually extracting data from each batch.
-- Built a pipeline using PaddleOCR (for table detection) and Qwen 7B (for extraction). Chose the small model over GPT-4 because it was accurate enough and 15x cheaper.
-- Result: 260 hours → 26 minutes. 85-90% straight-through automation. Project grew from 4-week PoC to 6-month engagement.
-- Published the approach on Medium — it's still the article people find me through.
+**Contract Intelligence Project (my biggest reference):**
+- Client: 200-page contracts, pricing in nested tables, 260 hours manual extraction per batch
+- Problem: Previous OCR failed on complex tables. GPT-4 Vision too expensive ($0.03/page × scale)
+- Solution: PaddleOCR (table detection) + Qwen 7B (extraction) + confidence-based human routing
+- Result: 260 hours → 26 minutes. 85% straight-through automation. $0.002/page (15x cheaper)
+- Outcome: 4-week PoC became 6-month engagement. Now our top case study.
 
-**Other work:**
-- **AI context layer for a PE firm** — built architecture for investment workflow automation using Claude Enterprise and MCP. The "Devil's Advocate" feature that challenges assumptions became their favorite part.
-- **BOM automation** — extraction from manufacturing documents, 95%+ field accuracy across 5+ document types.
-- Started writing SOWs and proposals, not just code. Learned that winning work is part of the job.
+**Other Delivery:**
+- AI architecture for PE firm investment workflows (Claude Enterprise + MCP)
+- Contract insights chatbot for waste management company
+- Started owning proposals and SOWs — learned that winning work is part of the job
+
+**Product Work:**
+- Launched enterprise chat platform core epic (Nov 2024) — became the company's internal AI platform
+- Built AI backend platform technical architecture — the multi-LLM engine under our products
 
 ---
 
 ### Data Engineer · Same Firm · Apr 2023 – Apr 2024
 
-Built the data foundations that make AI possible.
+Built data foundations that make AI possible.
 
-- Medallion architecture data platform processing 5M+ records daily (dbt, Redshift, Azure Data Factory)
-- SCD Type 2 implementation across 20+ entities — version history that auditors actually need
-- Data quality monitoring that caught problems before clients did
+- Medallion architecture platform: 5M+ records/day (dbt, Redshift, Azure Data Factory)
+- SCD Type 2 across 20+ entities — version history auditors need
+- Data quality monitoring catching problems before clients did
 
-**What I learned:** AI without clean data is just expensive guessing.
+First client delivery work in this role. Learned that AI without clean data is expensive guessing.
 
 ---
 
 ### Software Engineer · Same Firm · Feb 2022 – Apr 2023
 
-- RESTful APIs with Node.js, NestJS, FastAPI
-- ETL pipelines processing 1M+ records daily
-- Docker deployments that cut release time by 60%
+- RESTful APIs: Node.js, NestJS, FastAPI
+- ETL pipelines: 1M+ records daily
+- Docker deployments: 60% faster releases
 
 ---
 
-### Earlier roles · 2017 – 2022
+### Earlier Roles · 2017 – 2022
 
-**Full Stack Developer** at three companies — C#, .NET, SQL Server. Built enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.
-
----
-
-## Projects that show how I think
-
-### Contract Intelligence Platform
-**The problem:** 260 hours of manual data extraction per contract batch.  
-**What I tried:** GPT-4 Vision (too expensive), commercial OCR (failed on nested tables).  
-**What worked:** PaddleOCR + Qwen 7B + confidence thresholds for human review.  
-**The result:** 26 minutes, 85% automation, 15x cost reduction vs GPT-4.  
-**What broke:** Multi-currency tables caused hallucinations. Fixed with explicit currency detection.
-
-### Enterprise AI Platform
-**The problem:** Consultants using ChatGPT with sensitive client data.  
-**What I built:** Private AI connected to internal knowledge (SharePoint, Power BI, CRM).  
-**Why it mattered:** Compliance risk eliminated. Knowledge became searchable. New hires productive faster.
-
-### PE Firm Context Layer
-**The problem:** Investment team spending days preparing for committee meetings.  
-**What I built:** AI layer that knows their context, cites sources, and can argue the other side.  
-**Why they liked it:** "Devil's Advocate" feature that challenges assumptions on demand.
+**Full Stack Developer** at three companies — C#, .NET, SQL Server. Enterprise systems for retail and services. Learned that code solves business problems, not puzzles.
 
 ---
 
-## Skills (the ones I actually use)
+## Skills
 
-**Languages:** Python (daily), TypeScript (often), SQL (constantly), C# (past life)
+**AI/ML:** LangChain, LangGraph, RAG, Agents, MCP, Azure OpenAI, Claude/Anthropic, AWS Bedrock, PaddleOCR
 
-**AI/ML:** LangChain, LangGraph, RAG architectures, PaddleOCR, Azure AI, AWS Bedrock, Claude/Anthropic, OpenAI — I've shipped production systems with all of these
+**Platform:** Azure AI Foundry, Microsoft Fabric, Copilot Studio, Docker, Terraform, GitHub Actions
 
-**Data:** dbt, PostgreSQL, Redshift, Azure Data Factory, Power BI — the "plumbing" that makes AI work
+**Languages:** Python, TypeScript, SQL, C#
 
-**Infrastructure:** Docker, Azure, AWS, Terraform, GitHub Actions
+**Data:** dbt, PostgreSQL, Redshift, Power BI, Azure Data Factory
+
+**Enterprise:** SharePoint, Salesforce, Azure DevOps
 
 ---
 
@@ -131,11 +117,11 @@ Built the data foundations that make AI possible.
 
 ---
 
-## One more thing
+## Recognition
 
-I wrote about the contract extraction project on Medium. "Contract Intelligence at Scale: How OCR-LLM Turned 260 Hours Into 26 Minutes." It's still how most people find me.
-
-If you're building AI that needs to work in the real world — with real data, real constraints, and real users — I'd like to talk.
+- Performance bonus (PLI) FY2024-25
+- 2× hackathon 3rd place finishes
+- Enterprise AI platform demonstrated to executive leadership — positive response, roadmap discussions
 
 ---
 
