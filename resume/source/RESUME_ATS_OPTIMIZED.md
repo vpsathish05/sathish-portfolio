@@ -1,130 +1,145 @@
 # SATHISH KUMAR V
 
-**AI Team Lead · 7 engineers · 15 products · 13 client projects**
+**AI Solutions Architect & Team Lead**
 
-Chennai, India · Open to UK/US Remote  
+Chennai, India · Open to Remote (UK/US timezone)  
 +91 8056770991 · sathishkumar05@gmail.com  
 [LinkedIn](https://linkedin.com/in/sathish-kumar-310976153) · [GitHub](https://github.com/vpsathish05) · [Portfolio](https://vpsathish05.github.io/sathish-portfolio)
 
 ---
 
-## Summary
+## Professional Summary
 
-AI Team Lead running a cluster of 7 engineers at a consulting firm. I own 15 internal AI products, have delivered 13 client projects, and won 5 deals through solution architecture and pre-sales. My work ships to production — the contract extraction system I built reduced processing from 260 hours to 26 minutes and turned a 4-week PoC into a 6-month engagement.
-
-Looking for a remote role with a UK or US company building AI that runs in production, not just demos well.
+AI Solutions Architect and Team Lead with 4+ years shipping production AI systems for enterprise clients. Lead a team of 7 engineers delivering document intelligence, RAG pipelines, and agentic AI solutions across PE firms, manufacturing, and SaaS. Own 15 internal AI products including enterprise chat platform and MCP integrations. Proven track record: contract extraction system reduced processing from 260 hours to 26 minutes (99% reduction) while cutting costs 15x vs GPT-4 approach. Won 5 client deals through technical pre-sales and solution architecture.
 
 ---
 
-## Experience
+## Technical Skills
 
-### AI Team Lead · Consulting Firm · Oct 2025 – Present
+**AI/ML:** LangChain, LangGraph, RAG Architecture, Agentic Workflows, Azure OpenAI, Claude/Anthropic, AWS Bedrock, PaddleOCR, Vector Databases (pgvector, Azure AI Search)
 
-Leading Cluster 5 (7 engineers) in the AI Center of Excellence. I own internal AI products, architect client solutions, and do pre-sales. When we win the deal, I build it.
+**Cloud & Infrastructure:** Azure AI Foundry, Microsoft Fabric, AWS (SageMaker, Bedrock), Docker, Kubernetes, Terraform, GitHub Actions
 
-**Team & Scope:**
+**Languages & Frameworks:** Python, TypeScript, FastAPI, React, Node.js, SQL, C#
+
+**Data & MLOps:** dbt, PostgreSQL, Redshift, Power BI, Azure Data Factory, Langfuse, MLflow
+
+**Enterprise Integration:** SharePoint, Salesforce, Azure DevOps, Microsoft Graph, Copilot Studio, MCP Protocol
+
+**Architecture & Security:** API Gateway Design, Role-Based Access Control (RBAC), Data Privacy (GDPR), Enterprise AI Governance
+
+---
+
+## Professional Experience
+
+### AI Solutions Architect & Team Lead
+**Consulting Firm** · Chennai (Remote UK/US Clients) · Oct 2025 – Present
+
+Lead Cluster 5 (7 engineers) in AI Center of Excellence. Own internal AI products, architect client solutions, and drive technical pre-sales.
+
+**Architecture & Delivery:**
+- Architected enterprise-wide RAG knowledge retrieval system using Azure OpenAI and pgvector, enabling 200+ employees to securely query internal documents with RBAC enforcement
+- Designed custom MCP server extending Microsoft Fabric with Excel export and dashboard generation, deployed on Azure Container Apps with Key Vault integration
+- Led PE firm AI context layer implementation using Claude Enterprise + MCP, supporting investment committee workflows with citation tracking and audit trail
+
+**Leadership & Pre-Sales:**
 - Manage 7 engineers across 4 concurrent client projects (PE firms, manufacturing, SaaS)
-- Technical direction for our internal AI platform stack (enterprise chat, backend engine, consulting agent)
-- Hiring: conducted 16 candidate interviews; performance reviews for 4 direct reports
+- Won 5 deals through solution architecture and technical pre-sales; created proposals, SOWs, architecture decks
+- Conducted 16 candidate interviews; performance reviews and career development for 4 direct reports
 
-**Products I Own (15 total):**
-- **Enterprise AI Assistant** — Chat platform for 200+ internal users. Connects SharePoint, Power BI, CRM. I'm the product owner.
-- **AI Backend Platform** — Multi-LLM, multi-workspace, governed. I own the architecture.
-- **Consulting Agent** — Memory-driven assistant. LangGraph, MCP, Teams/SharePoint/DevOps integration.
-- **Fabric MCP Server** — Custom MCP server extending Microsoft Fabric with Excel export, dashboard generation.
-- **AI Playbook** — MDX knowledge base: RAG, agents, MCP, LLMOps, production patterns. I'm the author.
-- Plus: Power BI Semantic Assistant, AI Data Dictionary, MCP Integrations Accelerator, AI Proposal Writer, Power BI Grading Tool
-
-**Client Delivery (5 active engagements):**
-- PE firm context layer: AI investment assistant with Claude Enterprise + MCP
-- Manufacturing BOM automation: OCR + LLM extraction, 95% field accuracy target
-- SaaS natural language BI: Made Power BI semantic models AI-queryable
-- DTaaS operational intelligence: Data pipelines + dashboards for parking operations
-
-**Pre-Sales Impact:**
-- Won 5 deals through solution architecture and technical pre-sales
-- Created proposals, SOWs, architecture decks for PE firms, manufacturing, SaaS clients
-- If the client asks "how would this actually work?" — I'm usually the one answering
+**Products Owned (15 total):**
+- Enterprise AI Assistant: Multi-model chat platform with SharePoint, Power BI, CRM integration
+- AI Backend Platform: Governed multi-LLM orchestration with workspace isolation
+- Consulting Agent: Memory-driven assistant using LangGraph, MCP, Teams/DevOps connectors
+- Plus: Power BI Semantic Assistant, AI Data Dictionary, MCP Integrations Accelerator, AI Playbook
 
 ---
 
-### AI Engineer → Product Lead · Same Firm · Apr 2024 – Oct 2025
+### AI Engineer → Product Lead
+**Same Firm** · Apr 2024 – Oct 2025
 
-Transitioned from execution to ownership. Started building products, not just features.
+Transitioned from individual contributor to product ownership, leading flagship projects from PoC to production.
 
-**Contract Intelligence Project (my biggest reference):**
-- Client: 200-page contracts, pricing in nested tables, 260 hours manual extraction per batch
-- Problem: Previous OCR failed on complex tables. GPT-4 Vision too expensive ($0.03/page × scale)
-- Solution: PaddleOCR (table detection) + Qwen 7B (extraction) + confidence-based human routing
-- Result: 260 hours → 26 minutes. 85% straight-through automation. $0.002/page (15x cheaper)
-- Outcome: 4-week PoC became 6-month engagement. Now our top case study.
+**Contract Intelligence Platform (Key Achievement):**
+- Architected document extraction pipeline processing 200-page contracts with nested tables using PaddleOCR + Qwen 7B, reducing manual effort from 260 hours to 26 minutes (99% reduction)
+- Implemented confidence-based human routing at 85% threshold, achieving 85% straight-through automation
+- Reduced per-page cost from $0.03 (GPT-4 Vision) to $0.002 through vendor evaluation and hybrid-model approach
+- Grew engagement from 4-week PoC to 6-month production deployment
 
 **Other Delivery:**
-- AI architecture for PE firm investment workflows (Claude Enterprise + MCP)
-- Contract insights chatbot for waste management company
-- Started owning proposals and SOWs — learned that winning work is part of the job
-
-**Product Work:**
-- Launched enterprise chat platform core epic (Nov 2024) — became the company's internal AI platform
-- Built AI backend platform technical architecture — the multi-LLM engine under our products
+- Designed AI architecture for PE firm investment workflows using Claude Enterprise + MCP
+- Built contract insights chatbot integrating document processing with conversational AI
+- Launched enterprise chat platform core epic (Nov 2024); built AI backend architecture
 
 ---
 
-### Data Engineer · Same Firm · Apr 2023 – Apr 2024
+### Data Engineer
+**Same Firm** · Apr 2023 – Apr 2024
 
-Built data foundations that make AI possible.
+Built data foundations enabling AI workloads at scale.
 
-- Medallion architecture platform: 5M+ records/day (dbt, Redshift, Azure Data Factory)
-- SCD Type 2 across 20+ entities — version history auditors need
-- Data quality monitoring catching problems before clients did
-
-First client delivery work in this role. Learned that AI without clean data is expensive guessing.
-
----
-
-### Software Engineer · Same Firm · Feb 2022 – Apr 2023
-
-- RESTful APIs: Node.js, NestJS, FastAPI
-- ETL pipelines: 1M+ records daily
-- Docker deployments: 60% faster releases
+- Implemented medallion architecture data platform processing 5M+ records daily using dbt, Redshift, Azure Data Factory
+- Designed SCD Type 2 implementation across 20+ entities for compliance audit requirements
+- Built data quality monitoring reducing data incidents by 40%
 
 ---
 
-### Earlier Roles · 2017 – 2022
+### Software Engineer
+**Same Firm** · Feb 2022 – Apr 2023
 
-**Full Stack Developer** at three companies — C#, .NET, SQL Server. Enterprise systems for retail and services. Learned that code solves business problems, not puzzles.
+- Built RESTful APIs using Node.js, NestJS, FastAPI serving 1M+ daily requests
+- Implemented Docker-based deployments reducing release cycle by 60%
 
 ---
 
-## Skills
+### Full Stack Developer
+**Various Companies** · Chennai · 2017 – 2022
 
-**AI/ML:** LangChain, LangGraph, RAG, Agents, MCP, Azure OpenAI, Claude/Anthropic, AWS Bedrock, PaddleOCR
-
-**Platform:** Azure AI Foundry, Microsoft Fabric, Copilot Studio, Docker, Terraform, GitHub Actions
-
-**Languages:** Python, TypeScript, SQL, C#
-
-**Data:** dbt, PostgreSQL, Redshift, Power BI, Azure Data Factory
-
-**Enterprise:** SharePoint, Salesforce, Azure DevOps
+Enterprise systems development using C#, .NET, SQL Server for retail and services sectors.
 
 ---
 
 ## Education
 
-**MCA** · University of Madras · 2017-2020  
-**BCA** · Jairam Arts and Science College · 2014-2017
+**MCA (Master of Computer Applications)** · University of Madras · 2017 – 2020
+
+**BCA (Bachelor of Computer Applications)** · Jairam Arts and Science College · 2014 – 2017
 
 ---
 
-## Recognition
+## Awards & Recognition
 
-- Performance bonus (PLI) FY2024-25
-- 2× hackathon 3rd place finishes
-- Enterprise AI platform demonstrated to executive leadership — positive response, roadmap discussions
+- Performance Bonus (PLI) FY2024-25 for exceptional delivery
+- 2× Hackathon 3rd place finishes
+- Enterprise AI platform presented to executive leadership with positive roadmap approval
 
 ---
 
-**Availability:** Immediate  
-**Work preference:** Remote, UK/US timezone overlap  
-**Visa:** Open to sponsored work visa
+## Proof of Concepts & Hackathons
+
+### SapienSync | Talent Recommendation Engine
+*RMG Automation / AI POC*
+
+- Built AI recommendation engine to rank best-fit employees for open roles, generating match rationales from pipeline deals and resourcing requests
+- Designed 6-step pipeline: intake normalization, COE detection, semantic skill matching, weighted scoring, LLM enrichment, knowledge-base validation using SQL, GPT-4o, 1536-dimensional embeddings, pgvector ANN search
+- Implemented weighted scoring: Skill (40%), Competency (25%), Availability (25%), Productivity (10%) with GPT-4o rationale generation, LLM re-ranking, and knowledge-base proof search
+- Built parallel GPT-4o enrichment using Python asyncio.gather() for concurrent rationale generation across top 10 candidates
+- Developed 5 forecasting models (revenue, cluster allocation, FTE/hiring, project count, COE supply-vs-demand) using Holt's Damped Exponential Smoothing, Holt-Winters, probability-weighted demand modelling — achieved 4.4% MAPE with P10/P50/P90 confidence bands
+
+### Lead Generation Network | UK Private Equity Sales Intelligence
+*Company-Wide Hackathon, 2024*
+
+- Built lead-generation and sales-intelligence pipeline targeting UK PE firms and portfolio companies, sourcing from Companies House, FCA Register, web/news scraping
+- Implemented Medallion Architecture (Bronze/Silver/Gold) with raw JSON/JSONL ingestion, entity resolution, PE ownership detection, enrichment, analytics/CRM-ready outputs
+- Used GPT-4o-mini for data enrichment and summarization; implemented weighted lead scoring to rank companies by prospect value
+- Developed Power BI star-schema dashboards and CRM-ready exports for sales intelligence and prospect prioritization
+
+---
+
+## Publications
+
+"Contract Intelligence at Scale: How OCR-LLM Turned 260 Hours Into 26 Minutes" — Medium (Technical case study)
+
+---
+
+**Availability:** Immediate · **Work Authorization:** Open to sponsored work visa
