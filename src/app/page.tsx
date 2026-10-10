@@ -53,9 +53,9 @@ export default function Portfolio() {
         accent="Kumar."
         statement={
           <>
-            I architect <b>agentic AI for the enterprise</b> — MCP servers, RAG pipelines, 
-            document intelligence, and the governance that makes them safe to ship. 
-            Leading 7 engineers, owning 15 internal products, winning deals I then build.
+            I architect <b>agentic AI for the enterprise</b> — autonomous systems with memory, 
+            reasoning loops, tool orchestration, and the guardrails that make them safe to ship. 
+            From MCP servers to RAG pipelines, I build AI that acts, not just responds.
           </>
         }
         actions={
@@ -70,8 +70,8 @@ export default function Portfolio() {
         }
         graph={{
           core: "AGENT",
-          nodes: ["LLM", "MCP", "DATA", "HUMAN", "TOOLS"],
-          hot: [1, 2],
+          nodes: ["MEMORY", "TOOLS", "LOOP", "HARNESS", "OBSERVE", "GOVERN"],
+          hot: [2, 3],
         }}
       />
 
@@ -107,39 +107,39 @@ export default function Portfolio() {
           label="Expertise"
           title="What I"
           accent="architect."
-          lede="Six areas I design, build and own end to end."
+          lede="Six domains where I design, build, and ship production systems."
         />
         <CapabilityGrid
           items={[
             {
               title: "Agentic systems",
-              summary: "Multi-agent workflows with tool use, memory and human checkpoints — designed to fail safely.",
-              points: ["LangGraph orchestration", "MCP tool calling", "Human-in-the-loop"],
+              summary: "Autonomous agents with reasoning loops, tool orchestration, and human checkpoints — architected to fail gracefully.",
+              points: ["LangGraph orchestration", "MCP tool harness", "Memory & context management"],
             },
             {
               title: "RAG & knowledge",
-              summary: "Retrieval that cites its sources and says 'I don't know' when it should.",
-              points: ["Hybrid search", "Re-ranking", "Citation tracking"],
+              summary: "Retrieval systems that cite sources, surface uncertainty, and know when to escalate to humans.",
+              points: ["Hybrid vector + keyword search", "Re-ranking pipelines", "Citation & provenance tracking"],
             },
             {
-              title: "MCP & integration",
-              summary: "Secure, scoped servers that let agents act on enterprise systems.",
-              points: ["Custom MCP servers", "Fabric integration", "API design"],
+              title: "MCP & tool integration",
+              summary: "Secure, scoped MCP servers that let agents act on enterprise systems with full audit trails.",
+              points: ["Custom MCP protocol servers", "Microsoft Fabric integration", "Governed API access"],
             },
             {
               title: "Document intelligence",
-              summary: "OCR pipelines that handle complex layouts — nested tables, merged cells, multi-page contracts.",
-              points: ["PaddleOCR", "Table extraction", "Confidence routing"],
+              summary: "OCR pipelines handling complex layouts — nested tables, merged cells, multi-page contracts — with confidence-based routing.",
+              points: ["PaddleOCR + LLM extraction", "Table structure detection", "Human-in-the-loop routing"],
             },
             {
               title: "Data foundations",
-              summary: "Semantic layers and governed access so AI answers match the numbers people trust.",
-              points: ["dbt models", "Power BI semantic", "Data contracts"],
+              summary: "Semantic layers and governed access so AI answers match the numbers business users trust.",
+              points: ["dbt transformation models", "Power BI semantic layer", "Data contracts & lineage"],
             },
             {
-              title: "Governance & safety",
-              summary: "Guardrails, audit trails and the architecture that risk teams can sign off.",
-              points: ["RBAC", "Audit logging", "Enterprise compliance"],
+              title: "Governance & observability",
+              summary: "Guardrails, audit trails, and evaluation frameworks that risk teams can sign off on.",
+              points: ["RBAC & access control", "LLMOps & Langfuse", "Compliance documentation"],
             },
           ]}
         />
@@ -152,7 +152,7 @@ export default function Portfolio() {
           label="Selected work"
           title="Systems that"
           accent="shipped."
-          lede="Client delivery and open source — each with the architecture, the decisions, and what broke on the way to production."
+          lede="Client delivery and open source — each with the architecture decisions and production lessons learned."
         />
 
         <div className="sg-grid-2">
@@ -162,8 +162,8 @@ export default function Portfolio() {
             index="/01"
             kind="Document Intelligence"
             title="Contract Extraction at Scale"
-            summary="A company drowning in 200-page contracts, pricing buried in nested tables. Their team spent 260 hours per batch. Previous OCR attempts failed on complex layouts. I built the pipeline that does it in 26 minutes."
-            outcome="85% straight-through processing. $0.002/page vs $0.03 with GPT-4V. Started as 4-week PoC, became 6-month engagement."
+            summary="Enterprise clients drowning in 200-page contracts with pricing buried in nested tables. Manual extraction took 260 hours per batch; commercial OCR failed on complex layouts. I architected a hybrid pipeline combining PaddleOCR for structure detection with Qwen 7B for field extraction."
+            outcome="85% straight-through automation. Cost reduced from $0.03/page (GPT-4V) to $0.002/page. Four-week PoC became six-month production engagement."
             tags={["PaddleOCR", "Qwen 7B", "Human-in-loop", "Salesforce"]}
             href="https://medium.com/@vpsathish05/contract-intelligence-at-scale-how-ocr-llm-turned-260-hours-into-26-minutes-00dc6aab26a0"
           />
@@ -173,8 +173,8 @@ export default function Portfolio() {
               index="/02"
               kind="MCP · Open Source"
               title="Custom Fabric MCP Server"
-              summary="MCP server for AI-powered, governed access to Microsoft Fabric. Enables agents to query Warehouses and Lakehouses with validation, Excel export, and dashboard generation beyond native capabilities."
-              tags={["MCP", "Python", "Microsoft Fabric", "Azure"]}
+              summary="MCP server enabling AI agents to query Microsoft Fabric with validation, Excel export, and dashboard generation. Extends native capabilities with governed access patterns suitable for enterprise deployment."
+              tags={["MCP Protocol", "Python", "Microsoft Fabric", "Azure"]}
               href="https://github.com/vpsathish05/custom-fabric-mcp"
             />
 
@@ -182,7 +182,7 @@ export default function Portfolio() {
               index="/03"
               kind="Enterprise · Platform"
               title="Private AI for 200 Consultants"
-              summary="Consultants using ChatGPT with client data — compliance nightmare. Built a governed platform connecting SharePoint, Power BI, CRM. Same capabilities, zero data leaving the perimeter."
+              summary="Consultants using public ChatGPT with client data created compliance risk. Built a governed internal platform connecting SharePoint, Power BI, and CRM with RBAC — same AI capabilities, zero data leaving the perimeter."
               tags={["Azure OpenAI", "RBAC", "Knowledge graph"]}
             />
           </div>
@@ -194,15 +194,15 @@ export default function Portfolio() {
             index="/04"
             kind="RAG · Knowledge"
             title="AI Context Layer for PE"
-            summary="Investment team spent days preparing for committee meetings. Built an AI layer over deal rooms, models, reports — cites sources, challenges assumptions, tracks audit trail."
-            tags={["Claude Enterprise", "MCP", "Citation tracking"]}
+            summary="Investment teams spent days preparing for committee meetings. Built an AI layer over deal rooms, financial models, and reports with citation tracking, assumption challenging, and full audit trail."
+            tags={["Claude Enterprise", "MCP Protocol", "Citation tracking"]}
           />
 
           <ProjectCard
             index="/05"
             kind="AI · Open Source"
             title="RMG: Resource Management System"
-            summary="Replaces manual email-based resource negotiation with AI-powered candidate recommendations. Semantic matching, weighted scoring, automated rationale generation."
+            summary="Replaced manual email-based resource allocation with AI-powered candidate ranking. Six-step pipeline: semantic matching, weighted scoring (skills 40%, competency 25%, availability 25%), GPT-4o enrichment."
             tags={["Python", "GPT-4o", "pgvector", "FastAPI"]}
             href="https://github.com/vpsathish05/rmg"
           />
@@ -213,7 +213,7 @@ export default function Portfolio() {
             index="/06"
             kind="Data · Platform"
             title="Data Engine for PE"
-            summary="High-performance data engineering platform for Private Equity portfolio companies. Centralized command center for managing full data lifecycle with medallion architecture."
+            summary="High-performance data engineering platform for Private Equity portfolio companies. Centralized command center managing full data lifecycle with medallion architecture (Bronze → Silver → Gold)."
             tags={["TypeScript", "dbt", "Redshift", "Power BI"]}
             href="https://github.com/vpsathish05/data-engine"
           />
@@ -222,8 +222,8 @@ export default function Portfolio() {
             index="/07"
             kind="Agents · Infrastructure"
             title="SK-Hermes: Always-On Agent Runtime"
-            summary="Hermes Agent fork with documented AWS EC2 Docker Compose deployment. My personal always-on agent runtime for autonomous workflows."
-            tags={["Python", "Docker", "AWS EC2", "Agents"]}
+            summary="Hermes Agent fork with documented AWS EC2 Docker Compose deployment. Personal always-on runtime for autonomous agent workflows and experimentation."
+            tags={["Python", "Docker", "AWS EC2", "Agentic AI"]}
             href="https://github.com/vpsathish05/sk-hermes"
           />
         </div>
@@ -236,19 +236,19 @@ export default function Portfolio() {
           label="How it runs"
           title="Watch it"
           accent="think."
-          lede="The reference architecture behind the work, and a real (redacted) decision trace."
+          lede="The agentic architecture pattern I deploy, with a real decision trace from production."
         />
 
         <ArchitectureStack
-          title="Reference architecture · enterprise AI platform"
+          title="Reference architecture · agentic enterprise platform"
           meta="production · v3"
-          rail="Evaluation · Observability · Governance"
+          rail="Observe · Evaluate · Govern"
           layers={[
-            { name: "Experience", items: ["Web chat", "Teams bot", "API"] },
-            { name: "Orchestration", tone: "signal", items: ["Planner", "Agent router", "Memory", "Human approval"] },
-            { name: "Tools · MCP", tone: "current", items: ["CRM server", "Fabric server", "Docs server", "SharePoint"] },
-            { name: "Knowledge & data", items: ["Vector index", "Semantic models", "Document store"] },
-            { name: "Models & platform", items: ["Azure OpenAI", "Claude", "PaddleOCR", "Embeddings"] },
+            { name: "Experience", items: ["Web chat", "Teams bot", "API endpoints"] },
+            { name: "Agent harness", tone: "signal", items: ["Planning loop", "Agent router", "Memory store", "Human checkpoints"] },
+            { name: "Tool layer · MCP", tone: "current", items: ["CRM server", "Fabric server", "Docs server", "SharePoint connector"] },
+            { name: "Knowledge & retrieval", items: ["Vector index", "Semantic models", "Document store", "Graph DB"] },
+            { name: "Model layer", items: ["Azure OpenAI", "Claude", "PaddleOCR", "Embedding models"] },
           ]}
         />
 
@@ -257,13 +257,13 @@ export default function Portfolio() {
             title="trace · contract-extraction"
             meta="architecture decision · why PaddleOCR + Qwen, not GPT-4V"
             steps={[
-              { kind: "plan", label: "Requirement: Extract pricing from 200-page contracts", detail: "Nested tables, merged cells, multi-currency. Previous OCR had failed.", ms: 0 },
-              { kind: "model", label: "Attempt 1: GPT-4 Vision", detail: "Good accuracy. $0.03/page × 200 pages × 1000 contracts = $6,000/batch. Rejected.", ms: 0 },
-              { kind: "error", label: "Attempt 2: Commercial OCR vendors", detail: "Tested 3 platforms. All failed on nested tables with merged cells.", ms: 0 },
-              { kind: "mcp", label: "Solution: PaddleOCR for table detection", detail: "Open source, handles complex layouts. Runs on GPU we already had.", ms: 0 },
-              { kind: "model", label: "Solution: Qwen 7B for field extraction", detail: "Small enough to self-host. Accurate enough for structured fields. $0.002/page.", ms: 0 },
-              { kind: "human", label: "Design: Confidence thresholds", detail: "Below 85% → human review queue. 100% automation wasn't the goal.", ms: 0 },
-              { kind: "result", label: "Outcome", detail: "15x cheaper than GPT-4 approach. Client owns infra. Scales to any volume.", ms: 0 },
+              { kind: "plan", label: "Requirement analysis", detail: "Extract pricing from 200-page contracts with nested tables, merged cells, multi-currency. Commercial OCR had failed.", ms: 0 },
+              { kind: "model", label: "Evaluated: GPT-4 Vision", detail: "Excellent accuracy, prohibitive cost: $0.03/page × 200 pages × 1,000 contracts = $6,000/batch. Rejected.", ms: 0 },
+              { kind: "error", label: "Evaluated: Commercial OCR vendors", detail: "Tested three platforms. All failed on nested tables with merged cells — critical requirement.", ms: 0 },
+              { kind: "mcp", label: "Selected: PaddleOCR for table detection", detail: "Open source, handles complex layouts reliably. Runs on existing GPU infrastructure.", ms: 0 },
+              { kind: "model", label: "Selected: Qwen 7B for field extraction", detail: "Small enough to self-host, accurate for structured fields. Reduces cost to $0.002/page.", ms: 0 },
+              { kind: "human", label: "Designed: Confidence-based routing", detail: "Below 85% confidence → human review queue. Partial automation is the goal, not full automation.", ms: 0 },
+              { kind: "result", label: "Production outcome", detail: "15× cheaper than GPT-4 approach. Client owns infrastructure. Scales linearly with volume.", ms: 0 },
             ]}
             status="complete"
           />
@@ -272,7 +272,7 @@ export default function Portfolio() {
             title="~/lessons-learned"
             shell="production"
             lines={[
-              { text: "# What broke in production", tone: "warn" },
+              { text: "# Production edge cases", tone: "warn" },
               "",
               "1. Multi-currency tables",
               "   → LLM hallucinated exchange rates",
@@ -284,11 +284,11 @@ export default function Portfolio() {
               "",
               "3. Scanned at angles",
               "   → Table detection failed",
-              "   → Fix: Deskew preprocessing",
+              "   → Fix: Deskew preprocessing pipeline",
               "",
               { text: "# Key insight", tone: "ok" },
               "Production AI is 20% model, 80% edge cases.",
-              "Treat low-confidence as a feature, not failure.",
+              "Low confidence is a feature, not a failure.",
             ]}
           />
         </div>
@@ -300,18 +300,18 @@ export default function Portfolio() {
           index="04"
           label="Approach"
           title="How I"
-          accent="work."
-          lede="Every stage ends with something you can hold."
+          accent="deliver."
+          lede="Every phase produces a tangible artifact. No stage ends without something you can hold."
         />
         <ProcessSteps
           active={3}
           steps={[
-            { title: "Discover", summary: "Map the decision, the users and the data.", output: "Problem brief + metrics" },
-            { title: "Architect", summary: "Pick patterns and boundaries; design for failure.", output: "Reference architecture" },
-            { title: "Prototype", summary: "Ship a thin, real slice end to end.", output: "Working slice" },
-            { title: "Evaluate", summary: "Measure quality, safety, cost and latency.", output: "Eval report" },
-            { title: "Productionise", summary: "Harden, secure and hand over.", output: "Runbook + guardrails" },
-            { title: "Operate", summary: "Monitor drift; improve on a cadence.", output: "Dashboards + reviews" },
+            { title: "Discover", summary: "Map the decision landscape, users, and data sources.", output: "Problem brief + success metrics" },
+            { title: "Architect", summary: "Select patterns, define boundaries, design for failure modes.", output: "Reference architecture" },
+            { title: "Prototype", summary: "Ship a thin, working slice end-to-end.", output: "Functional prototype" },
+            { title: "Evaluate", summary: "Measure quality, safety, cost, and latency against baselines.", output: "Evaluation report" },
+            { title: "Productionize", summary: "Harden security, add observability, document operations.", output: "Runbook + guardrails" },
+            { title: "Operate", summary: "Monitor drift, run evals on cadence, iterate.", output: "Dashboards + review cycles" },
           ]}
         />
       </section>
@@ -323,11 +323,12 @@ export default function Portfolio() {
           label="Stack"
           title="Tools I"
           accent="reach for."
+          lede="The technologies I use daily to build production agentic systems."
         />
         <StackMatrix
           groups={[
             {
-              label: "Models",
+              label: "Models & inference",
               items: [
                 { name: "Azure OpenAI", level: "daily" },
                 { name: "Claude / Anthropic", level: "daily" },
@@ -336,7 +337,7 @@ export default function Portfolio() {
               ],
             },
             {
-              label: "Orchestration",
+              label: "Agent orchestration",
               items: [
                 { name: "LangChain", level: "daily" },
                 { name: "LangGraph", level: "daily" },
@@ -345,7 +346,7 @@ export default function Portfolio() {
               ],
             },
             {
-              label: "Data & RAG",
+              label: "RAG & data",
               items: [
                 { name: "pgvector", level: "daily" },
                 { name: "Azure AI Search", level: "proficient" },
@@ -354,21 +355,21 @@ export default function Portfolio() {
               ],
             },
             {
-              label: "Languages",
+              label: "Languages & frameworks",
               items: [
                 { name: "Python", level: "daily" },
                 { name: "TypeScript", level: "daily" },
                 { name: "SQL", level: "daily" },
-                { name: "C#", level: "familiar" },
+                { name: "FastAPI / React", level: "daily" },
               ],
             },
             {
-              label: "Infrastructure",
+              label: "Infrastructure & ops",
               items: [
-                { name: "Docker", level: "daily" },
+                { name: "Docker / Kubernetes", level: "daily" },
                 { name: "Azure", level: "daily" },
                 { name: "AWS", level: "proficient" },
-                { name: "Terraform", level: "proficient" },
+                { name: "Terraform / IaC", level: "proficient" },
               ],
             },
           ]}
@@ -382,6 +383,7 @@ export default function Portfolio() {
           label="About"
           title="The path"
           accent="so far."
+          lede="From full-stack development to leading AI engineering — seven years of building systems that ship."
         />
         
         {/* Profile with Photo */}
@@ -395,14 +397,14 @@ export default function Portfolio() {
           </div>
           <div className="about-text">
             <p className="about-statement">
-              I&apos;m an AI architect who believes production systems should be boring — 
-              predictable, observable, and easy to fix at 3am. The interesting part is 
-              getting them there.
+              I believe production AI systems should be boring — predictable, observable, 
+              and straightforward to debug at 3am. The interesting work is getting them there.
             </p>
             <p className="about-detail">
-              Based in Chennai, working with UK and US clients remotely. I lead a team of 7, 
-              own the technical direction for our AI practice, and still write code every day. 
-              Looking for my next role where I can keep shipping AI that actually runs in production.
+              Based in Chennai, serving UK and US clients remotely. I lead a team of seven engineers, 
+              own technical direction for our AI practice, and still write code daily. Currently 
+              seeking opportunities where I can continue shipping agentic AI that runs in production — 
+              not just demos that impress in meetings.
             </p>
           </div>
         </div>
@@ -410,35 +412,35 @@ export default function Portfolio() {
         <Timeline
           items={[
             {
-              period: "Oct 2025 – Now",
+              period: "Oct 2025 – Present",
               role: "AI Solutions Architect & Team Lead",
               org: "JMAN Group",
               current: true,
-              summary: "Lead Cluster 5 (7 engineers) in AI Centre of Excellence. Own 15 internal AI products. Architect client solutions from pitch to production — if we win, I build it. 5 deals won this year.",
+              summary: "Lead Cluster 5 (7 engineers) in AI Centre of Excellence. Own 15 internal AI products. Architect client solutions from pitch to production — solutions I win, I build. Five deals closed this year through technical pre-sales.",
             },
             {
               period: "Apr 2024 – Oct 2025",
               role: "AI Engineer → Product Lead",
               org: "JMAN Group",
-              summary: "Led the contract extraction project that became our biggest reference (260h → 26min). Started building enterprise AI platform — internal products now serving 200+ employees.",
+              summary: "Delivered the contract extraction project that became our flagship reference (260 hours → 26 minutes). Built enterprise AI platform now serving 200+ employees across the organization.",
             },
             {
               period: "Apr 2023 – Apr 2024",
               role: "Data Engineer",
               org: "JMAN Group",
-              summary: "Built medallion architecture platform processing 5M+ records daily using dbt, Redshift, Azure Data Factory. SCD Type 2 across 20+ entities.",
+              summary: "Built medallion architecture platform processing 5M+ records daily. Implemented SCD Type 2 across 20+ entities using dbt, Redshift, and Azure Data Factory.",
             },
             {
               period: "Feb 2022 – Apr 2023",
               role: "Software Engineer",
               org: "JMAN Group",
-              summary: "Built RESTful APIs using Node.js, NestJS, FastAPI serving 1M+ daily requests. Docker-based CI/CD reducing release cycle by 60%.",
+              summary: "Developed RESTful APIs using Node.js, NestJS, and FastAPI serving 1M+ daily requests. Established Docker-based CI/CD reducing release cycles by 60%.",
             },
             {
               period: "2017 – 2022",
               role: "Full Stack Developer",
               org: "Elroi, Qserve, RmKV",
-              summary: "Enterprise systems using C#, .NET, SQL Server. Retail management, accounting, inventory systems for multiple companies.",
+              summary: "Built enterprise systems using C#, .NET, and SQL Server. Delivered retail management, accounting, and inventory solutions across multiple organizations.",
             },
           ]}
         />
@@ -463,6 +465,7 @@ export default function Portfolio() {
           label="Writing & talks"
           title="Thinking"
           accent="out loud."
+          lede="Technical writing, open source contributions, and knowledge sharing."
         />
         <WritingList
           items={[
@@ -476,14 +479,14 @@ export default function Portfolio() {
             {
               type: "Open Source",
               title: "Custom Fabric MCP Server",
-              venue: "GitHub · AI-powered Fabric access with governance",
+              venue: "GitHub · AI-powered Microsoft Fabric access with governance",
               date: "2026",
               href: "https://github.com/vpsathish05/custom-fabric-mcp",
             },
             {
               type: "Internal",
               title: "AI Playbook: RAG, Agents, MCP, Production Patterns",
-              venue: "JMAN Group knowledge base · Author & owner",
+              venue: "JMAN Group knowledge base · Author and maintainer",
               date: "Ongoing",
             },
           ]}
@@ -491,10 +494,10 @@ export default function Portfolio() {
 
         {/* 11. Endorsements / Testimonial */}
         <Testimonial
-          quote="He turned a vague 'we need AI' into an architecture our engineers could build and our risk team could sign off. The contract extraction system he built became our biggest client reference."
+          quote="He transformed a vague 'we need AI' brief into architecture our engineers could build and our risk team could approve. The contract extraction system he delivered became our flagship client reference."
           name="Delivery Director"
-          role="JMAN Group · Enterprise AI practice"
-          source="Internal review"
+          role="JMAN Group · Enterprise AI Practice"
+          source="Internal performance review"
         />
       </section>
 
@@ -503,7 +506,7 @@ export default function Portfolio() {
         eyebrow="08 — Contact"
         title="Let's build something"
         accent="agentic."
-        lede="Open to conversations about AI architecture, MCP, and taking agents from demo to production. Looking for remote roles with UK/US companies (60-90 day notice)."
+        lede="Open to conversations about AI architecture, MCP protocol, and taking autonomous agents from prototype to production. Seeking remote roles with UK/US companies — 60-90 day notice period, open to visa sponsorship."
         email="sathishkumar05@gmail.com"
         links={[
           { label: "LinkedIn", href: "https://www.linkedin.com/in/sathish-kumar-310976153/" },
