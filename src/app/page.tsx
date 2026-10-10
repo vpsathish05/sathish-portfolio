@@ -203,7 +203,7 @@ export default function Portfolio() {
             {
               period: "2025–Now",
               role: "AI COE Team Lead & Solutions Consultant",
-              org: "Consulting Firm",
+              org: "JMAN Group",
               current: true,
               summary:
                 "Leading a cluster of 6-7 engineers. Product owner for enterprise AI platforms. Won 5+ sales opportunities through solution architecture. Created AI Playbook for the organization.",
@@ -211,21 +211,21 @@ export default function Portfolio() {
             {
               period: "2024–2025",
               role: "Solution Enabler",
-              org: "Consulting Firm",
+              org: "JMAN Group",
               summary:
                 "Led Contract Intelligence achieving 99% time reduction. Built custom MCP servers. Architected AI context layers for PE firms.",
             },
             {
               period: "2023–2024",
               role: "Senior Software Engineer",
-              org: "Consulting Firm",
+              org: "JMAN Group",
               summary:
                 "Built medallion architecture data platforms processing 5M+ records daily. Data engineering with dbt, Redshift, Azure Data Factory.",
             },
             {
               period: "2022–2023",
               role: "Software Engineer",
-              org: "Consulting Firm",
+              org: "JMAN Group",
               summary:
                 "Full-stack development with Node.js, React, NestJS. ETL pipelines with Azure Data Factory.",
             },
