@@ -37,8 +37,8 @@ export default function Portfolio() {
         initials="SK"
         homeHref="#"
         links={[
-          { label: "Work", href: "#work", active: true },
           { label: "Expertise", href: "#expertise" },
+          { label: "Work", href: "#work", active: true },
           { label: "About", href: "#about" },
           { label: "Writing", href: "#writing" },
         ]}
