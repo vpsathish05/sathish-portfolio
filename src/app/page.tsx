@@ -31,8 +31,8 @@ export default function Portfolio() {
         homeHref="#"
         links={[
           { label: "Work", href: "#work", active: true },
-          { label: "Systems", href: "#systems" },
-          { label: "About", href: "#about" },
+          { label: "How I think", href: "#approach" },
+          { label: "Path", href: "#path" },
           { label: "Contact", href: "#contact" },
         ]}
         status="Open to remote roles"
@@ -41,30 +41,31 @@ export default function Portfolio() {
 
       {/* Hero Section */}
       <Hero
-        eyebrow="AI COE TEAM LEAD · AGENTIC SYSTEMS"
-        name="Sathish Kumar"
-        accent="V."
+        eyebrow="AI ENGINEER · CHENNAI → UK/US REMOTE"
+        name="I build AI that"
+        accent="actually ships."
         statement={
           <>
-            I architect <b>agentic AI for the enterprise</b> — MCP servers, multi-agent
-            workflows, RAG pipelines and the guardrails that make them safe to ship.
-            Managing 6-7 engineers while delivering 15+ AI products.
+            Most AI projects die in notebooks. Mine run in production — processing 
+            thousands of documents, answering real questions, saving real time. 
+            I lead a team of 6 engineers at a consulting firm. We turn messy 
+            enterprise problems into systems that work.
           </>
         }
         actions={
           <>
             <Button size="lg" href="#work">
-              See selected work
+              See the work
             </Button>
             <Button size="lg" variant="secondary" href="/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v1.pdf">
-              Download CV
+              Resume (PDF)
             </Button>
           </>
         }
         graph={{
-          core: "Agent",
-          nodes: ["MCP", "RAG", "LLM", "Tools", "Data"],
-          hot: [0, 2],
+          core: "Ship",
+          nodes: ["Docs", "Data", "LLMs", "Users", "Value"],
+          hot: [0, 4],
         }}
       />
 
@@ -73,204 +74,196 @@ export default function Portfolio() {
         <SectionHeader
           index="01"
           label="Selected work"
-          title="Systems that"
-          accent="think in context."
-          lede="Four case studies — each with the architecture, real agent runs, and what scaled to production."
+          title="Three problems"
+          accent="I actually solved."
+          lede="Not demos. Not proofs of concept that got shelved. Real systems that real people use every day."
         />
 
         <div className="sg-grid-2">
+          {/* Featured Case Study */}
           <ProjectCard
             featured
             index="/01"
-            kind="EXTRACTION · ENTERPRISE"
-            title="Contract Intelligence Platform"
-            summary="An AI pipeline that extracts structured data from 200-page contracts using PaddleOCR and Qwen SLM, with Salesforce integration and human-in-the-loop validation."
-            outcome="260 hours → 26 minutes. 99% time reduction with 85-90% automation rate."
-            tags={["PaddleOCR", "LLM Extraction", "Salesforce", "FastAPI", "AWS GPU"]}
+            kind="DOCUMENT INTELLIGENCE"
+            title="The 260-hour problem"
+            summary="A company was drowning in contracts. 200-page documents with pricing buried in nested tables. Their team spent 260 hours manually extracting data from each batch. They'd tried OCR before — it failed on complex tables."
+            outcome="Built a pipeline that does it in 26 minutes. 85% of documents now process without human touch. The legal team does strategy now, not data entry."
+            tags={["PaddleOCR", "Small LLM", "Human-in-loop", "Salesforce"]}
             href="https://medium.com/@vpsathish05/contract-intelligence-at-scale-how-ocr-llm-turned-260-hours-into-26-minutes-00dc6aab26a0"
           />
 
           <div style={{ display: "grid", gap: 24, alignContent: "start" }}>
             <ProjectCard
               index="/02"
-              kind="PLATFORM · INTERNAL"
-              title="Enterprise AI Assistant"
-              summary="Product owner for secure AI platform serving 200+ employees — private ChatGPT with integrated knowledge, Power BI, and document intelligence."
-              tags={["Azure OpenAI", "MCP", "Fabric Data Agent", "React"]}
+              kind="ENTERPRISE PLATFORM"
+              title="The compliance nightmare"
+              summary="200 consultants using ChatGPT with client data. Sensitive information going to public APIs. Built a private AI platform that connects to internal systems — SharePoint, Power BI, CRM. Now they have AI without the risk."
+              tags={["Azure OpenAI", "Knowledge integration", "Governance"]}
             />
 
             <ProjectCard
               index="/03"
-              kind="CONTEXT LAYER · PE"
-              title="AI Context Layer for PE"
-              summary="AI architecture enabling investment workflow automation for a private equity firm with Claude Enterprise and custom MCP tools."
-              tags={["Claude Enterprise", "MCP", "LangGraph", "Enterprise Search"]}
-            />
-
-            <ProjectCard
-              index="/04"
-              kind="MCP · ANALYTICS"
-              title="Custom Fabric MCP Server"
-              summary="Extended Microsoft Fabric beyond native capabilities — Excel export, dashboards, and AI client connectivity via custom MCP server."
-              tags={["MCP", "Microsoft Fabric", "Azure Container Apps", "Python"]}
+              kind="INVESTMENT INTELLIGENCE"
+              title="The analyst bottleneck"
+              summary="PE firm's investment team spent days preparing for committee meetings. Information scattered everywhere. Built an AI layer that knows their context, cites its sources, and challenges assumptions on demand."
+              tags={["Claude Enterprise", "MCP", "Audit trail"]}
             />
           </div>
         </div>
       </section>
 
-      {/* Systems Section - Evidence */}
-      <section id="systems" className="stack">
+      {/* How I Think Section */}
+      <section id="approach" className="stack">
         <SectionHeader
           index="02"
-          label="How it runs"
-          title="Watch it"
-          accent="think."
-          lede="A real (redacted) run of the contract extraction agent, and the MCP server behind it."
+          label="How I think"
+          title="What I chose"
+          accent="and why."
+          lede="The interesting part isn't the tech. It's the trade-offs."
         />
 
         <div className="proof">
           <AgentTrace
-            live
-            title="trace · contract-extraction"
-            meta="run 7d3f · 8 steps · 4.2s"
+            title="Contract extraction · the decision"
+            meta="Why PaddleOCR + small LLM, not GPT-4 Vision"
             steps={[
-              { kind: "plan", label: "Analyze document structure", detail: "200-page contract with nested tables", ms: 180 },
-              { kind: "tool", label: "paddle_ocr", detail: "Extract text and table regions → 847 cells detected", ms: 2100 },
-              { kind: "model", label: "Qwen SLM extraction", detail: "Extract pricing, terms, parties from cells", ms: 1200 },
-              { kind: "mcp", label: "validate_schema", detail: "business_rules.validate() → 3 warnings", ms: 95 },
-              { kind: "tool", label: "confidence_score", detail: "Calculate field-level confidence → 0.91 avg", ms: 120 },
-              { kind: "mcp", label: "salesforce_lookup", detail: "crm.match_account(party_name) → 1 match", ms: 340 },
-              { kind: "human", label: "Review queue", detail: "3 low-confidence fields flagged for review", ms: 50 },
-              { kind: "result", label: "Contract processed → Salesforce updated", ms: 115 },
+              { kind: "plan", label: "First attempt: GPT-4 Vision", detail: "Promising accuracy, but $0.03 per page × 200 pages × 1000 contracts = budget blown", ms: 0 },
+              { kind: "error", label: "Commercial OCR tools", detail: "Tested 3 vendors. All failed on nested tables with merged cells.", ms: 0 },
+              { kind: "mcp", label: "PaddleOCR for detection", detail: "Open source, handles complex layouts, runs on GPU we already had", ms: 0 },
+              { kind: "model", label: "Qwen 7B for extraction", detail: "Small enough to self-host, accurate enough for structured fields", ms: 0 },
+              { kind: "human", label: "Confidence threshold", detail: "Below 85%? Flag for human review. 100% automation wasn't the goal — accuracy was.", ms: 0 },
+              { kind: "result", label: "The outcome", detail: "Costs $0.002/page, not $0.03. Scales to any volume. Client owns the infrastructure.", ms: 0 },
             ]}
             status="complete"
           />
 
           <Terminal
-            title="~/mcp/fabric-server"
-            shell="pwsh"
+            title="What actually broke"
+            shell="lessons-learned"
             lines={[
-              { cmd: "uv run fabric-mcp --env production" },
-              "▸ authenticating via Entra ID service principal",
-              { text: "✓ connected to workspace: analytics-prod", tone: "ok" },
-              "▸ registering tools: query_semantic_model, export_excel, generate_chart",
-              { text: "✓ 6 tools registered · health_check passed (89ms)", tone: "ok" },
-              { cmd: "mcp call query_semantic_model --dataset procurement" },
-              '{ "rows": 1247, "measures": ["spend_ytd", "supplier_count"] }',
-              { text: "! cache refresh due in 2h · last sync 22h ago", tone: "warn" },
+              { text: "# Things that didn't work the first time", tone: "warn" },
+              "",
+              "1. Multi-currency tables",
+              "   → LLM hallucinated exchange rates",
+              "   → Fix: Explicit currency detection step",
+              "",
+              "2. Handwritten annotations",
+              "   → OCR confidence dropped to 40%",
+              "   → Fix: Route to human queue, don't guess",
+              "",
+              "3. Scanned at angles",
+              "   → Table detection failed",
+              "   → Fix: Deskew preprocessing",
+              "",
+              { text: "# The lesson", tone: "ok" },
+              "Production AI is 20% model, 80% edge cases.",
             ]}
-            cursor
           />
         </div>
 
         <div className="sg-metrics">
           <Metric
-            value="0.91"
-            label="Extraction accuracy"
-            note="Measured · 500-contract eval set"
+            value="99%"
+            label="Time reduction"
+            note="260 hours → 26 minutes"
           />
           <Metric
-            value="26"
-            unit="min"
-            label="Processing time"
-            note="Measured · was 260 hours manual"
+            value="85%"
+            label="Straight-through"
+            note="No human intervention needed"
           />
           <Metric
-            value="85"
-            unit="%"
-            label="Straight-through rate"
-            note="Measured · no human intervention"
+            value="6"
+            unit="mo"
+            label="Engagement length"
+            note="Started as 4-week PoC"
           />
           <Metric
-            value="5+"
-            label="Sales won"
-            note="Through solution architecture"
+            value="$0.002"
+            label="Per page cost"
+            note="vs $0.03 with GPT-4"
           />
         </div>
       </section>
 
-      {/* About / Timeline Section */}
-      <section id="about" className="stack">
+      {/* Path Section */}
+      <section id="path" className="stack">
         <SectionHeader
           index="03"
-          label="About"
-          title="The path"
-          accent="so far."
+          label="The path"
+          title="How I got"
+          accent="here."
         />
 
         <Timeline
           items={[
             {
-              period: "2025–Now",
-              role: "AI COE Team Lead & Solutions Consultant",
-              org: "JMAN Group",
+              period: "Now",
+              role: "AI Team Lead",
+              org: "Consulting firm",
               current: true,
               summary:
-                "Leading a cluster of 6-7 engineers. Product owner for enterprise AI platforms. Won 5+ sales opportunities through solution architecture. Created AI Playbook for the organization.",
+                "Running a team of 6-7 engineers. We build AI systems for enterprises — the kind that handle real documents, connect to real systems, and need real governance. I also do pre-sales: if we win the deal, I usually end up building it.",
             },
             {
-              period: "2024–2025",
-              role: "Solution Enabler",
-              org: "JMAN Group",
+              period: "2024–25",
+              role: "AI Engineer → Product Lead",
+              org: "Same firm",
               summary:
-                "Led Contract Intelligence achieving 99% time reduction. Built custom MCP servers. Architected AI context layers for PE firms.",
+                "This is when I stopped being a 'resource' and started owning outcomes. Led the contract extraction project that became our biggest reference. Started building internal AI products, not just client work.",
             },
             {
-              period: "2023–2024",
-              role: "Senior Software Engineer",
-              org: "JMAN Group",
+              period: "2022–24",
+              role: "Data Engineer",
+              org: "Same firm",
               summary:
-                "Built medallion architecture data platforms processing 5M+ records daily. Data engineering with dbt, Redshift, Azure Data Factory.",
+                "Built the data foundations that make AI possible. ETL pipelines, data warehouses, dbt models. Learned that AI without clean data is just expensive guessing.",
             },
             {
-              period: "2022–2023",
-              role: "Software Engineer",
-              org: "JMAN Group",
+              period: "2017–22",
+              role: "Software Developer",
+              org: "Various companies",
               summary:
-                "Full-stack development with Node.js, React, NestJS. ETL pipelines with Azure Data Factory.",
-            },
-            {
-              period: "2017–2022",
-              role: "Full Stack Developer",
-              org: "Multiple companies",
-              summary:
-                "C#, .NET, SQL Server. Enterprise applications for retail and services industries.",
-            },
-            {
-              period: "Hackathons",
-              role: "2× 3rd place finishes",
-              org: "Internal competitions",
+                "Started with C# and .NET. Built enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.",
             },
           ]}
         />
 
-        <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginTop: "var(--space-5)" }}>
-          <Tag tone="signal">MCP</Tag>
+        <div style={{ marginTop: "var(--space-6)" }}>
+          <p style={{ 
+            fontFamily: "var(--font-sans)", 
+            fontSize: "16px", 
+            lineHeight: "26px",
+            color: "var(--ink-muted)",
+            maxWidth: "var(--prose-max)"
+          }}>
+            <strong style={{ color: "var(--ink)" }}>The through-line:</strong> I&apos;ve always cared more about whether something works than whether it&apos;s technically impressive. 
+            The contract extraction system uses a 7B parameter model — not because I couldn&apos;t use GPT-4, but because the smaller model was accurate enough and 15x cheaper. 
+            That&apos;s the kind of decision I make every day.
+          </p>
+        </div>
+
+        <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap", marginTop: "var(--space-5)" }}>
+          <Tag tone="signal">Python</Tag>
+          <Tag tone="signal">TypeScript</Tag>
           <Tag tone="current">LangChain</Tag>
-          <Tag tone="current">LangGraph</Tag>
-          <Tag tone="signal">Azure AI Foundry</Tag>
+          <Tag tone="current">Azure AI</Tag>
           <Tag tone="current">AWS Bedrock</Tag>
-          <Tag>RAG</Tag>
-          <Tag>Agentic AI</Tag>
-          <Tag>Python</Tag>
-          <Tag>TypeScript</Tag>
           <Tag>FastAPI</Tag>
           <Tag>React</Tag>
+          <Tag>PostgreSQL</Tag>
           <Tag>dbt</Tag>
-          <Tag>Microsoft Fabric</Tag>
-          <Tag>Power BI</Tag>
           <Tag>Docker</Tag>
-          <Tag>Terraform</Tag>
         </div>
       </section>
 
       {/* Contact Section */}
       <div id="contact">
         <ContactBand
-          eyebrow="04 — CONTACT"
-          title="Let's build something"
-          accent="agentic."
-          lede="Open to remote AI architect roles in UK/US timezones. Let's talk about MCP, agents, and taking AI from demo to production."
+          eyebrow="04 — LET'S TALK"
+          title="Looking for AI that"
+          accent="actually works?"
+          lede="I'm exploring remote roles with UK or US companies. If you need someone who can build AI systems that ship — not just demo — let's talk."
           email="sathishkumar05@gmail.com"
           links={[
             { label: "LinkedIn", href: "https://www.linkedin.com/in/sathish-kumar-310976153/" },
@@ -288,7 +281,7 @@ export default function Portfolio() {
           arrow={false}
           onClick={() => setTheme(theme === "night" ? "paper" : "night")}
         >
-          {theme === "night" ? "Paper theme" : "Night theme"}
+          {theme === "night" ? "Light" : "Dark"}
         </Button>
       </div>
 

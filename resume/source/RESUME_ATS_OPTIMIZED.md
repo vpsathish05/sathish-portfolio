@@ -1,203 +1,144 @@
 # SATHISH KUMAR V
 
-**AI Architect & Team Lead | LLM Systems | RAG Architecture | Agentic AI**
+**AI Engineer · Building systems that ship, not just demo**
 
-Chennai, India | +91 8056770991 | sathishkumar05@gmail.com  
-LinkedIn: linkedin.com/in/sathish-kumar-310976153  
-GitHub: github.com/vpsathish05  
-Portfolio: vpsathish05.github.io/sathish-portfolio
-
----
-
-## PROFESSIONAL SUMMARY
-
-AI COE Team Lead managing 6-7 engineers while driving enterprise AI strategy. 6+ years of progressive expertise building production-grade AI systems, LLM applications, and intelligent automation. Product owner for 5+ internal AI platforms serving 200+ employees. Delivered 13+ client AI projects and 15+ internal AI products. Achieved 99% processing time reduction (260 hours → 26 minutes) with 85-90% automation rates. Won 5+ enterprise sales opportunities through solution architecture and technical pre-sales. Expert in Azure AI Foundry, AWS Bedrock, LangChain/LangGraph, MCP (Model Context Protocol), and RAG architectures.
+Chennai, India · Open to UK/US Remote  
++91 8056770991 · sathishkumar05@gmail.com  
+[LinkedIn](https://linkedin.com/in/sathish-kumar-310976153) · [GitHub](https://github.com/vpsathish05) · [Portfolio](https://vpsathish05.github.io/sathish-portfolio)
 
 ---
 
-## TECHNICAL SKILLS
+## In short
 
-**AI & LLM:** Azure AI Foundry, AWS Bedrock, LangChain, LangGraph, RAG Architectures, Agentic AI, MCP (Model Context Protocol), Copilot Studio, Microsoft Fabric AI, Databricks Agents, OpenAI API, Anthropic Claude, Prompt Engineering
+I lead a team of AI engineers at a consulting firm. We build systems that help enterprises make sense of their documents, data, and decisions.
 
-**Document Intelligence:** PaddleOCR, Azure Document Intelligence, Amazon Textract, PDF Extraction, Table Extraction, Contract Processing
+My work has saved clients thousands of hours of manual work. The contract extraction project I led reduced processing time from 260 hours to 26 minutes — and turned a 4-week proof of concept into a 6-month engagement because it actually worked.
 
-**Vector Databases:** Chroma DB, PostgreSQL pgvector, Azure Cognitive Search, Pinecone
-
-**Programming:** Python, TypeScript, JavaScript, C#
-
-**Full Stack:** FastAPI, Next.js, React, Angular, Node.js, NestJS, .NET Core
-
-**Data Engineering:** dbt, Microsoft Fabric, Amazon Redshift, PostgreSQL, Azure Data Factory, Databricks, SQL Server, Power BI
-
-**Cloud & DevOps:** Azure, AWS, Docker, Terraform, GitHub Actions, Git
+I'm looking for a remote role with a UK or US company where I can build AI that ships to production, not just presentations.
 
 ---
 
-## PROFESSIONAL EXPERIENCE
+## What I'm good at
 
-### AI COE Team Lead & Solutions Consultant
-**JMAN Group, Chennai**  
-October 2025 - Present
+**Building AI that works in the real world** — Not demos, but production systems with messy data, edge cases, and users who don't read documentation.
 
-- Lead AI Center of Excellence cluster team of 6-7 engineers, driving AI strategy and delivery across the organization
-- Product owner for enterprise AI assistant platform serving 200+ employees with integrated knowledge, BI, and document intelligence
-- Won 5+ sales opportunities (enterprise AI platforms, DTaaS, AI context layers) through solution architecture and technical pre-sales
-- Architected AI solutions for enterprise clients using Azure AI Foundry, AWS Bedrock, and MCP (Model Context Protocol)
-- Created AI Playbook—comprehensive architecture guide covering RAG, agents, multi-agent systems, MCP, LLMOps, and production patterns
-- Led AI governance and compliance reviews including EU AI Act and GDPR considerations
-- Conducted 16+ technical interviews for AI engineering roles, building high-performing teams
-- Achieved 2x hackathon 3rd place finishes for PE lead-generation pipeline solution
+**Making trade-offs** — Chose a 7B parameter model over GPT-4 because it was 15x cheaper and accurate enough. That's the kind of decision I make.
 
-### Solution Enabler
-**JMAN Group, Chennai**  
-April 2024 - October 2025
+**Leading without micromanaging** — My team of 6-7 engineers ships because I give them context and get out of the way.
 
-- Product lead and technical owner for private AI platform—foundation for enterprise AI products with multi-LLM support
-- Led Contract Intelligence project achieving 99% processing time reduction (260 hours → 26 minutes) with 85-90% automation rate
-- Architected AI context layer for PE firm enabling investment workflow automation with Claude Enterprise and MCP
-- Created custom MCP server for Microsoft Fabric with Excel export and dashboard capabilities beyond native Fabric Data Agent
-- Led AI workstream for BOM Entry Automation achieving 95%+ required-field extraction accuracy across 5+ document types
-- Built Intelligent Query solution making Power BI semantic models AI-ready for conversational analytics
-- Designed and deployed RAG architectures with vector databases achieving 40% improvement in retrieval accuracy
-- Authored SOWs, proposals, and technical architecture for multiple won opportunities
-
-### Senior Software Engineer
-**JMAN Group, Chennai**  
-April 2023 - April 2024
-
-- Enhanced data pipelines for increased scalability using dbt, Azure Data Factory, and Matillion ETL
-- Built medallion architecture data platform processing 5M+ records daily with optimized Redshift models
-- Developed data models in Amazon Redshift and SQL Server with SCD Type 2 implementation
-- Built full-stack applications using Angular, React, Node.js, and TypeScript
-- Implemented automated data quality checks ensuring 99.5% data integrity across pipelines
-
-### Software Engineer
-**JMAN Group, Chennai**  
-February 2022 - April 2023
-
-- Developed RESTful APIs using Node.js, NestJS, and FastAPI
-- Implemented ETL pipelines with Azure Data Factory processing 1M+ records daily
-- Built containerized deployments using Docker reducing deployment time by 60%
-- Optimized database queries achieving 3x performance improvement
-- Delivered client updates and supported delivery across multiple engagements
-
-### Full Stack Developer
-**Elroi Software Solutions, Chennai**  
-September 2021 - February 2022
-
-- Developed enterprise applications using C# and .NET Framework
-- Implemented database solutions using SQL Server and ASP.NET MVC
-- Built web applications with Entity Framework serving 500+ daily users
-
-### Full-Stack Developer
-**Qserve UAE, Chennai**  
-August 2020 - November 2020
-
-- Developed Retail Management System covering order processing, sales tracking, accounting, and inventory
-- Built scalable application with .NET Core, SQL Server, and Azure integration
-- Designed REST APIs handling 10,000+ daily transactions
-
-### Software Developer
-**RmKV Computask Pvt. Ltd., Chennai**  
-July 2017 - August 2018
-
-- Maintained enterprise applications for RmKV Group across 20+ company locations
-- Customized modules for Sales, Accounts, Inventory, and Human Resources
-- Worked with SQL Server, C#, Angular, and .NET Framework
+**Talking to clients** — I do pre-sales, run workshops, and explain technical decisions to non-technical people. If I help win a deal, I usually end up building it.
 
 ---
 
-## KEY PROJECTS
+## Experience
+
+### AI Team Lead · Consulting Firm · Oct 2025 – Present
+
+Leading a team that builds AI systems for enterprise clients. I own the technical direction, do pre-sales, and still write code when it matters.
+
+**What I've shipped:**
+- **Enterprise AI platform** serving 200+ internal users — private alternative to ChatGPT that connects to SharePoint, Power BI, and CRM. Solved the "consultants using public AI with client data" problem.
+- **Custom MCP server for Microsoft Fabric** — extended Fabric's capabilities to export to Excel and generate charts. Built because the native tool only answered questions, couldn't DO anything.
+- Won 5+ sales opportunities through solution architecture and technical pre-sales. If the client says "how would this actually work?", I'm usually the one answering.
+
+**What I manage:**
+- Team of 6-7 engineers across multiple client projects
+- Technical direction for AI products and client engagements
+- AI Playbook — internal knowledge base covering RAG, agents, MCP, evaluation, and production patterns
+
+---
+
+### AI Engineer → Product Lead · Same Firm · Apr 2024 – Oct 2025
+
+This is when I stopped being an "AI resource" and started owning outcomes.
+
+**The contract extraction project** (the one I'm most proud of):
+- Client had 200-page contracts with pricing buried in nested tables. Their team spent 260 hours manually extracting data from each batch.
+- Built a pipeline using PaddleOCR (for table detection) and Qwen 7B (for extraction). Chose the small model over GPT-4 because it was accurate enough and 15x cheaper.
+- Result: 260 hours → 26 minutes. 85-90% straight-through automation. Project grew from 4-week PoC to 6-month engagement.
+- Published the approach on Medium — it's still the article people find me through.
+
+**Other work:**
+- **AI context layer for a PE firm** — built architecture for investment workflow automation using Claude Enterprise and MCP. The "Devil's Advocate" feature that challenges assumptions became their favorite part.
+- **BOM automation** — extraction from manufacturing documents, 95%+ field accuracy across 5+ document types.
+- Started writing SOWs and proposals, not just code. Learned that winning work is part of the job.
+
+---
+
+### Data Engineer · Same Firm · Apr 2023 – Apr 2024
+
+Built the data foundations that make AI possible.
+
+- Medallion architecture data platform processing 5M+ records daily (dbt, Redshift, Azure Data Factory)
+- SCD Type 2 implementation across 20+ entities — version history that auditors actually need
+- Data quality monitoring that caught problems before clients did
+
+**What I learned:** AI without clean data is just expensive guessing.
+
+---
+
+### Software Engineer · Same Firm · Feb 2022 – Apr 2023
+
+- RESTful APIs with Node.js, NestJS, FastAPI
+- ETL pipelines processing 1M+ records daily
+- Docker deployments that cut release time by 60%
+
+---
+
+### Earlier roles · 2017 – 2022
+
+**Full Stack Developer** at three companies — C#, .NET, SQL Server. Built enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.
+
+---
+
+## Projects that show how I think
 
 ### Contract Intelligence Platform
-**Role:** Technical Lead | **Client:** Enterprise Client  
-**Tech:** Python, FastAPI, PaddleOCR, Qwen SLM, AWS EC2 GPU, S3, Salesforce, MongoDB
+**The problem:** 260 hours of manual data extraction per contract batch.  
+**What I tried:** GPT-4 Vision (too expensive), commercial OCR (failed on nested tables).  
+**What worked:** PaddleOCR + Qwen 7B + confidence thresholds for human review.  
+**The result:** 26 minutes, 85% automation, 15x cost reduction vs GPT-4.  
+**What broke:** Multi-currency tables caused hallucinations. Fixed with explicit currency detection.
 
-- Engineered AI-powered contract extraction system achieving 85-90% straight-through automation
-- Reduced manual processing from 260 hours to 26 minutes—99% time reduction with <1% error rate
-- Built multi-stage pipeline for complex table extraction from 200-page contracts
-- Project grew from 3-4 week PoC to 6-month engagement due to demonstrated value
-- Published technical article on Medium documenting architecture and approach
+### Enterprise AI Platform
+**The problem:** Consultants using ChatGPT with sensitive client data.  
+**What I built:** Private AI connected to internal knowledge (SharePoint, Power BI, CRM).  
+**Why it mattered:** Compliance risk eliminated. Knowledge became searchable. New hires productive faster.
 
-### Enterprise AI Assistant Platform
-**Role:** Product Owner & Lead Architect | **Type:** Internal Product  
-**Tech:** React, TypeScript, Azure OpenAI, Azure Cognitive Search, PostgreSQL, MCP, Microsoft Fabric
-
-- Product owner for secure AI platform—private ChatGPT alternative serving 200+ employees
-- Integrated with SharePoint, Power BI, DevOps, and CRM for comprehensive knowledge access
-- Built workspace management with multi-model AI support and governance controls
-- Implemented Fabric Data Agent integration for conversational analytics over semantic models
-- Presented to executive leadership with positive reception and ongoing roadmap
-
-### AI Context Layer for Private Equity
-**Role:** AI Solution Architect | **Client:** PE Firm  
-**Tech:** Azure AI, Claude Enterprise, MCP, LangGraph, Enterprise Search
-
-- Designed AI context layer enabling investment workflow automation
-- Architected solution using Claude Enterprise with custom MCP tool layer
-- Created comprehensive strategy, design documentation, and architecture diagrams
-- Enabled context-aware IC (Investment Committee) analysis workflows
-- Authored RFP response and proposal leading to active engagement
-
-### Custom MCP Server for Microsoft Fabric
-**Role:** Creator & Technical Lead | **Type:** Internal Product  
-**Tech:** MCP, Microsoft Fabric, Azure Container Apps, Python, Claude
-
-- Created MCP server extending Fabric capabilities beyond native Fabric Data Agent limitations
-- Enabled Excel export, dashboard-style output, and external AI client connectivity
-- Deployed on Azure Container Apps with Key Vault and Entra ID authentication
-- Demonstrated via Claude Chat for conversational analytics with actionable outputs
-
-### Intelligent Query & Procurement Intelligence
-**Role:** AI Architect & Demo Lead | **Client:** PE Portfolio Company  
-**Tech:** Microsoft Fabric, Power BI, Copilot Studio, Fabric Data Agent, MCP
-
-- Built conversational analytics layer over procurement and planning semantic models
-- Designed AI context layer with table, field, and measure descriptions
-- Exposed curated schema to agents via Copilot Studio and Fabric Data Agent
-- Presented working concept to client stakeholders; removed need for custom SQL/BI per question
-
-### AI Research Chatbot
-**Role:** Technical Lead | **Client:** Healthcare Client  
-**Tech:** Next.js, LangChain, OpenAI API, Chroma DB, PostgreSQL pgvector, PubMed/Scholar APIs
-
-- Designed RAG-based chatbot serving 1K+ daily queries for healthcare professionals
-- Implemented intelligent caching reducing response time by 10x for repeated queries
-- Integrated PubMed, Google Scholar, and Semantic Scholar for comprehensive research access
-- Reduced research time from hours to minutes through semantic search
+### PE Firm Context Layer
+**The problem:** Investment team spending days preparing for committee meetings.  
+**What I built:** AI layer that knows their context, cites sources, and can argue the other side.  
+**Why they liked it:** "Devil's Advocate" feature that challenges assumptions on demand.
 
 ---
 
-## LEADERSHIP & ACHIEVEMENTS
+## Skills (the ones I actually use)
 
-- **Team Leadership:** Managing 6-7 engineers in AI COE cluster with mentoring, appraisals, and career development
-- **Product Ownership:** 5+ internal AI platforms including enterprise AI assistant, private AI backend, and consulting project assistant
-- **Sales Impact:** Won 5+ enterprise opportunities through solution architecture and technical pre-sales
-- **Knowledge Sharing:** Created AI Playbook, delivered 10+ internal training sessions on AI architecture
-- **Hackathons:** 2x 3rd place finishes for PE lead-generation and AI solutions
-- **Recognition:** Performance-linked bonus (PLI) FY2024-25 for contribution and dedication
+**Languages:** Python (daily), TypeScript (often), SQL (constantly), C# (past life)
 
----
+**AI/ML:** LangChain, LangGraph, RAG architectures, PaddleOCR, Azure AI, AWS Bedrock, Claude/Anthropic, OpenAI — I've shipped production systems with all of these
 
-## EDUCATION
+**Data:** dbt, PostgreSQL, Redshift, Azure Data Factory, Power BI — the "plumbing" that makes AI work
 
-**Master of Computer Applications (MCA)**  
-University of Madras IDE | 2017-2020 | 70%
-
-**Bachelor of Computer Applications (BCA)**  
-Jairam Arts and Science College | 2014-2017 | 66%
+**Infrastructure:** Docker, Azure, AWS, Terraform, GitHub Actions
 
 ---
 
-## PUBLICATIONS
+## Education
 
-- "Contract Intelligence at Scale: How OCR-LLM Turned 260 Hours Into 26 Minutes" - Medium (2024)
+**MCA** · University of Madras · 2017-2020  
+**BCA** · Jairam Arts and Science College · 2014-2017
 
 ---
 
-## ADDITIONAL INFORMATION
+## One more thing
 
-- **Languages:** English (Professional), Tamil (Native)
-- **Availability:** Immediate
-- **Work Preference:** Remote (Open to UK/US timezone overlap)
-- **Visa Status:** Open to sponsored work visa for UK/US positions
+I wrote about the contract extraction project on Medium. "Contract Intelligence at Scale: How OCR-LLM Turned 260 Hours Into 26 Minutes." It's still how most people find me.
+
+If you're building AI that needs to work in the real world — with real data, real constraints, and real users — I'd like to talk.
+
+---
+
+**Availability:** Immediate  
+**Work preference:** Remote, UK/US timezone overlap  
+**Visa:** Open to sponsored work visa

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sathish Kumar V - Resume v1</title>
+    <title>Sathish Kumar V - Resume</title>
     <style>
         * {
             margin: 0;
@@ -12,188 +12,153 @@
         }
 
         body {
-            font-family: 'Calibri', 'Segoe UI', sans-serif;
-            line-height: 1.5;
-            color: #2c3e50;
-            max-width: 850px;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 50px;
+            padding: 48px 56px;
+            font-size: 11px;
         }
 
         .header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #2c3e50;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #1a1a1a;
         }
 
         h1 {
-            font-size: 34px;
-            color: #2c3e50;
-            margin-bottom: 6px;
-        }
-
-        .subtitle {
-            font-size: 15px;
-            color: #34495e;
+            font-size: 28px;
             font-weight: 600;
-            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
         }
 
-        .contact {
-            font-size: 9.5px;
-            color: #555;
-        }
-
-        .contact a {
-            color: #3498db;
-            text-decoration: none;
-            margin: 0 6px;
-        }
-
-        h2 {
-            font-size: 14px;
-            color: #fff;
-            background: #2c3e50;
-            padding: 6px 12px;
-            margin-top: 18px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .summary {
-            font-size: 10.5px;
-            line-height: 1.6;
+        .tagline {
+            font-size: 13px;
+            color: #444;
             margin-bottom: 12px;
         }
 
-        .highlight {
-            background: #ecf0f1;
-            padding: 8px 12px;
-            border-left: 4px solid #e74c3c;
-            margin: 12px 0;
+        .contact {
             font-size: 10px;
+            color: #666;
+        }
+
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 12px;
             font-weight: 600;
-            color: #c0392b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1a1a1a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .intro {
+            font-size: 11px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .job {
+            margin-bottom: 16px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .job-date {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .job-company {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .achievement {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .achievement-title {
+            font-weight: 600;
+            font-size: 10px;
+            color: #333;
+        }
+
+        .achievement p {
+            font-size: 10px;
+            color: #444;
+            margin-top: 2px;
+        }
+
+        .project {
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .project-detail {
+            font-size: 10px;
+            color: #444;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 6px;
+            grid-template-columns: 100px 1fr;
+            gap: 4px 12px;
             font-size: 10px;
-            margin-bottom: 8px;
         }
 
         .skills-grid strong {
-            color: #2c3e50;
+            color: #333;
         }
 
-        .company-block {
-            margin-bottom: 14px;
-        }
-
-        .company-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 6px;
-        }
-
-        .company-name {
-            font-size: 12px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .company-duration {
-            font-size: 9.5px;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-
-        .role {
-            margin-bottom: 8px;
-            padding-left: 12px;
-            border-left: 2px solid #3498db;
-        }
-
-        .role-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 4px;
-        }
-
-        .role-title {
-            font-size: 11px;
-            font-weight: 600;
-            color: #34495e;
-        }
-
-        .role-date {
-            font-size: 9px;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-
-        ul {
-            margin-left: 18px;
-            margin-top: 4px;
-        }
-
-        li {
-            font-size: 10px;
-            margin-bottom: 3px;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .project {
-            margin-bottom: 10px;
-        }
-
-        .project-title {
-            font-size: 11px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .project-meta {
-            font-size: 9px;
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 3px;
-        }
-
-        .tech {
-            font-size: 9px;
-            color: #3498db;
-            font-weight: 600;
-            margin-top: 3px;
+        .skills-grid span {
+            color: #444;
         }
 
         .education-item {
             font-size: 10px;
-            margin-bottom: 5px;
-        }
-
-        .achievements {
-            font-size: 10px;
-            margin-bottom: 8px;
-        }
-
-        .achievements li {
             margin-bottom: 4px;
+        }
+
+        .closing {
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #666;
         }
 
         @media print {
             body {
-                padding: 20px 30px;
-            }
-
-            h2,
-            .highlight {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                padding: 24px 32px;
             }
         }
     </style>
@@ -201,186 +166,137 @@
 
 <body>
     <div class="header">
-        <h1>SATHISH KUMAR V</h1>
-        <div class="subtitle">AI Architect & Team Lead | LLM Systems | RAG Architecture | Agentic AI</div>
+        <h1>Sathish Kumar V</h1>
+        <div class="tagline">AI Engineer · Building systems that ship, not just demo</div>
         <div class="contact">
-            Chennai, India | +91 8056770991 | sathishkumar05@gmail.com<br>
-            <a href="https://linkedin.com/in/sathish-kumar-310976153">LinkedIn</a> |
-            <a href="https://github.com/vpsathish05">GitHub</a> |
-            <a href="https://medium.com/@vpsathish05">Medium</a> |
+            Chennai, India · Open to UK/US Remote<br>
+            +91 8056770991 · sathishkumar05@gmail.com · 
+            <a href="https://linkedin.com/in/sathish-kumar-310976153">LinkedIn</a> · 
+            <a href="https://github.com/vpsathish05">GitHub</a> · 
             <a href="https://vpsathish05.github.io/sathish-portfolio">Portfolio</a>
         </div>
     </div>
 
-    <h2>Professional Summary</h2>
-    <p class="summary">
-        AI COE Team Lead managing 6-7 engineers while driving enterprise AI strategy. 6+ years of progressive expertise 
-        building production-grade AI systems, LLM applications, and intelligent automation. Product owner for 5+ internal 
-        AI platforms serving 200+ employees. Delivered 13+ client AI projects and 15+ internal AI products. Achieved 99% 
-        processing time reduction (260 hours → 26 minutes) with 85-90% automation rates. Won 5+ enterprise sales 
-        opportunities through solution architecture and technical pre-sales. Expert in Azure AI Foundry, AWS Bedrock, 
-        LangChain/LangGraph, MCP (Model Context Protocol), and RAG architectures.
+    <h2>In Short</h2>
+    <p class="intro">
+        I lead a team of AI engineers at a consulting firm. We build systems that help enterprises make sense of their documents, data, and decisions. My work has saved clients thousands of hours of manual work. The contract extraction project I led reduced processing time from 260 hours to 26 minutes — and turned a 4-week proof of concept into a 6-month engagement because it actually worked.
+    </p>
+    <p class="intro">
+        I'm looking for a remote role with a UK or US company where I can build AI that ships to production, not just presentations.
     </p>
 
-    <h2>Technical Skills</h2>
+    <h2>Experience</h2>
+
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">AI Team Lead</span>
+            <span class="job-date">Oct 2025 – Present</span>
+        </div>
+        <div class="job-company">Consulting Firm · Chennai</div>
+        
+        <div class="achievement">
+            <div class="achievement-title">Enterprise AI Platform</div>
+            <p>Built private ChatGPT alternative for 200+ users. Connected to SharePoint, Power BI, CRM. Solved the "consultants using public AI with client data" compliance problem.</p>
+        </div>
+        
+        <div class="achievement">
+            <div class="achievement-title">Sales Impact</div>
+            <p>Won 5+ opportunities through solution architecture and pre-sales. If clients ask "how would this work?", I'm usually the one answering.</p>
+        </div>
+        
+        <div class="achievement">
+            <div class="achievement-title">Team Leadership</div>
+            <p>Managing 6-7 engineers across multiple projects. Own technical direction and AI Playbook (internal knowledge base for production AI patterns).</p>
+        </div>
+    </div>
+
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">AI Engineer → Product Lead</span>
+            <span class="job-date">Apr 2024 – Oct 2025</span>
+        </div>
+        <div class="job-company">Same Firm</div>
+        
+        <div class="achievement">
+            <div class="achievement-title">Contract Extraction (my best work)</div>
+            <p>Client spent 260 hours extracting data from 200-page contracts. Built pipeline with PaddleOCR + Qwen 7B. Chose small model over GPT-4 because it was accurate enough and 15x cheaper. Result: 26 minutes, 85% automation. 4-week PoC became 6-month engagement.</p>
+        </div>
+        
+        <div class="achievement">
+            <div class="achievement-title">PE Firm Context Layer</div>
+            <p>AI architecture for investment workflows using Claude Enterprise and MCP. "Devil's Advocate" feature that challenges assumptions became their favorite part.</p>
+        </div>
+    </div>
+
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Data Engineer</span>
+            <span class="job-date">Apr 2023 – Apr 2024</span>
+        </div>
+        <div class="job-company">Same Firm</div>
+        <p style="font-size: 10px; color: #444;">Built data foundations for AI: medallion architecture (5M+ daily records), dbt models, SCD Type 2, data quality monitoring. Learned that AI without clean data is just expensive guessing.</p>
+    </div>
+
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Software Engineer</span>
+            <span class="job-date">Feb 2022 – Apr 2023</span>
+        </div>
+        <div class="job-company">Same Firm</div>
+        <p style="font-size: 10px; color: #444;">APIs (Node.js, FastAPI), ETL pipelines (1M+ records/day), Docker deployments (60% faster releases).</p>
+    </div>
+
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Full Stack Developer</span>
+            <span class="job-date">2017 – 2022</span>
+        </div>
+        <div class="job-company">Various Companies · Chennai</div>
+        <p style="font-size: 10px; color: #444;">C#, .NET, SQL Server. Enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.</p>
+    </div>
+
+    <h2>Projects That Show How I Think</h2>
+
+    <div class="project">
+        <div class="project-title">Contract Intelligence Platform</div>
+        <div class="project-detail">
+            <strong>Problem:</strong> 260 hours manual extraction. 
+            <strong>What I tried:</strong> GPT-4 Vision (too expensive), commercial OCR (failed on nested tables). 
+            <strong>What worked:</strong> PaddleOCR + Qwen 7B + human review for low-confidence fields. 
+            <strong>Result:</strong> 26 min, 85% automation, 15x cheaper than GPT-4. 
+            <strong>What broke:</strong> Multi-currency tables caused hallucinations — fixed with explicit currency detection.
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="project-title">Enterprise AI Platform</div>
+        <div class="project-detail">
+            <strong>Problem:</strong> Consultants using ChatGPT with client data. 
+            <strong>Solution:</strong> Private AI with SharePoint, Power BI, CRM integration. 
+            <strong>Impact:</strong> Compliance risk eliminated, knowledge searchable, new hires productive faster.
+        </div>
+    </div>
+
+    <h2>Skills</h2>
     <div class="skills-grid">
-        <strong>AI & LLM:</strong>
-        <span>Azure AI Foundry • AWS Bedrock • LangChain • LangGraph • RAG • Agentic AI • MCP • Copilot Studio • 
-            Microsoft Fabric AI • Databricks Agents • OpenAI • Claude • Prompt Engineering</span>
-        <strong>Document Intelligence:</strong>
-        <span>PaddleOCR • Azure Document Intelligence • Amazon Textract • PDF/Table Extraction</span>
-        <strong>Vector Databases:</strong>
-        <span>Chroma DB • PostgreSQL pgvector • Azure Cognitive Search • Pinecone</span>
-        <strong>Programming:</strong>
-        <span>Python • TypeScript • JavaScript • C#</span>
-        <strong>Full Stack:</strong>
-        <span>FastAPI • Next.js • React • Angular • Node.js • NestJS • .NET Core</span>
-        <strong>Data Engineering:</strong>
-        <span>dbt • Microsoft Fabric • Amazon Redshift • PostgreSQL • Azure Data Factory • Databricks • Power BI</span>
-        <strong>Cloud & DevOps:</strong>
-        <span>Azure • AWS • Docker • Terraform • GitHub Actions • Git</span>
+        <strong>Languages:</strong>
+        <span>Python (daily), TypeScript (often), SQL (constantly), C# (past life)</span>
+        <strong>AI/ML:</strong>
+        <span>LangChain, LangGraph, RAG, PaddleOCR, Azure AI, AWS Bedrock, Claude, OpenAI</span>
+        <strong>Data:</strong>
+        <span>dbt, PostgreSQL, Redshift, Azure Data Factory, Power BI</span>
+        <strong>Infrastructure:</strong>
+        <span>Docker, Azure, AWS, Terraform, GitHub Actions</span>
     </div>
-
-    <h2>Professional Experience</h2>
-
-    <div class="company-block">
-        <div class="company-header">
-            <div class="company-name">JMAN Group, Chennai</div>
-            <div class="company-duration">Feb 2022 – Present (4+ years)</div>
-        </div>
-
-        <div class="role">
-            <div class="role-header">
-                <div class="role-title">AI COE Team Lead & Solutions Consultant</div>
-                <div class="role-date">Oct 2025 – Present</div>
-            </div>
-            <ul>
-                <li>Lead AI Center of Excellence cluster team of 6-7 engineers, driving AI strategy and delivery across the organization</li>
-                <li>Product owner for enterprise AI assistant platform serving 200+ employees with integrated knowledge, BI, and document intelligence</li>
-                <li>Won 5+ sales opportunities (enterprise AI platforms, DTaaS, AI context layers) through solution architecture and technical pre-sales</li>
-                <li>Created AI Playbook—comprehensive architecture guide covering RAG, agents, multi-agent systems, MCP, LLMOps</li>
-                <li>Led AI governance and compliance reviews including EU AI Act and GDPR considerations</li>
-                <li>Conducted 16+ technical interviews for AI engineering roles, building high-performing teams</li>
-            </ul>
-        </div>
-
-        <div class="role">
-            <div class="role-header">
-                <div class="role-title">Solution Enabler</div>
-                <div class="role-date">Apr 2024 – Oct 2025</div>
-            </div>
-            <ul>
-                <li>Product lead and technical owner for private AI platform—foundation for enterprise AI products with multi-LLM support</li>
-                <li>Led Contract Intelligence project achieving 99% processing time reduction (260 hours → 26 minutes) with 85-90% automation rate</li>
-                <li>Architected AI context layer for PE firm enabling investment workflow automation with Claude Enterprise and MCP</li>
-                <li>Created custom MCP server for Microsoft Fabric with Excel export and dashboard capabilities beyond native Fabric Data Agent</li>
-                <li>Led AI workstream for BOM Entry Automation achieving 95%+ required-field extraction accuracy across 5+ document types</li>
-                <li>Built Intelligent Query solution making Power BI semantic models AI-ready for conversational analytics</li>
-            </ul>
-        </div>
-
-        <div class="role">
-            <div class="role-header">
-                <div class="role-title">Senior Software Engineer</div>
-                <div class="role-date">Apr 2023 – Apr 2024</div>
-            </div>
-            <ul>
-                <li>Built medallion architecture data platform processing 5M+ records daily with optimized Redshift models</li>
-                <li>Developed data models in Amazon Redshift and SQL Server with SCD Type 2 implementation</li>
-                <li>Implemented automated data quality checks ensuring 99.5% data integrity across pipelines</li>
-            </ul>
-        </div>
-
-        <div class="role">
-            <div class="role-header">
-                <div class="role-title">Software Engineer</div>
-                <div class="role-date">Feb 2022 – Apr 2023</div>
-            </div>
-            <ul>
-                <li>Developed RESTful APIs using Node.js, NestJS, and FastAPI</li>
-                <li>Implemented ETL pipelines with Azure Data Factory processing 1M+ records daily</li>
-                <li>Built containerized deployments using Docker reducing deployment time by 60%</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="company-block">
-        <div class="company-header">
-            <div class="company-name">Previous Experience</div>
-            <div class="company-duration">Jul 2017 – Feb 2022</div>
-        </div>
-        <div class="role">
-            <ul>
-                <li><strong>Elroi Software Solutions</strong> (Sep 2021 – Feb 2022): Full Stack Developer - Enterprise applications with C#, .NET, SQL Server</li>
-                <li><strong>Qserve UAE</strong> (Aug 2020 – Nov 2020): Full-Stack Developer - Retail Management System with .NET Core</li>
-                <li><strong>RmKV Computask</strong> (Jul 2017 – Aug 2018): Software Developer - Enterprise ERP for 20+ locations</li>
-            </ul>
-        </div>
-    </div>
-
-    <h2>Key Projects</h2>
-
-    <div class="project">
-        <div class="project-title">Contract Intelligence Platform | Enterprise Client</div>
-        <div class="project-meta">Technical Lead | Project grew from 3-4 week PoC to 6-month engagement</div>
-        <ul>
-            <li>Reduced manual processing from 260 hours to 26 minutes—99% time reduction with &lt;1% error rate</li>
-            <li>Built multi-stage pipeline using PaddleOCR and Qwen SLM for complex table extraction from 200-page contracts</li>
-            <li>Deployed GPU-accelerated inference on AWS EC2 with S3 storage and Salesforce integration</li>
-        </ul>
-        <div class="tech">Tech: Python, FastAPI, PaddleOCR, Qwen SLM, AWS EC2 GPU, S3, Salesforce, MongoDB</div>
-    </div>
-
-    <div class="project">
-        <div class="project-title">Enterprise AI Assistant Platform | Internal Product</div>
-        <div class="project-meta">Product Owner & Lead Architect | Serving 200+ employees</div>
-        <ul>
-            <li>Product owner for secure AI platform—private ChatGPT alternative with integrated knowledge, BI, and document intelligence</li>
-            <li>Integrated with SharePoint, Power BI, DevOps, and CRM; implemented Fabric Data Agent for conversational analytics</li>
-        </ul>
-        <div class="tech">Tech: React, TypeScript, Azure OpenAI, Azure Cognitive Search, PostgreSQL, MCP, Microsoft Fabric</div>
-    </div>
-
-    <div class="project">
-        <div class="project-title">AI Context Layer for Private Equity | PE Firm Client</div>
-        <div class="project-meta">AI Solution Architect | Won engagement through RFP response</div>
-        <ul>
-            <li>Designed AI context layer enabling investment workflow automation with Claude Enterprise and custom MCP tool layer</li>
-            <li>Enabled context-aware IC (Investment Committee) analysis workflows</li>
-        </ul>
-        <div class="tech">Tech: Azure AI, Claude Enterprise, MCP, LangGraph, Enterprise Search</div>
-    </div>
-
-    <div class="project">
-        <div class="project-title">Custom MCP Server for Microsoft Fabric | Internal Product</div>
-        <div class="project-meta">Creator & Technical Lead</div>
-        <ul>
-            <li>Extended Fabric capabilities beyond native Fabric Data Agent—Excel export, dashboards, AI client connectivity</li>
-            <li>Deployed on Azure Container Apps with Key Vault and Entra ID authentication</li>
-        </ul>
-        <div class="tech">Tech: MCP, Microsoft Fabric, Azure Container Apps, Python, Claude</div>
-    </div>
-
-    <h2>Leadership & Achievements</h2>
-    <ul class="achievements">
-        <li><strong>Team Leadership:</strong> Managing 6-7 engineers in AI COE cluster with mentoring, appraisals, and career development</li>
-        <li><strong>Product Ownership:</strong> 5+ internal AI platforms including enterprise AI assistant and private AI backend</li>
-        <li><strong>Sales Impact:</strong> Won 5+ enterprise opportunities through solution architecture and technical pre-sales</li>
-        <li><strong>Knowledge Sharing:</strong> Created AI Playbook, delivered 10+ internal training sessions on AI architecture</li>
-        <li><strong>Recognition:</strong> Performance-linked bonus (PLI) FY2024-25; 2x hackathon 3rd place finishes</li>
-    </ul>
 
     <h2>Education</h2>
-    <div class="education-item"><strong>Master of Computer Applications (MCA)</strong> | University of Madras IDE | 2017-2020 | 70%</div>
-    <div class="education-item"><strong>Bachelor of Computer Applications (BCA)</strong> | Jairam Arts and Science College | 2014-2017 | 66%</div>
+    <div class="education-item"><strong>MCA</strong> · University of Madras · 2017-2020</div>
+    <div class="education-item"><strong>BCA</strong> · Jairam Arts and Science College · 2014-2017</div>
 
-    <h2>Publications</h2>
-    <ul>
-        <li>"Contract Intelligence at Scale: How OCR-LLM Turned 260 Hours Into 26 Minutes" - Medium (2024)</li>
-    </ul>
-
-    <div style="margin-top: 15px; font-size: 9px; color: #7f8c8d; text-align: center;">
-        <strong>Availability:</strong> Immediate | <strong>Work Preference:</strong> Remote (Open to UK/US timezone overlap)
+    <div class="closing">
+        <strong>Availability:</strong> Immediate · 
+        <strong>Work preference:</strong> Remote, UK/US timezone overlap · 
+        <strong>Published:</strong> "Contract Intelligence at Scale" on Medium
     </div>
 </body>
 
