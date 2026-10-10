@@ -43,12 +43,12 @@ export default function Portfolio() {
           { label: "Writing", href: "#writing" },
         ]}
         status="Open to UK/US remote"
-        cta={{ label: "Résumé", href: "/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v2.pdf" }}
+        cta={{ label: "Résumé", href: "/sathish-portfolio/resume/Sathish_Kumar_V_Resume_v2.pdf" }}
       />
 
       {/* 1. Hero */}
       <Hero
-        eyebrow="AI Solutions Architect · Team Lead · Chennai → UK/US Remote"
+        eyebrow="AI Solutions Architect · Team Lead · 7+ Years · Chennai → UK/US Remote"
         name="Sathish"
         accent="Kumar."
         statement={
@@ -63,7 +63,7 @@ export default function Portfolio() {
             <Button size="lg" href="#work">
               See selected work
             </Button>
-            <Button size="lg" variant="secondary" href="/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v2.pdf">
+            <Button size="lg" variant="secondary" href="/sathish-portfolio/resume/Sathish_Kumar_V_Resume_v2.pdf">
               View résumé
             </Button>
           </>
@@ -152,7 +152,7 @@ export default function Portfolio() {
           label="Selected work"
           title="Systems that"
           accent="shipped."
-          lede="Three case studies — each with the architecture, the decisions, and what broke on the way to production."
+          lede="Client delivery and open source — each with the architecture, the decisions, and what broke on the way to production."
         />
 
         <div className="sg-grid-2">
@@ -171,10 +171,11 @@ export default function Portfolio() {
           <div style={{ display: "grid", gap: 24, alignContent: "start" }}>
             <ProjectCard
               index="/02"
-              kind="RAG · Knowledge"
-              title="AI Context Layer for PE"
-              summary="Investment team spent days preparing for committee meetings. Built an AI layer over deal rooms, models, reports — cites sources, challenges assumptions, tracks audit trail."
-              tags={["Claude Enterprise", "MCP", "Citation tracking"]}
+              kind="MCP · Open Source"
+              title="Custom Fabric MCP Server"
+              summary="MCP server for AI-powered, governed access to Microsoft Fabric. Enables agents to query Warehouses and Lakehouses with validation, Excel export, and dashboard generation beyond native capabilities."
+              tags={["MCP", "Python", "Microsoft Fabric", "Azure"]}
+              href="https://github.com/vpsathish05/custom-fabric-mcp"
             />
 
             <ProjectCard
@@ -185,6 +186,46 @@ export default function Portfolio() {
               tags={["Azure OpenAI", "RBAC", "Knowledge graph"]}
             />
           </div>
+        </div>
+
+        {/* Additional projects */}
+        <div className="sg-grid-2">
+          <ProjectCard
+            index="/04"
+            kind="RAG · Knowledge"
+            title="AI Context Layer for PE"
+            summary="Investment team spent days preparing for committee meetings. Built an AI layer over deal rooms, models, reports — cites sources, challenges assumptions, tracks audit trail."
+            tags={["Claude Enterprise", "MCP", "Citation tracking"]}
+          />
+
+          <ProjectCard
+            index="/05"
+            kind="AI · Open Source"
+            title="RMG: Resource Management System"
+            summary="Replaces manual email-based resource negotiation with AI-powered candidate recommendations. Semantic matching, weighted scoring, automated rationale generation."
+            tags={["Python", "GPT-4o", "pgvector", "FastAPI"]}
+            href="https://github.com/vpsathish05/rmg"
+          />
+        </div>
+
+        <div className="sg-grid-2">
+          <ProjectCard
+            index="/06"
+            kind="Data · Platform"
+            title="Data Engine for PE"
+            summary="High-performance data engineering platform for Private Equity portfolio companies. Centralized command center for managing full data lifecycle with medallion architecture."
+            tags={["TypeScript", "dbt", "Redshift", "Power BI"]}
+            href="https://github.com/vpsathish05/data-engine"
+          />
+
+          <ProjectCard
+            index="/07"
+            kind="Agents · Infrastructure"
+            title="SK-Hermes: Always-On Agent Runtime"
+            summary="Hermes Agent fork with documented AWS EC2 Docker Compose deployment. My personal always-on agent runtime for autonomous workflows."
+            tags={["Python", "Docker", "AWS EC2", "Agents"]}
+            href="https://github.com/vpsathish05/sk-hermes"
+          />
         </div>
       </section>
 
@@ -345,29 +386,35 @@ export default function Portfolio() {
         <Timeline
           items={[
             {
-              period: "Now",
+              period: "Oct 2025 – Now",
               role: "AI Solutions Architect & Team Lead",
               org: "JMAN Group",
               current: true,
-              summary: "Lead a cluster of 7 engineers in AI Centre of Excellence. Own 15 internal products. Architect client solutions from pitch to production — if we win, I build it. 5 deals won this year.",
+              summary: "Lead Cluster 5 (7 engineers) in AI Centre of Excellence. Own 15 internal AI products. Architect client solutions from pitch to production — if we win, I build it. 5 deals won this year.",
             },
             {
-              period: "2024–25",
+              period: "Apr 2024 – Oct 2025",
               role: "AI Engineer → Product Lead",
               org: "JMAN Group",
-              summary: "Led the contract extraction project that became our biggest reference. Started building enterprise AI platform — internal products now serving the whole company.",
+              summary: "Led the contract extraction project that became our biggest reference (260h → 26min). Started building enterprise AI platform — internal products now serving 200+ employees.",
             },
             {
-              period: "2023–24",
+              period: "Apr 2023 – Apr 2024",
               role: "Data Engineer",
               org: "JMAN Group",
-              summary: "Built data foundations. Medallion architecture, dbt models, 5M+ records daily. Learned that AI without clean data is expensive guessing.",
+              summary: "Built medallion architecture platform processing 5M+ records daily using dbt, Redshift, Azure Data Factory. SCD Type 2 across 20+ entities.",
             },
             {
-              period: "2017–22",
-              role: "Software Developer",
-              org: "Various companies",
-              summary: "Started with C# and .NET. Enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.",
+              period: "Feb 2022 – Apr 2023",
+              role: "Software Engineer",
+              org: "JMAN Group",
+              summary: "Built RESTful APIs using Node.js, NestJS, FastAPI serving 1M+ daily requests. Docker-based CI/CD reducing release cycle by 60%.",
+            },
+            {
+              period: "2017 – 2022",
+              role: "Full Stack Developer",
+              org: "Elroi, Qserve, RmKV",
+              summary: "Enterprise systems using C#, .NET, SQL Server. Retail management, accounting, inventory systems for multiple companies.",
             },
           ]}
         />
@@ -376,7 +423,7 @@ export default function Portfolio() {
         <CredentialList
           items={[
             { kind: "cert", title: "Azure AI Engineer Associate (AI-102)", issuer: "Microsoft", year: "In Progress" },
-            { kind: "cert", title: "AWS Solutions Architect", issuer: "Amazon Web Services", year: "Planned 2026" },
+            { kind: "cert", title: "AWS Solutions Architect Associate", issuer: "Amazon Web Services", year: "Planned 2026" },
             { kind: "degree", title: "MCA (Master of Computer Applications)", issuer: "University of Madras", year: "2020" },
             { kind: "degree", title: "BCA (Bachelor of Computer Applications)", issuer: "Jairam Arts and Science College", year: "2017" },
             { kind: "award", title: "Equity stakeholder", issuer: "JMAN Group — shares awarded for contribution", year: "2025" },
@@ -403,16 +450,17 @@ export default function Portfolio() {
               href: "https://medium.com/@vpsathish05/contract-intelligence-at-scale-how-ocr-llm-turned-260-hours-into-26-minutes-00dc6aab26a0",
             },
             {
+              type: "Open Source",
+              title: "Custom Fabric MCP Server",
+              venue: "GitHub · AI-powered Fabric access with governance",
+              date: "2026",
+              href: "https://github.com/vpsathish05/custom-fabric-mcp",
+            },
+            {
               type: "Internal",
               title: "AI Playbook: RAG, Agents, MCP, Production Patterns",
               venue: "JMAN Group knowledge base · Author & owner",
               date: "Ongoing",
-            },
-            {
-              type: "Demo",
-              title: "Enterprise AI Platform",
-              venue: "Executive leadership presentation · Roadmap approved",
-              date: "2025",
             },
           ]}
         />
@@ -437,7 +485,7 @@ export default function Portfolio() {
           { label: "LinkedIn", href: "https://www.linkedin.com/in/sathish-kumar-310976153/" },
           { label: "GitHub", href: "https://github.com/vpsathish05" },
           { label: "Medium", href: "https://medium.com/@vpsathish05" },
-          { label: "Résumé", href: "/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v2.pdf" },
+          { label: "Résumé", href: "/sathish-portfolio/resume/Sathish_Kumar_V_Resume_v2.pdf" },
         ]}
       />
 
