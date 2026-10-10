@@ -1,15 +1,65 @@
-# Portfolio Development Agent
+# Kiro Automation Setup
 
-This directory contains automation tools for maintaining the portfolio project.
+This directory contains automation tools and hooks for the portfolio project.
 
-## Files
+## 📁 Structure
 
-- **portfolio-agent.md** - Knowledge base with project structure and maintenance guidelines
-- **portfolio-agent.js** - Automation script for common portfolio updates
+```
+.kiro/
+├── hooks/                      # Automated validation hooks
+│   ├── session-validation-reminder.json  # Reminds about validation on start
+│   ├── validate-before-git.json          # Validates before git commit/push
+│   ├── validate-on-ts-save.json          # Type-checks on .ts/.tsx save
+│   ├── lint-on-save.json                 # Lints on .ts/.tsx save
+│   └── build-on-portfolio-change.json    # Builds on portfolio.ts change
+│
+├── steering/                   # Project rules and guidelines
+│   └── project-rules.md        # Validation requirements
+│
+├── settings/                   # Kiro settings (if needed)
+│
+├── portfolio-agent.js          # Portfolio update automation script
+├── portfolio-agent.md          # Agent knowledge base
+└── README.md                   # This file
+```
 
-## Quick Start
+## 🔄 Automated Hooks
 
-### Using the Agent Script
+### Session Start
+- **Session Validation Reminder** - Displays project rules and validation requirements
+
+### On File Save (.ts/.tsx)
+- **Validate TypeScript on Save** - Runs `tsc --noEmit` to check types
+- **Lint on TypeScript Save** - Runs ESLint on the saved file
+
+### On Portfolio Data Change
+- **Build on Portfolio Data Change** - Runs `npm run build` when `portfolio.ts` is modified
+
+### Before Git Operations
+- **Validate Before Git Commit** - Runs full validation (`npm run validate`) before any git commit or push
+
+## ✅ Validation Requirements
+
+**Every code change MUST pass:**
+
+```bash
+npm run validate    # lint + type-check + test
+npm run build       # production build
+```
+
+### Validation Commands
+
+| Command | What It Does |
+|---------|--------------|
+| `npm run lint` | ESLint (errors fail, warnings allowed) |
+| `npm run type-check` | TypeScript type checking |
+| `npm run test` | Jest tests (41 tests) |
+| `npm run validate` | All of the above |
+| `npm run build` | Production build |
+
+## 🛠️ Portfolio Agent Script
+
+Automate common portfolio updates:
 
 ```bash
 # Add new work experience
@@ -33,11 +83,6 @@ node .kiro/portfolio-agent.js add-skill \
   --name="Vue.js" \
   --color="#42b883"
 
-# Update contact info
-node .kiro/portfolio-agent.js update-contact \
-  --email="newemail@example.com" \
-  --phone="+91 9876543210"
-
 # List current items
 node .kiro/portfolio-agent.js list-projects
 node .kiro/portfolio-agent.js list-experiences
@@ -46,41 +91,55 @@ node .kiro/portfolio-agent.js list-experiences
 node .kiro/portfolio-agent.js help
 ```
 
-## Available Commands
+## 📋 Steering Rules
 
-| Command | Description |
-|---------|-------------|
-| `add-experience` | Add new work experience entry |
-| `add-project` | Add new project entry |
-| `add-skill` | Add new skill to a category |
-| `update-contact` | Update contact information |
-| `list-projects` | List all current projects |
-| `list-experiences` | List all work experiences |
-| `help` | Show help message |
+The `steering/project-rules.md` file contains:
+- Validation requirements
+- Project structure documentation
+- Git workflow guidelines
+- Common task instructions
 
-## Skill Categories
+These rules are automatically loaded when the description matches.
 
-- `programming` - Programming languages
-- `frontend` - Frontend frameworks/libraries
-- `backend` - Backend frameworks/tools
-- `data` - Data engineering tools
+## 🚀 Workflow
 
-## Tips
+### Making Code Changes
 
-- All data is stored in `src/data/portfolio.ts`
-- After adding projects, manually edit to add `techStack` and `details` arrays
-- Use hex color codes for skills (e.g., "#42b883")
-- Keep descriptions concise and professional
-- Most recent items should be first in arrays
+1. Edit files
+2. Hooks automatically run type-check and lint on save
+3. If changing `portfolio.ts`, build runs automatically
+4. Before committing, full validation runs
+5. Push to main triggers CI/CD and auto-deploy
 
-## Using with Kiro CLI
+### Task Completion Checklist
 
-You can ask Kiro to help with portfolio updates:
+Before marking any task complete:
 
-```
-"Add a new project to my portfolio with title 'AI Dashboard'"
-"Update my email address in the portfolio"
-"List all my current projects"
-```
+- [ ] `npm run lint` passes
+- [ ] `npm run type-check` passes
+- [ ] `npm run test` passes
+- [ ] `npm run build` passes
+- [ ] Changes committed with descriptive message
+- [ ] Pushed to main (if ready for deploy)
 
-Kiro will use the agent script or directly edit the portfolio data file.
+## 🔧 Troubleshooting
+
+### Hook Not Running
+- Hooks activate on next session start
+- Check hook matcher regex matches your use case
+
+### Validation Failing
+- Run `npm run validate` manually to see full error output
+- Fix issues before proceeding
+
+### Build Failing
+- Check TypeScript errors: `npm run type-check`
+- Check for missing imports or dependencies
+- Ensure `portfolio.ts` data structure is valid
+
+## 📝 Notes
+
+- Hooks use absolute paths for reliability on Windows
+- Timeout values are in seconds
+- PostFileSave hooks run after the file is written
+- PreToolUse hooks can block operations if they fail with exit code 2

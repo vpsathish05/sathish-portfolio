@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Build on Portfolio Data Change",
+      "trigger": "PostFileSave",
+      "description": "Runs production build after portfolio data changes",
+      "matcher": "portfolio\\.ts$",
+      "action": {
+        "type": "command",
+        "command": "cd \"d:\\S A T H I S H\\Projects\\sathish-portfolio\" && npm run build 2>&1 | tail -30",
+        "timeout": 180
+      }
+    }
+  ]
+}

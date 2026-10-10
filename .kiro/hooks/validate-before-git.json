@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Validate Before Git Commit",
+      "trigger": "PreToolUse",
+      "description": "Validates the project (lint, type-check, test) before git commit",
+      "matcher": "execute_pwsh.*git (commit|push)",
+      "action": {
+        "type": "command",
+        "command": "cd \"d:\\S A T H I S H\\Projects\\sathish-portfolio\" && npm run validate 2>&1",
+        "timeout": 120
+      }
+    }
+  ]
+}

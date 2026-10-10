@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Lint on TypeScript Save",
+      "trigger": "PostFileSave",
+      "description": "Runs ESLint on saved TypeScript files",
+      "matcher": "\\.(ts|tsx)$",
+      "action": {
+        "type": "command",
+        "command": "cd \"d:\\S A T H I S H\\Projects\\sathish-portfolio\" && npx next lint --file \"%KIRO_FILE_PATH%\" 2>&1 | head -10",
+        "timeout": 30
+      }
+    }
+  ]
+}

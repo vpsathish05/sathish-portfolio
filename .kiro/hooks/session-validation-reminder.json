@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Session Start Validation Reminder",
+      "trigger": "SessionStart",
+      "description": "Reminds to always validate before completing tasks",
+      "action": {
+        "type": "agent",
+        "prompt": "IMPORTANT PROJECT RULES FOR THIS PORTFOLIO PROJECT:\n\n1. ALWAYS RUN VALIDATION BEFORE COMPLETING ANY TASK:\n   - Run `npm run validate` (lint + type-check + test) after making code changes\n   - Run `npm run build` to verify the production build works\n   - If any step fails, fix the issues before marking task complete\n\n2. TESTING REQUIREMENTS:\n   - All tests must pass: `npm run test`\n   - Type checking must pass: `npm run type-check`\n   - Linting must pass (errors only): `npm run lint`\n\n3. GIT WORKFLOW:\n   - Push to main triggers auto-deploy to GitHub Pages\n   - Always verify build passes locally before pushing\n   - Use descriptive commit messages\n\n4. FILE LOCATIONS:\n   - Portfolio data: src/data/portfolio.ts\n   - Job hunt docs: docs/job-hunt/\n   - Resume files: resume/source/\n   - Tests: src/**/__tests__/\n\n5. BEFORE MARKING ANY TASK COMPLETE:\n   - Run: npm run validate && npm run build\n   - Confirm all checks pass\n   - If pushing to git, verify the push succeeded"
+      }
+    }
+  ]
+}

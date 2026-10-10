@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Validate TypeScript on Save",
+      "trigger": "PostFileSave",
+      "description": "Runs TypeScript type-check when .ts or .tsx files are saved",
+      "matcher": "\\.(ts|tsx)$",
+      "action": {
+        "type": "command",
+        "command": "cd \"d:\\S A T H I S H\\Projects\\sathish-portfolio\" && npx tsc --noEmit 2>&1 | head -20",
+        "timeout": 60
+      }
+    }
+  ]
+}
