@@ -12,10 +12,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Sathish Kumar V" }],
   icons: {
     icon: [
-      { url: '/sathish-portfolio/favicon.svg', type: 'image/svg+xml' },
-      { url: '/sathish-portfolio/favicon.ico', sizes: 'any' }
+      { url: '/sathish-portfolio/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/sathish-portfolio/favicon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/sathish-portfolio/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
+  manifest: '/sathish-portfolio/manifest.json',
   openGraph: {
     title: "Sathish Kumar V — AI Architect & Team Lead",
     description: "AI COE Team Lead building agentic AI for the enterprise. MCP servers, multi-agent workflows, and RAG architectures.",

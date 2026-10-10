@@ -1,0 +1,21 @@
+{
+  "name": "Sathish Kumar V — AI Architect",
+  "short_name": "Sathish Kumar",
+  "description": "AI Solutions Architect & Team Lead building agentic AI for the enterprise",
+  "start_url": "/sathish-portfolio/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/sathish-portfolio/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/sathish-portfolio/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
