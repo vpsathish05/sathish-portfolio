@@ -53,7 +53,7 @@ export default function RootLayout({
   const websiteSchema = generateWebsiteSchema();
 
   return (
-    <html lang="en" data-theme="night" suppressHydrationWarning>
+    <html lang="en" data-theme="obsidian" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

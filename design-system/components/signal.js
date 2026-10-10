@@ -47,6 +47,7 @@ const h = React.createElement;
 
   /* Hero (with AgentGraph) -------------------------------------------- */
   var SAT = [[200, 50, 'middle', 0, -20], [342.7, 153.6, 'start', 20, 4], [288.2, 321.4, 'start', 16, 24], [111.8, 321.4, 'end', -16, 24], [57.3, 153.6, 'end', -20, 4]];
+  function diamond(x, y, r) { return x + ',' + (y - r) + ' ' + (x + r) + ',' + y + ' ' + x + ',' + (y + r) + ' ' + (x - r) + ',' + y; }
   function AgentGraph(p) {
     var labels = p.nodes || ['LLM', 'MCP', 'DATA', 'HUMAN', 'TOOLS'];
     var hot = p.hot || [1, 2];
@@ -60,11 +61,11 @@ const h = React.createElement;
       kids.push(h('circle', { key: 'p' + i, className: 'packet', r: 3.5, cx: 0, cy: 0, style: { offsetPath: "path('M" + s[0] + ' ' + s[1] + " L200 200')", animationDelay: (n * 0.9) + 's' } }));
     });
     SAT.forEach(function (s, i) {
-      kids.push(h('rect', { key: 's' + i, className: cx('sat', hot.indexOf(i) >= 0 && 'hot'), x: s[0] - 8, y: s[1] - 8, width: 16, height: 16, rx: 3 }));
+      kids.push(h('polygon', { key: 's' + i, className: cx('sat', hot.indexOf(i) >= 0 && 'hot'), points: diamond(s[0], s[1], 10) }));
       kids.push(h('text', { key: 't' + i, className: 'label', x: s[0] + s[3], y: s[1] + s[4], textAnchor: s[2] }, labels[i] || ''));
     });
-    kids.push(h('rect', { key: 'halo', className: 'halo', x: 164, y: 164, width: 72, height: 72, rx: 12 }));
-    kids.push(h('rect', { key: 'core', className: 'core', x: 164, y: 164, width: 72, height: 72, rx: 12 }));
+    kids.push(h('polygon', { key: 'halo', className: 'halo', points: diamond(200, 200, 48) }));
+    kids.push(h('polygon', { key: 'core', className: 'core', points: diamond(200, 200, 48) }));
     kids.push(h('text', { key: 'cl', className: 'core-label', x: 200, y: 204, textAnchor: 'middle' }, core));
     return h('div', { className: 'sg-graph', 'aria-hidden': 'true' },
       h('svg', { viewBox: '0 0 400 400', role: 'presentation' }, kids));
@@ -183,4 +184,135 @@ const h = React.createElement;
         })) : null));
   }
 
-export { Button, Tag, NavBar, Hero, AgentGraph, SectionHeader, Metric, ProjectCard, AgentTrace, Terminal, Timeline, ContactBand };
+  /* CapabilityGrid ---------------------------------------------------- */
+  function CapabilityGrid(p) {
+    var items = p.items || [];
+    return h('div', { className: cx('sg-cap', p.className), style: p.columns ? { '--cols': p.columns } : undefined }, items.map(function (it, i) {
+      return h('article', { key: i, className: 'sg-cap__cell' },
+        h('div', { className: 'sg-cap__head' },
+          h('span', { className: 'sg-cap__mark', 'aria-hidden': 'true' }),
+          h('h3', { className: 'sg-cap__title' }, it.title),
+          h('span', { className: 'sg-cap__code' }, it.code || pad(i + 1))),
+        it.summary ? h('p', { className: 'sg-cap__summary' }, it.summary) : null,
+        (it.points && it.points.length) ? h('ul', { className: 'sg-cap__list' }, it.points.map(function (x, j) { return h('li', { key: j }, x); })) : null);
+    }));
+  }
+
+  /* ArchitectureStack ------------------------------------------------- */
+  function ArchitectureStack(p) {
+    var layers = p.layers || [];
+    return h('figure', { className: cx('sg-arch', p.rail && 'has-rail', p.className) },
+      (p.title || p.meta) ? h('figcaption', { className: 'sg-arch__cap' }, h('span', { className: 'sg-arch__title' }, p.title), h('span', null, p.meta)) : null,
+      h('div', { className: 'sg-arch__layers' }, layers.map(function (l, i) {
+        return h('div', { key: i, className: cx('sg-arch__layer', l.tone && 'is-' + l.tone) },
+          h('span', { className: 'sg-arch__name' }, l.name),
+          h('div', { className: 'sg-arch__items' }, (l.items || []).map(function (t, j) { return h(Tag, { key: j, tone: l.tone === 'current' ? 'current' : 'neutral' }, t); })));
+      })),
+      p.rail ? h('div', { className: 'sg-arch__rail' }, p.rail) : null);
+  }
+
+  /* ProcessSteps ------------------------------------------------------ */
+  function ProcessSteps(p) {
+    var steps = p.steps || [];
+    return h('ol', { className: cx('sg-steps', p.className), style: { '--n': steps.length || 1 } }, steps.map(function (s, i) {
+      return h('li', { key: i, className: cx('sg-steps__item', i === p.active && 'is-active') },
+        h('span', { className: 'sg-steps__node', 'aria-hidden': 'true' }),
+        h('span', { className: 'sg-steps__num' }, pad(i + 1)),
+        h('h3', { className: 'sg-steps__title' }, s.title),
+        s.summary ? h('p', { className: 'sg-steps__summary' }, s.summary) : null,
+        s.output ? h('p', { className: 'sg-steps__out' }, h('span', { 'aria-hidden': 'true' }, '\u2192 '), s.output) : null);
+    }));
+  }
+
+  /* StackMatrix ------------------------------------------------------- */
+  var LEVEL = { daily: 'Daily', proficient: 'Proficient', familiar: 'Familiar' };
+  function Level(lv) { return h('span', { className: 'sg-lvl sg-lvl--' + lv, 'aria-hidden': 'true' }); }
+  function StackMatrix(p) {
+    var groups = p.groups || [];
+    return h('div', { className: cx('sg-stack', p.className) },
+      p.legend === false ? null : h('div', { className: 'sg-stack__legend' },
+        Object.keys(LEVEL).map(function (k) { return h('span', { key: k, className: 'sg-stack__key' }, Level(k), LEVEL[k]); })),
+      groups.map(function (g, i) {
+        return h('div', { key: i, className: 'sg-stack__row' },
+          h('span', { className: 'sg-stack__label' }, g.label),
+          h('ul', { className: 'sg-stack__items' }, (g.items || []).map(function (it, j) {
+            var t = typeof it === 'string' ? { name: it, level: 'proficient' } : it;
+            var lv = LEVEL[t.level] ? t.level : 'proficient';
+            return h('li', { key: j, className: 'sg-stack__item' }, Level(lv), t.name, h('span', { className: 'sg-sr' }, ' (' + LEVEL[lv] + ')'));
+          })));
+      }));
+  }
+
+  /* CredentialList ---------------------------------------------------- */
+  var CRED = { cert: ['Certification', 'current'], degree: ['Education', 'neutral'], award: ['Award', 'signal'], membership: ['Membership', 'neutral'] };
+  function CredentialList(p) {
+    var items = p.items || [];
+    return h('ul', { className: cx('sg-cred', p.className) }, items.map(function (c, i) {
+      var k = CRED[c.kind] || [c.kind || 'Credential', 'neutral'];
+      return h('li', { key: i, className: 'sg-cred__item' },
+        h('span', null, h(Tag, { tone: k[1], dot: true }, k[0])),
+        h('div', null, h('p', { className: 'sg-cred__title' }, c.title), c.issuer ? h('p', { className: 'sg-cred__issuer' }, c.issuer) : null),
+        h('div', { className: 'sg-cred__meta' }, c.year ? h('span', null, c.year) : null,
+          c.href ? h('a', { className: 'sg-cred__verify', href: c.href }, 'Verify \u2197') : null));
+    }));
+  }
+
+  /* WritingList ------------------------------------------------------- */
+  function WritingList(p) {
+    var items = p.items || [];
+    return h('ul', { className: cx('sg-writing', p.className) }, items.map(function (w, i) {
+      return h('li', { key: i, className: 'sg-writing__item' },
+        h('a', { className: 'sg-writing__link', href: w.href || '#' },
+          h('span', { className: 'sg-writing__type' }, w.type || 'Article'),
+          h('span', null, h('span', { className: 'sg-writing__title' }, w.title), w.venue ? h('span', { className: 'sg-writing__venue' }, w.venue) : null),
+          h('span', { className: 'sg-writing__date' }, w.date || '', h('span', { className: 'sg-writing__go', 'aria-hidden': 'true' }, ' \u2197'))));
+    }));
+  }
+
+  /* Testimonial ------------------------------------------------------- */
+  function Testimonial(p) {
+    return h('figure', { className: cx('sg-quote', p.className) },
+      h('span', { className: 'sg-quote__mark', 'aria-hidden': 'true' }, '\u201C'),
+      h('blockquote', { className: 'sg-quote__text' }, h('p', null, p.quote)),
+      h('figcaption', { className: 'sg-quote__by' },
+        h('span', { className: 'sg-quote__dia', 'aria-hidden': 'true' }),
+        h('span', null, h('span', { className: 'sg-quote__name' }, p.name), p.role ? h('span', { className: 'sg-quote__role' }, p.role) : null),
+        p.source ? h(Tag, { className: 'sg-quote__src' }, p.source) : null));
+  }
+
+  /* ServiceCard ------------------------------------------------------- */
+  function ServiceCard(p) {
+    var inc = p.includes || [];
+    return h('article', { className: cx('sg-svc', p.featured && 'sg-svc--featured', p.className) },
+      h('div', { className: 'sg-svc__top' }, h('span', { className: 'sg-svc__index' }, p.index || ''), p.duration ? h(Tag, { tone: p.featured ? 'signal' : 'neutral' }, p.duration) : null),
+      h('h3', { className: 'sg-svc__title' }, p.title),
+      p.summary ? h('p', { className: 'sg-svc__summary' }, p.summary) : null,
+      inc.length ? h('ul', { className: 'sg-svc__list' }, inc.map(function (x, i) { return h('li', { key: i }, x); })) : null,
+      p.cta ? h('div', { className: 'sg-svc__cta' }, h(Button, { href: p.cta.href || '#', variant: p.featured ? 'primary' : 'secondary', arrow: true }, p.cta.label)) : null);
+  }
+
+  /* Resume ------------------------------------------------------------ */
+  function ResumeHeader(p) {
+    var links = p.links || [];
+    return h('header', { className: cx('sg-rh', p.className) },
+      h('p', { className: 'sg-rh__title' }, p.title),
+      h('h1', { className: 'sg-rh__name' }, p.name),
+      h('p', { className: 'sg-rh__contact' }, [p.location].concat(links.map(function (l) { return l.href ? h('a', { href: l.href }, l.label) : l.label; })).filter(Boolean).map(function (x, i, a) {
+        return h(React.Fragment, { key: i }, x, i < a.length - 1 ? h('span', { className: 'sg-rh__sep', 'aria-hidden': 'true' }, ' \u25c6 ') : null);
+      })),
+      p.statement ? h('p', { className: 'sg-rh__statement' }, p.statement) : null);
+  }
+  function ResumeSection(p) {
+    return h('section', { className: cx('sg-rs', p.className) }, h('h2', { className: 'sg-rs__title' }, p.title), h('div', { className: 'sg-rs__body' }, p.children));
+  }
+  function ResumeRole(p) {
+    var b = p.bullets || [];
+    return h('div', { className: cx('sg-rr', p.className) },
+      h('div', { className: 'sg-rr__head' },
+        h('p', { className: 'sg-rr__role' }, p.role, p.org ? h('span', { className: 'sg-rr__org' }, ' \u00b7 ' + p.org) : null),
+        h('span', { className: 'sg-rr__period' }, [p.location, p.period].filter(Boolean).join(' \u00b7 '))),
+      p.summary ? h('p', { className: 'sg-rr__summary' }, p.summary) : null,
+      b.length ? h('ul', { className: 'sg-rr__bullets' }, b.map(function (x, i) { return h('li', { key: i }, x); })) : null);
+  }
+
+export { Button, Tag, NavBar, Hero, SectionHeader, Metric, ProjectCard, AgentTrace, Terminal, Timeline, ContactBand, AgentGraph, CapabilityGrid, ArchitectureStack, ProcessSteps, StackMatrix, CredentialList, WritingList, Testimonial, ServiceCard, ResumeHeader, ResumeSection, ResumeRole };

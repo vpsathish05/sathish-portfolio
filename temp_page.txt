@@ -1,0 +1,325 @@
+﻿"use client";
+
+import { useState, useEffect } from "react";
+import {
+  NavBar,
+  Hero,
+  SectionHeader,
+  ProjectCard,
+  AgentTrace,
+  Terminal,
+  Metric,
+  Timeline,
+  ContactBand,
+  Button,
+  Tag,
+} from "../../design-system/components/signal.js";
+
+export default function Portfolio() {
+  const [theme, setTheme] = useState<"night" | "paper">("night");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  return (
+    <div className="shell">
+      {/* Navigation */}
+      <NavBar
+        name="Sathish Kumar V"
+        initials="SK"
+        homeHref="#"
+        links={[
+          { label: "Work", href: "#work", active: true },
+          { label: "Systems", href: "#systems" },
+          { label: "About", href: "#about" },
+          { label: "Contact", href: "#contact" },
+        ]}
+        status="Open to remote roles"
+        cta={{ label: "Let's talk", href: "#contact" }}
+      />
+
+      {/* Hero Section */}
+      <Hero
+        eyebrow="AI COE TEAM LEAD ┬╖ AGENTIC SYSTEMS"
+        name="Sathish Kumar"
+        accent="V."
+        statement={
+          <>
+            I architect <b>agentic AI for the enterprise</b> ΓÇö MCP servers, multi-agent
+            workflows, RAG pipelines and the guardrails that make them safe to ship.
+            Managing 6-7 engineers while delivering 15+ AI products.
+          </>
+        }
+        actions={
+          <>
+            <Button size="lg" href="#work">
+              See selected work
+            </Button>
+            <Button size="lg" variant="secondary" href="/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v1.pdf">
+              Download CV
+            </Button>
+          </>
+        }
+        graph={{
+          core: "Agent",
+          nodes: ["MCP", "RAG", "LLM", "Tools", "Data"],
+          hot: [0, 2],
+        }}
+      />
+
+      {/* Selected Work Section */}
+      <section id="work" className="stack">
+        <SectionHeader
+          index="01"
+          label="Selected work"
+          title="Systems that"
+          accent="think in context."
+          lede="Four case studies ΓÇö each with the architecture, real agent runs, and what scaled to production."
+        />
+
+        <div className="sg-grid-2">
+          <ProjectCard
+            featured
+            index="/01"
+            kind="EXTRACTION ┬╖ ENTERPRISE"
+            title="Contract Intelligence Platform"
+            summary="An AI pipeline that extracts structured data from 200-page contracts using PaddleOCR and Qwen SLM, with Salesforce integration and human-in-the-loop validation."
+            outcome="260 hours ΓåÆ 26 minutes. 99% time reduction with 85-90% automation rate."
+            tags={["PaddleOCR", "LLM Extraction", "Salesforce", "FastAPI", "AWS GPU"]}
+            href="https://medium.com/@vpsathish05/contract-intelligence-at-scale-how-ocr-llm-turned-260-hours-into-26-minutes-00dc6aab26a0"
+          />
+
+          <div style={{ display: "grid", gap: 24, alignContent: "start" }}>
+            <ProjectCard
+              index="/02"
+              kind="PLATFORM ┬╖ INTERNAL"
+              title="Enterprise AI Assistant"
+              summary="Product owner for secure AI platform serving 200+ employees ΓÇö private ChatGPT with integrated knowledge, Power BI, and document intelligence."
+              tags={["Azure OpenAI", "MCP", "Fabric Data Agent", "React"]}
+            />
+
+            <ProjectCard
+              index="/03"
+              kind="CONTEXT LAYER ┬╖ PE"
+              title="AI Context Layer for PE"
+              summary="AI architecture enabling investment workflow automation for a private equity firm with Claude Enterprise and custom MCP tools."
+              tags={["Claude Enterprise", "MCP", "LangGraph", "Enterprise Search"]}
+            />
+
+            <ProjectCard
+              index="/04"
+              kind="MCP ┬╖ ANALYTICS"
+              title="Custom Fabric MCP Server"
+              summary="Extended Microsoft Fabric beyond native capabilities ΓÇö Excel export, dashboards, and AI client connectivity via custom MCP server."
+              tags={["MCP", "Microsoft Fabric", "Azure Container Apps", "Python"]}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Systems Section - Evidence */}
+      <section id="systems" className="stack">
+        <SectionHeader
+          index="02"
+          label="How it runs"
+          title="Watch it"
+          accent="think."
+          lede="A real (redacted) run of the contract extraction agent, and the MCP server behind it."
+        />
+
+        <div className="proof">
+          <AgentTrace
+            live
+            title="trace ┬╖ contract-extraction"
+            meta="run 7d3f ┬╖ 8 steps ┬╖ 4.2s"
+            steps={[
+              { kind: "plan", label: "Analyze document structure", detail: "200-page contract with nested tables", ms: 180 },
+              { kind: "tool", label: "paddle_ocr", detail: "Extract text and table regions ΓåÆ 847 cells detected", ms: 2100 },
+              { kind: "model", label: "Qwen SLM extraction", detail: "Extract pricing, terms, parties from cells", ms: 1200 },
+              { kind: "mcp", label: "validate_schema", detail: "business_rules.validate() ΓåÆ 3 warnings", ms: 95 },
+              { kind: "tool", label: "confidence_score", detail: "Calculate field-level confidence ΓåÆ 0.91 avg", ms: 120 },
+              { kind: "mcp", label: "salesforce_lookup", detail: "crm.match_account(party_name) ΓåÆ 1 match", ms: 340 },
+              { kind: "human", label: "Review queue", detail: "3 low-confidence fields flagged for review", ms: 50 },
+              { kind: "result", label: "Contract processed ΓåÆ Salesforce updated", ms: 115 },
+            ]}
+            status="complete"
+          />
+
+          <Terminal
+            title="~/mcp/fabric-server"
+            shell="pwsh"
+            lines={[
+              { cmd: "uv run fabric-mcp --env production" },
+              "Γû╕ authenticating via Entra ID service principal",
+              { text: "Γ£ô connected to workspace: analytics-prod", tone: "ok" },
+              "Γû╕ registering tools: query_semantic_model, export_excel, generate_chart",
+              { text: "Γ£ô 6 tools registered ┬╖ health_check passed (89ms)", tone: "ok" },
+              { cmd: "mcp call query_semantic_model --dataset procurement" },
+              '{ "rows": 1247, "measures": ["spend_ytd", "supplier_count"] }',
+              { text: "! cache refresh due in 2h ┬╖ last sync 22h ago", tone: "warn" },
+            ]}
+            cursor
+          />
+        </div>
+
+        <div className="sg-metrics">
+          <Metric
+            value="0.91"
+            label="Extraction accuracy"
+            note="Measured ┬╖ 500-contract eval set"
+          />
+          <Metric
+            value="26"
+            unit="min"
+            label="Processing time"
+            note="Measured ┬╖ was 260 hours manual"
+          />
+          <Metric
+            value="85"
+            unit="%"
+            label="Straight-through rate"
+            note="Measured ┬╖ no human intervention"
+          />
+          <Metric
+            value="5+"
+            label="Sales won"
+            note="Through solution architecture"
+          />
+        </div>
+      </section>
+
+      {/* About / Timeline Section */}
+      <section id="about" className="stack">
+        <SectionHeader
+          index="03"
+          label="About"
+          title="The path"
+          accent="so far."
+        />
+
+        <Timeline
+          items={[
+            {
+              period: "2025ΓÇôNow",
+              role: "AI COE Team Lead & Solutions Consultant",
+              org: "JMAN Group",
+              current: true,
+              summary:
+                "Leading a cluster of 6-7 engineers. Product owner for enterprise AI platforms. Won 5+ sales opportunities through solution architecture. Created AI Playbook for the organization.",
+            },
+            {
+              period: "2024ΓÇô2025",
+              role: "Solution Enabler",
+              org: "JMAN Group",
+              summary:
+                "Led Contract Intelligence achieving 99% time reduction. Built custom MCP servers. Architected AI context layers for PE firms.",
+            },
+            {
+              period: "2023ΓÇô2024",
+              role: "Senior Software Engineer",
+              org: "JMAN Group",
+              summary:
+                "Built medallion architecture data platforms processing 5M+ records daily. Data engineering with dbt, Redshift, Azure Data Factory.",
+            },
+            {
+              period: "2022ΓÇô2023",
+              role: "Software Engineer",
+              org: "JMAN Group",
+              summary:
+                "Full-stack development with Node.js, React, NestJS. ETL pipelines with Azure Data Factory.",
+            },
+            {
+              period: "2017ΓÇô2022",
+              role: "Full Stack Developer",
+              org: "Multiple companies",
+              summary:
+                "C#, .NET, SQL Server. Enterprise applications for retail and services industries.",
+            },
+            {
+              period: "Hackathons",
+              role: "2├ù 3rd place finishes",
+              org: "Internal competitions",
+            },
+          ]}
+        />
+
+        <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginTop: "var(--space-5)" }}>
+          <Tag tone="signal">MCP</Tag>
+          <Tag tone="current">LangChain</Tag>
+          <Tag tone="current">LangGraph</Tag>
+          <Tag tone="signal">Azure AI Foundry</Tag>
+          <Tag tone="current">AWS Bedrock</Tag>
+          <Tag>RAG</Tag>
+          <Tag>Agentic AI</Tag>
+          <Tag>Python</Tag>
+          <Tag>TypeScript</Tag>
+          <Tag>FastAPI</Tag>
+          <Tag>React</Tag>
+          <Tag>dbt</Tag>
+          <Tag>Microsoft Fabric</Tag>
+          <Tag>Power BI</Tag>
+          <Tag>Docker</Tag>
+          <Tag>Terraform</Tag>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <div id="contact">
+        <ContactBand
+          eyebrow="04 ΓÇö CONTACT"
+          title="Let's build something"
+          accent="agentic."
+          lede="Open to remote AI architect roles in UK/US timezones. Let's talk about MCP, agents, and taking AI from demo to production."
+          email="sathishkumar05@gmail.com"
+          links={[
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/sathish-kumar-310976153/" },
+            { label: "GitHub", href: "https://github.com/vpsathish05" },
+            { label: "Medium", href: "https://medium.com/@vpsathish05" },
+          ]}
+        />
+      </div>
+
+      {/* Theme Toggle */}
+      <div className="theme-toggle">
+        <Button
+          variant="secondary"
+          size="sm"
+          arrow={false}
+          onClick={() => setTheme(theme === "night" ? "paper" : "night")}
+        >
+          {theme === "night" ? "Paper theme" : "Night theme"}
+        </Button>
+      </div>
+
+      <style jsx global>{`
+        html, body { margin: 0; background: var(--bg); }
+        .shell { 
+          max-width: var(--content-max); 
+          margin: 0 auto; 
+          padding: var(--space-3) var(--space-5) var(--space-9); 
+          display: grid; 
+          gap: var(--space-9); 
+        }
+        .shell > .sg-nav { position: sticky; top: var(--space-3); z-index: 10; }
+        .stack { display: grid; gap: var(--space-6); }
+        .proof { 
+          display: grid; 
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+          gap: var(--space-5); 
+          align-items: start; 
+        }
+        .theme-toggle { 
+          position: fixed; 
+          right: var(--space-5); 
+          bottom: var(--space-5); 
+          z-index: 20; 
+        }
+        @media (max-width: 768px) {
+          .shell { padding: var(--space-3); gap: var(--space-7); }
+          .proof { grid-template-columns: 1fr; }
+        }
+      `}</style>
+    </div>
+  );
+}

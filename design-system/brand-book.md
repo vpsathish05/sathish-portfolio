@@ -1,11 +1,11 @@
-Signal is a portfolio design system for an AI architect who builds agentic systems. Its idea in one line: **show the system, not the slide.** The page reads like an editorial magazine and proves itself like a terminal: a serif voice making claims, mono evidence underneath, and one saffron *signal* marking the thing that matters.
+Signal is a portfolio design system for an AI architect who builds agentic systems. Its idea in one line: **show the system, not the slide.** The look is **Obsidian**: near-black, machined surfaces with a metallic sheen, sharp faceted geometry, and one ice silver-white glow marking the thing that matters. The page reads like an editorial magazine and proves itself like a terminal: a serif voice making claims, mono evidence underneath.
 
 ## Principles
 
 1. **Evidence over adjectives.** Every claim on the page sits next to proof — an `AgentTrace`, a `Terminal`, an architecture visual, a `Metric`. If a sentence says "scalable", replace it with what scaled.
-2. **One signal per view.** `signal` (saffron) appears once per screen: the primary `Button`, the agent core, or the `ContactBand`. Two saffron things in one viewport means one of them is wrong.
+2. **One glow per view.** `signal` (ice silver-white) appears once per screen: the primary `Button`, the agent core, or the `ContactBand`. Two glowing things in one viewport means one of them is wrong.
 3. **Editorial meets terminal.** Claims and names in the `display` serif; data, labels and anything a machine said in `mono`; everything else in `sans`.
-4. **Precise, never sterile.** Small corners (`radius-xs`, `radius-md`), hairlines (`line`), a 4px grid — warmed by the paper-and-ink neutrals and generous air (`space-9` between sections).
+4. **Machined, never cold.** Sharp corners (`radius-xs` to `radius-lg`, nothing round), diamond nodes, hairlines (`line`), a 1px `sheen` on every raised edge, a 4px grid — softened by the serif and generous air (`space-9` between sections).
 
 ## Content fundamentals
 
@@ -22,11 +22,12 @@ Signal is a portfolio design system for an AI architect who builds agentic syste
 
 - Ground every page in `bg`; step up with `surface` (cards, nav) and `surface-raised` (featured only); step *down* into `surface-sunk` for evidence (Hero stage, `AgentTrace`, `Terminal`, card visuals). Depth means "this is proof".
 - Text is `ink` (headings, labels) or `ink-muted` (paragraphs). `ink-faint` is for small mono metadata only.
-- `signal` is the brand. Use it as a fill; when saffron must be text, use `signal-ink`. Text on a saffron fill is always `on-signal`.
-- `current` (teal) is connective tissue: MCP and tool nodes, live edges, availability status, the focus ring. It never competes with signal for "primary".
+- `signal` is the glow: ice silver-white on Obsidian, deep steel on Paper. Use it as a fill; when it must be text, use `signal-ink` (pale ice blue, with `glow-text` on Obsidian). Text on a signal fill is always `on-signal`.
+- `sheen` is the metal: a 1px top-edge highlight on cards and stages and a faint diagonal light across the Hero. Never more than that — the surfaces stay matte.
+- `current` (mint) is connective tissue: MCP and tool nodes, live edges, availability status. It never competes with signal for "primary". The focus ring is the ice `focus` token.
 - `signal-soft` / `current-soft` are tag grounds; `signal-tint` is decorative and never sits behind text.
-- `danger` only for failures, always paired with a word. Signal (orange) and current (teal) sit on the blue–orange axis, so status never depends on red/green.
-- Night is the default theme (dark looks dominate AI-portfolio audiences); Paper must look equally finished — test both before shipping a page.
+- `danger` only for failures, always paired with a word. Ice and mint differ in lightness as well as hue, and every status carries a word, so nothing depends on colour alone.
+- Obsidian is the default theme; Paper (cool greys, steel accent) must look equally finished — test both before shipping a page.
 
 ## Typography
 
@@ -40,7 +41,7 @@ Signal is a portfolio design system for an AI architect who builds agentic syste
 
 - 4px base: `space-1` … `space-9`. Card padding `space-5`; section gap `space-9`; hero/contact padding `space-8`.
 - Frame: `content-max` 1200px, 12-column mental grid; case-study prose capped at `prose-max`.
-- Corners say what a thing is: `radius-pill` = an action (Buttons only); `radius-xs` = data (tags, nodes); `radius-md` = a container; `radius-lg` = a stage (Hero, ContactBand).
+- Corners are machined: `radius-xs` for actions and data (Buttons, tags), `radius-md` for containers, `radius-lg` for stages (Hero, ContactBand). Nothing is a pill or a circle; markers and nodes are diamonds (squares turned 45°).
 - Borders before shadows. Cards rest on a `line` border; hover raises them 3px with `shadow-card` and draws a 2px `signal` rule across the top edge.
 - Texture comes from one pattern: a dot grid in `line` at a 24px pitch, faded with a mask. Use it on stages only.
 
@@ -58,7 +59,14 @@ Signal is a portfolio design system for an AI architect who builds agentic syste
 
 ## Components at a glance
 
-`NavBar` → `Hero` → `SectionHeader` + `ProjectCard` grid → `AgentTrace` / `Terminal` inside case studies → `Metric` row → `Timeline` → `ContactBand`. That order *is* the home page. Use `Tag` for stacks and status, `Button` for every action. See **Case study anatomy** for the page that sits behind each card.
+- **Page frame:** `NavBar`, `Hero`, `SectionHeader`, `ContactBand`.
+- **Proof:** `Metric`, `ProjectCard`, `AgentTrace`, `Terminal`, `ArchitectureStack`, `Testimonial`.
+- **Expertise:** `CapabilityGrid`, `ProcessSteps`, `StackMatrix`.
+- **Profile:** `Timeline`, `CredentialList`, `WritingList`, `ServiceCard` (optional).
+- **Résumé:** `ResumeHeader`, `ResumeSection`, `ResumeRole` inside `.sg-resume`.
+- `Tag` for stacks and status, `Button` for every action.
+
+The page order and the CV format are in **Portfolio & résumé structure**; the page behind each project card is in **Case study anatomy**.
 
 ## Accessibility
 

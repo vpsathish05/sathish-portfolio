@@ -13,10 +13,17 @@ import {
   ContactBand,
   Button,
   Tag,
+  CapabilityGrid,
+  ArchitectureStack,
+  ProcessSteps,
+  StackMatrix,
+  CredentialList,
+  WritingList,
+  Testimonial,
 } from "../../design-system/components/signal.js";
 
 export default function Portfolio() {
-  const [theme, setTheme] = useState<"night" | "paper">("night");
+  const [theme, setTheme] = useState<"obsidian" | "paper">("obsidian");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -24,118 +31,128 @@ export default function Portfolio() {
 
   return (
     <div className="shell">
-      {/* Navigation */}
+      {/* 0. Navigation */}
       <NavBar
         name="Sathish Kumar V"
         initials="SK"
         homeHref="#"
         links={[
-          { label: "Impact", href: "#impact", active: true },
-          { label: "Work", href: "#work" },
-          { label: "Products", href: "#products" },
-          { label: "Path", href: "#path" },
-          { label: "Contact", href: "#contact" },
+          { label: "Work", href: "#work", active: true },
+          { label: "Expertise", href: "#expertise" },
+          { label: "About", href: "#about" },
+          { label: "Writing", href: "#writing" },
         ]}
         status="Open to UK/US remote"
-        cta={{ label: "Let&apos;s talk", href: "#contact" }}
+        cta={{ label: "Résumé", href: "/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v2.pdf" }}
       />
 
-      {/* Hero Section */}
+      {/* 1. Hero */}
       <Hero
-        eyebrow="AI TEAM LEAD · 7 ENGINEERS · CHENNAI → UK/US REMOTE"
-        name="I ship AI that"
-        accent="runs in production."
+        eyebrow="AI Solutions Architect · Team Lead · Chennai → UK/US Remote"
+        name="Sathish"
+        accent="Kumar."
         statement={
           <>
-            Not demos. Not notebooks. Production systems processing thousands of documents, 
-            answering real questions, connecting to real enterprise data. I lead a team of 7, 
-            own 15 internal AI products, and architect client solutions from pitch to deployment. 
-            When we win the deal, I build it.
+            I architect <b>agentic AI for the enterprise</b> — MCP servers, RAG pipelines, 
+            document intelligence, and the governance that makes them safe to ship. 
+            Leading 7 engineers, owning 15 internal products, winning deals I then build.
           </>
         }
         actions={
           <>
             <Button size="lg" href="#work">
-              See the systems
+              See selected work
             </Button>
-            <Button size="lg" variant="secondary" href="/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v1.pdf">
-              Resume (PDF)
+            <Button size="lg" variant="secondary" href="/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v2.pdf">
+              View résumé
             </Button>
           </>
         }
         graph={{
-          core: "Ship",
-          nodes: ["Docs", "RAG", "Agents", "MCP", "Value"],
-          hot: [0, 4],
+          core: "AGENT",
+          nodes: ["LLM", "MCP", "DATA", "HUMAN", "TOOLS"],
+          hot: [1, 2],
         }}
       />
 
-      {/* Impact Numbers - Staff Engineer Style */}
-      <section id="impact" className="stack">
+      {/* 2. Proof Strip - Metrics */}
+      <div className="sg-metrics">
+        <Metric
+          value="99"
+          unit="%"
+          label="Time reduction"
+          note="Contract extraction: 260h → 26min"
+        />
+        <Metric
+          value="15"
+          label="AI products owned"
+          note="Enterprise platform, agents, MCP tools"
+        />
+        <Metric
+          value="7"
+          label="Engineers led"
+          note="Hiring, mentoring, delivery"
+        />
+        <Metric
+          value="5"
+          label="Deals won"
+          note="Solutions I architected and pitched"
+        />
+      </div>
+
+      {/* 3. Expertise - What I architect */}
+      <section id="expertise" className="stack">
         <SectionHeader
           index="01"
-          label="Impact"
-          title="What I&apos;ve"
-          accent="actually shipped."
-          lede="Numbers from production systems, not benchmarks. Every metric here is something I can walk you through in an interview."
+          label="Expertise"
+          title="What I"
+          accent="architect."
+          lede="Six areas I design, build and own end to end."
         />
-
-        <div className="sg-metrics sg-metrics-hero">
-          <Metric
-            value="13"
-            label="Client projects"
-            note="Contract intel, PE platforms, DTaaS"
-          />
-          <Metric
-            value="15"
-            label="Internal products"
-            note="AI platform, agents, MCP tools"
-          />
-          <Metric
-            value="7"
-            label="Engineers led"
-            note="Hiring, mentoring, delivery"
-          />
-          <Metric
-            value="5"
-            label="Deals won"
-            note="Solutions I architected and pitched"
-          />
-        </div>
-
-        <div className="sg-metrics">
-          <Metric
-            value="99%"
-            label="Time reduction"
-            note="Contract extraction: 260h → 26min"
-          />
-          <Metric
-            value="85%"
-            label="Straight-through processing"
-            note="No human intervention needed"
-          />
-          <Metric
-            value="$0.002"
-            label="Per-page cost"
-            note="vs $0.03 with GPT-4 Vision"
-          />
-          <Metric
-            value="6"
-            unit="mo"
-            label="PoC → Production"
-            note="Started as 4-week pilot"
-          />
-        </div>
+        <CapabilityGrid
+          items={[
+            {
+              title: "Agentic systems",
+              summary: "Multi-agent workflows with tool use, memory and human checkpoints — designed to fail safely.",
+              points: ["LangGraph orchestration", "MCP tool calling", "Human-in-the-loop"],
+            },
+            {
+              title: "RAG & knowledge",
+              summary: "Retrieval that cites its sources and says 'I don't know' when it should.",
+              points: ["Hybrid search", "Re-ranking", "Citation tracking"],
+            },
+            {
+              title: "MCP & integration",
+              summary: "Secure, scoped servers that let agents act on enterprise systems.",
+              points: ["Custom MCP servers", "Fabric integration", "API design"],
+            },
+            {
+              title: "Document intelligence",
+              summary: "OCR pipelines that handle complex layouts — nested tables, merged cells, multi-page contracts.",
+              points: ["PaddleOCR", "Table extraction", "Confidence routing"],
+            },
+            {
+              title: "Data foundations",
+              summary: "Semantic layers and governed access so AI answers match the numbers people trust.",
+              points: ["dbt models", "Power BI semantic", "Data contracts"],
+            },
+            {
+              title: "Governance & safety",
+              summary: "Guardrails, audit trails and the architecture that risk teams can sign off.",
+              points: ["RBAC", "Audit logging", "Enterprise compliance"],
+            },
+          ]}
+        />
       </section>
 
-      {/* Client Work Section */}
+      {/* 4. Selected Work */}
       <section id="work" className="stack">
         <SectionHeader
           index="02"
-          label="Client delivery"
-          title="Enterprise AI"
-          accent="that shipped."
-          lede="I architect and deliver AI systems for consulting clients — PE firms, SaaS companies, manufacturing. I do pre-sales, solution design, and hands-on build."
+          label="Selected work"
+          title="Systems that"
+          accent="shipped."
+          lede="Three case studies — each with the architecture, the decisions, and what broke on the way to production."
         />
 
         <div className="sg-grid-2">
@@ -143,10 +160,10 @@ export default function Portfolio() {
           <ProjectCard
             featured
             index="/01"
-            kind="DOCUMENT INTELLIGENCE"
-            title="Contract extraction at scale"
+            kind="Document Intelligence"
+            title="Contract Extraction at Scale"
             summary="A company drowning in 200-page contracts, pricing buried in nested tables. Their team spent 260 hours per batch. Previous OCR attempts failed on complex layouts. I built the pipeline that does it in 26 minutes."
-            outcome="85% straight-through processing. Legal team does strategy now, not data entry. Started as 4-week PoC, became 6-month engagement because it worked."
+            outcome="85% straight-through processing. $0.002/page vs $0.03 with GPT-4V. Started as 4-week PoC, became 6-month engagement."
             tags={["PaddleOCR", "Qwen 7B", "Human-in-loop", "Salesforce"]}
             href="https://medium.com/@vpsathish05/contract-intelligence-at-scale-how-ocr-llm-turned-260-hours-into-26-minutes-00dc6aab26a0"
           />
@@ -154,79 +171,67 @@ export default function Portfolio() {
           <div style={{ display: "grid", gap: 24, alignContent: "start" }}>
             <ProjectCard
               index="/02"
-              kind="PE INVESTMENT PLATFORM"
-              title="AI context layer for PE"
-              summary="Investment team spent days preparing for committee meetings. Information scattered across deal rooms, models, reports. Built an AI layer that knows their portfolio context, cites sources, challenges assumptions."
-              tags={["Claude Enterprise", "MCP tools", "Audit trail"]}
+              kind="RAG · Knowledge"
+              title="AI Context Layer for PE"
+              summary="Investment team spent days preparing for committee meetings. Built an AI layer over deal rooms, models, reports — cites sources, challenges assumptions, tracks audit trail."
+              tags={["Claude Enterprise", "MCP", "Citation tracking"]}
             />
 
             <ProjectCard
               index="/03"
-              kind="ENTERPRISE AI PLATFORM"
-              title="Private AI for 200 consultants"
-              summary="Consultants using ChatGPT with client data — compliance nightmare. Built a governed AI platform connecting SharePoint, Power BI, CRM. Same capabilities, zero data leaving the perimeter."
-              tags={["Azure OpenAI", "Knowledge integration", "Governance"]}
+              kind="Enterprise · Platform"
+              title="Private AI for 200 Consultants"
+              summary="Consultants using ChatGPT with client data — compliance nightmare. Built a governed platform connecting SharePoint, Power BI, CRM. Same capabilities, zero data leaving the perimeter."
+              tags={["Azure OpenAI", "RBAC", "Knowledge graph"]}
             />
           </div>
         </div>
-
-        {/* Additional projects row */}
-        <div className="sg-grid-3">
-          <ProjectCard
-            index="/04"
-            kind="MANUFACTURING"
-            title="BOM automation"
-            summary="Manual entry from emails, PDFs, images into ERP. Built ingestion pipeline with OCR, LLM extraction, validation. Target: 95% accuracy on required fields."
-            tags={["Azure AI Foundry", "SharePoint", "ERP integration"]}
-          />
-          <ProjectCard
-            index="/05"
-            kind="ANALYTICS"
-            title="Natural language BI"
-            summary="Business users couldn&apos;t query their own data without SQL. Built semantic layer making Power BI models AI-queryable via Copilot Studio."
-            tags={["Fabric", "Semantic models", "MCP"]}
-          />
-          <ProjectCard
-            index="/06"
-            kind="OPERATIONAL DATA"
-            title="DTaaS platform"
-            summary="Parking operations needed real-time insight into PCNs, site performance, degradation patterns. Built data extraction and dashboards from daily operational data."
-            tags={["Data pipelines", "Power BI", "Azure DevOps"]}
-          />
-        </div>
       </section>
 
-      {/* Deep Case Study - The Technical Proof */}
+      {/* 5. How It Runs - Architecture & Trace */}
       <section className="stack">
         <SectionHeader
           index="03"
-          label="Deep dive"
-          title="How I think"
-          accent="about trade-offs."
-          lede="The interesting part isn&apos;t the tech — it&apos;s choosing the right tool for the constraint. Here&apos;s one decision that mattered."
+          label="How it runs"
+          title="Watch it"
+          accent="think."
+          lede="The reference architecture behind the work, and a real (redacted) decision trace."
+        />
+
+        <ArchitectureStack
+          title="Reference architecture · enterprise AI platform"
+          meta="production · v3"
+          rail="Evaluation · Observability · Governance"
+          layers={[
+            { name: "Experience", items: ["Web chat", "Teams bot", "API"] },
+            { name: "Orchestration", tone: "signal", items: ["Planner", "Agent router", "Memory", "Human approval"] },
+            { name: "Tools · MCP", tone: "current", items: ["CRM server", "Fabric server", "Docs server", "SharePoint"] },
+            { name: "Knowledge & data", items: ["Vector index", "Semantic models", "Document store"] },
+            { name: "Models & platform", items: ["Azure OpenAI", "Claude", "PaddleOCR", "Embeddings"] },
+          ]}
         />
 
         <div className="proof">
           <AgentTrace
-            title="Contract extraction · architecture decision"
-            meta="Why PaddleOCR + small LLM, not GPT-4 Vision"
+            title="trace · contract-extraction"
+            meta="architecture decision · why PaddleOCR + Qwen, not GPT-4V"
             steps={[
               { kind: "plan", label: "Requirement: Extract pricing from 200-page contracts", detail: "Nested tables, merged cells, multi-currency. Previous OCR had failed.", ms: 0 },
-              { kind: "model", label: "Attempt 1: GPT-4 Vision", detail: "Good accuracy. $0.03/page × 200 pages × 1000 contracts = $6,000/batch. Budget rejected.", ms: 0 },
+              { kind: "model", label: "Attempt 1: GPT-4 Vision", detail: "Good accuracy. $0.03/page × 200 pages × 1000 contracts = $6,000/batch. Rejected.", ms: 0 },
               { kind: "error", label: "Attempt 2: Commercial OCR vendors", detail: "Tested 3 platforms. All failed on nested tables with merged cells.", ms: 0 },
               { kind: "mcp", label: "Solution: PaddleOCR for table detection", detail: "Open source, handles complex layouts. Runs on GPU we already had.", ms: 0 },
               { kind: "model", label: "Solution: Qwen 7B for field extraction", detail: "Small enough to self-host. Accurate enough for structured fields. $0.002/page.", ms: 0 },
-              { kind: "human", label: "Design choice: Confidence thresholds", detail: "Below 85% confidence → human review queue. 100% automation wasn&apos;t the goal.", ms: 0 },
-              { kind: "result", label: "Outcome", detail: "15x cheaper than GPT-4 approach. Client owns infrastructure. Scales to any volume.", ms: 0 },
+              { kind: "human", label: "Design: Confidence thresholds", detail: "Below 85% → human review queue. 100% automation wasn't the goal.", ms: 0 },
+              { kind: "result", label: "Outcome", detail: "15x cheaper than GPT-4 approach. Client owns infra. Scales to any volume.", ms: 0 },
             ]}
             status="complete"
           />
 
           <Terminal
-            title="What broke in production"
-            shell="lessons-learned"
+            title="~/lessons-learned"
+            shell="production"
             lines={[
-              { text: "# Things that didn't work the first time", tone: "warn" },
+              { text: "# What broke in production", tone: "warn" },
               "",
               "1. Multi-currency tables",
               "   → LLM hallucinated exchange rates",
@@ -234,264 +239,225 @@ export default function Portfolio() {
               "",
               "2. Handwritten annotations",
               "   → OCR confidence dropped to 40%",
-              "   → Fix: Route to human queue, don't guess",
+              "   → Fix: Route to human, don't guess",
               "",
               "3. Scanned at angles",
-              "   → Table detection failed completely",
+              "   → Table detection failed",
               "   → Fix: Deskew preprocessing",
               "",
-              "4. Nested sub-tables",
-              "   → Structure flattened incorrectly",
-              "   → Fix: Hierarchical parsing pass",
-              "",
-              { text: "# What I learned", tone: "ok" },
+              { text: "# Key insight", tone: "ok" },
               "Production AI is 20% model, 80% edge cases.",
-              "The fix that worked: treat low-confidence as",
-              "a feature, not a failure. Route to humans.",
+              "Treat low-confidence as a feature, not failure.",
             ]}
           />
         </div>
       </section>
 
-      {/* Internal Products Section */}
-      <section id="products" className="stack">
+      {/* 6. Approach - How I Work */}
+      <section className="stack">
         <SectionHeader
           index="04"
-          label="Products I own"
-          title="Internal AI"
-          accent="platform."
-          lede="I don&apos;t just build client projects. I own the AI products my company uses internally — the platform, the agents, the accelerators."
+          label="Approach"
+          title="How I"
+          accent="work."
+          lede="Every stage ends with something you can hold."
         />
-
-        <div className="sg-grid-3">
-          <ProjectCard
-            index="/01"
-            kind="ENTERPRISE AI PLATFORM"
-            title="Enterprise AI Assistant"
-            summary="Our internal ChatGPT alternative. Secure enterprise AI assistant connecting to SharePoint, Power BI, project data. Multi-model, multi-workspace. I&apos;m the product owner."
-            tags={["React", "Azure OpenAI", "MCP", "PostgreSQL"]}
-          />
-          <ProjectCard
-            index="/02"
-            kind="AI BACKEND"
-            title="AI Backend Platform"
-            summary="The engine under our chat platform. Central AI platform with multi-LLM support, knowledge integration, document intelligence. I own the technical architecture."
-            tags={["Azure", "Multi-model", "API platform"]}
-          />
-          <ProjectCard
-            index="/03"
-            kind="CONSULTING AGENT"
-            title="Consulting Agent"
-            summary="AI assistant for project teams. Connects to Teams, SharePoint, DevOps, HubSpot. Memory-driven, governance-first. I lead product and delivery."
-            tags={["LangGraph", "FastAPI", "MCP", "Redis"]}
-          />
-        </div>
-
-        <div className="sg-grid-3">
-          <ProjectCard
-            index="/04"
-            kind="MCP SERVER"
-            title="Fabric MCP"
-            summary="Custom MCP server over Microsoft Fabric. Adds Excel export, dashboard generation beyond Fabric Data Agent&apos;s limits. I built the prototype."
-            tags={["MCP", "Fabric", "Claude"]}
-          />
-          <ProjectCard
-            index="/05"
-            kind="ACCELERATOR"
-            title="Power BI Semantic Assistant"
-            summary="Makes Power BI models AI-queryable. Schema curation, descriptions, agent access. Used in client demos. I architected it."
-            tags={["Copilot Studio", "Fabric", "MCP"]}
-          />
-          <ProjectCard
-            index="/06"
-            kind="KNOWLEDGE BASE"
-            title="AI Playbook"
-            summary="Developer-focused AI knowledge base. RAG, agents, MCP, prompt engineering, production case studies. I&apos;m the author and owner."
-            tags={["MDX", "Architecture", "Best practices"]}
-          />
-        </div>
-
-        <div style={{ marginTop: "var(--space-4)", display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
-          <Tag tone="current">+ AI Proposal Writer</Tag>
-          <Tag tone="current">+ Power BI Grading Tool</Tag>
-          <Tag tone="current">+ MCP Integrations Accelerator</Tag>
-          <Tag tone="current">+ AI Data Dictionary</Tag>
-          <Tag tone="current">+ Work IQ Chatbot</Tag>
-        </div>
+        <ProcessSteps
+          active={3}
+          steps={[
+            { title: "Discover", summary: "Map the decision, the users and the data.", output: "Problem brief + metrics" },
+            { title: "Architect", summary: "Pick patterns and boundaries; design for failure.", output: "Reference architecture" },
+            { title: "Prototype", summary: "Ship a thin, real slice end to end.", output: "Working slice" },
+            { title: "Evaluate", summary: "Measure quality, safety, cost and latency.", output: "Eval report" },
+            { title: "Productionise", summary: "Harden, secure and hand over.", output: "Runbook + guardrails" },
+            { title: "Operate", summary: "Monitor drift; improve on a cadence.", output: "Dashboards + reviews" },
+          ]}
+        />
       </section>
 
-      {/* Hackathons Section */}
+      {/* 7. Stack - Tools I Reach For */}
       <section className="stack">
         <SectionHeader
           index="05"
-          label="Proof of concepts"
-          title="Hackathon"
-          accent="projects."
-          lede="Side projects that demonstrate how I think about hard problems — from talent matching to sales intelligence."
+          label="Stack"
+          title="Tools I"
+          accent="reach for."
         />
-
-        <div className="sg-grid-2">
-          <ProjectCard
-            featured
-            index="/01"
-            kind="AI POC"
-            title="SapienSync | Talent Recommendation"
-            summary="AI engine ranking best-fit employees for open roles. 6-step pipeline: intake normalization, COE detection, semantic skill matching (1536-dim embeddings, pgvector), weighted scoring, GPT-4o rationale generation, knowledge-base validation."
-            outcome="Weighted scoring across Skill (40%), Competency (25%), Availability (25%), Productivity (10%). Parallel GPT-4o enrichment using asyncio.gather(). 5 forecasting models achieving 4.4% MAPE."
-            tags={["GPT-4o", "pgvector", "Holt-Winters", "asyncio"]}
-          />
-
-          <ProjectCard
-            index="/02"
-            kind="HACKATHON 2024"
-            title="UK PE Lead Generation Network"
-            summary="Sales intelligence pipeline targeting UK Private Equity firms. Medallion Architecture (Bronze/Silver/Gold) with Companies House, FCA Register, web scraping. GPT-4o-mini enrichment, weighted lead scoring, Power BI dashboards."
-            tags={["Medallion", "GPT-4o-mini", "Power BI", "CRM"]}
-          />
-        </div>
+        <StackMatrix
+          groups={[
+            {
+              label: "Models",
+              items: [
+                { name: "Azure OpenAI", level: "daily" },
+                { name: "Claude / Anthropic", level: "daily" },
+                { name: "AWS Bedrock", level: "proficient" },
+                { name: "Open-weight (Qwen, Llama)", level: "proficient" },
+              ],
+            },
+            {
+              label: "Orchestration",
+              items: [
+                { name: "LangChain", level: "daily" },
+                { name: "LangGraph", level: "daily" },
+                { name: "MCP Protocol", level: "daily" },
+                { name: "Copilot Studio", level: "proficient" },
+              ],
+            },
+            {
+              label: "Data & RAG",
+              items: [
+                { name: "pgvector", level: "daily" },
+                { name: "Azure AI Search", level: "proficient" },
+                { name: "Microsoft Fabric", level: "daily" },
+                { name: "dbt", level: "proficient" },
+              ],
+            },
+            {
+              label: "Languages",
+              items: [
+                { name: "Python", level: "daily" },
+                { name: "TypeScript", level: "daily" },
+                { name: "SQL", level: "daily" },
+                { name: "C#", level: "familiar" },
+              ],
+            },
+            {
+              label: "Infrastructure",
+              items: [
+                { name: "Docker", level: "daily" },
+                { name: "Azure", level: "daily" },
+                { name: "AWS", level: "proficient" },
+                { name: "Terraform", level: "proficient" },
+              ],
+            },
+          ]}
+        />
       </section>
 
-      {/* Path Section */}
-      <section id="path" className="stack">
+      {/* 8. Experience - Timeline */}
+      <section id="about" className="stack">
         <SectionHeader
           index="06"
-          label="Path"
-          title="How I"
-          accent="got here."
+          label="About"
+          title="The path"
+          accent="so far."
         />
-
         <Timeline
           items={[
             {
-              period: "2026",
-              role: "AI Team Lead",
-              org: "Consulting firm",
+              period: "Now",
+              role: "AI Solutions Architect & Team Lead",
+              org: "JMAN Group",
               current: true,
-              summary:
-                "Lead a cluster of 7 engineers. Own 15 internal AI products. Architect client solutions from pitch to production. Do pre-sales — if we win, I build it. 5 deals won this year from solutions I designed.",
+              summary: "Lead a cluster of 7 engineers in AI Centre of Excellence. Own 15 internal products. Architect client solutions from pitch to production — if we win, I build it. 5 deals won this year.",
             },
             {
               period: "2024–25",
-              role: "AI Engineer → Product Owner",
-              org: "Same firm",
-              summary:
-                "Stopped being a resource, started owning outcomes. Led the contract extraction project that became our biggest reference. Started building our enterprise AI platform — internal products that now serve the whole company.",
+              role: "AI Engineer → Product Lead",
+              org: "JMAN Group",
+              summary: "Led the contract extraction project that became our biggest reference. Started building enterprise AI platform — internal products now serving the whole company.",
             },
             {
-              period: "2022–24",
+              period: "2023–24",
               role: "Data Engineer",
-              org: "Same firm",
-              summary:
-                "Built data foundations. ETL pipelines, warehouses, dbt models. Learned that AI without clean data is expensive guessing. First client delivery work.",
+              org: "JMAN Group",
+              summary: "Built data foundations. Medallion architecture, dbt models, 5M+ records daily. Learned that AI without clean data is expensive guessing.",
             },
             {
               period: "2017–22",
               role: "Software Developer",
-              org: "Various",
-              summary:
-                "Started with C# and .NET. Enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.",
+              org: "Various companies",
+              summary: "Started with C# and .NET. Enterprise systems for retail and services. Learned that code exists to solve business problems, not to be clever.",
             },
           ]}
         />
 
-        <div style={{ marginTop: "var(--space-6)" }}>
-          <p style={{ 
-            fontFamily: "var(--font-sans)", 
-            fontSize: "16px", 
-            lineHeight: "26px",
-            color: "var(--ink-muted)",
-            maxWidth: "var(--prose-max)"
-          }}>
-            <strong style={{ color: "var(--ink)" }}>What I&apos;m looking for:</strong> A remote role with a UK or US company 
-            where I can keep doing what I do best — shipping AI systems that actually work. I&apos;m interested in 
-            teams building AI products, not AI features. I want to own outcomes, not tickets.
-          </p>
-        </div>
-
-        {/* Tech Stack - Organized */}
-        <div style={{ marginTop: "var(--space-6)" }}>
-          <div style={{ marginBottom: "var(--space-3)" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "var(--ink-muted)", letterSpacing: "0.05em" }}>AI / LLM</span>
-          </div>
-          <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
-            <Tag tone="signal">LangChain</Tag>
-            <Tag tone="signal">LangGraph</Tag>
-            <Tag tone="signal">Azure OpenAI</Tag>
-            <Tag tone="signal">Claude / Anthropic</Tag>
-            <Tag tone="signal">MCP</Tag>
-            <Tag tone="current">RAG</Tag>
-            <Tag tone="current">Agents</Tag>
-            <Tag tone="current">PaddleOCR</Tag>
-          </div>
-
-          <div style={{ marginBottom: "var(--space-3)" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "var(--ink-muted)", letterSpacing: "0.05em" }}>PLATFORM / INFRA</span>
-          </div>
-          <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
-            <Tag>Azure AI Foundry</Tag>
-            <Tag>Microsoft Fabric</Tag>
-            <Tag>AWS Bedrock</Tag>
-            <Tag>Docker</Tag>
-            <Tag>Terraform</Tag>
-            <Tag>GitHub Actions</Tag>
-          </div>
-
-          <div style={{ marginBottom: "var(--space-3)" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "var(--ink-muted)", letterSpacing: "0.05em" }}>LANGUAGES / FRAMEWORKS</span>
-          </div>
-          <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
-            <Tag>Python</Tag>
-            <Tag>TypeScript</Tag>
-            <Tag>FastAPI</Tag>
-            <Tag>React</Tag>
-            <Tag>PostgreSQL</Tag>
-            <Tag>Redis</Tag>
-            <Tag>dbt</Tag>
-          </div>
-
-          <div style={{ marginBottom: "var(--space-3)" }}>
-            <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "var(--ink-muted)", letterSpacing: "0.05em" }}>ENTERPRISE</span>
-          </div>
-          <div style={{ display: "flex", gap: "var(--space-2)", flexWrap: "wrap" }}>
-            <Tag>Power BI</Tag>
-            <Tag>SharePoint</Tag>
-            <Tag>Salesforce</Tag>
-            <Tag>Azure DevOps</Tag>
-            <Tag>Copilot Studio</Tag>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <div id="contact">
-        <ContactBand
-          eyebrow="07 — LET&apos;S TALK"
-          title="Looking for someone who"
-          accent="ships?"
-          lede="I&apos;m exploring remote roles with UK or US companies (60-90 day notice). If you need someone who builds AI systems that run in production — not just demo well — let&apos;s talk."
-          email="sathishkumar05@gmail.com"
-          links={[
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/sathish-kumar-310976153/" },
-            { label: "GitHub", href: "https://github.com/vpsathish05" },
-            { label: "Medium", href: "https://medium.com/@vpsathish05" },
+        {/* 9. Credentials */}
+        <CredentialList
+          items={[
+            { kind: "cert", title: "Azure AI Engineer Associate (AI-102)", issuer: "Microsoft", year: "In Progress" },
+            { kind: "cert", title: "AWS Solutions Architect", issuer: "Amazon Web Services", year: "Planned 2026" },
+            { kind: "degree", title: "MCA (Master of Computer Applications)", issuer: "University of Madras", year: "2020" },
+            { kind: "degree", title: "BCA (Bachelor of Computer Applications)", issuer: "Jairam Arts and Science College", year: "2017" },
+            { kind: "award", title: "Equity stakeholder", issuer: "JMAN Group — shares awarded for contribution", year: "2025" },
+            { kind: "award", title: "Hackathon — 2× podium finishes", issuer: "Company-wide competitions", year: "2024" },
           ]}
         />
-      </div>
+      </section>
+
+      {/* 10. Writing */}
+      <section id="writing" className="stack">
+        <SectionHeader
+          index="07"
+          label="Writing & talks"
+          title="Thinking"
+          accent="out loud."
+        />
+        <WritingList
+          items={[
+            {
+              type: "Article",
+              title: "Contract Intelligence at Scale: How OCR-LLM Turned 260 Hours Into 26 Minutes",
+              venue: "Medium · Technical case study",
+              date: "2025",
+              href: "https://medium.com/@vpsathish05/contract-intelligence-at-scale-how-ocr-llm-turned-260-hours-into-26-minutes-00dc6aab26a0",
+            },
+            {
+              type: "Internal",
+              title: "AI Playbook: RAG, Agents, MCP, Production Patterns",
+              venue: "JMAN Group knowledge base · Author & owner",
+              date: "Ongoing",
+            },
+            {
+              type: "Demo",
+              title: "Enterprise AI Platform",
+              venue: "Executive leadership presentation · Roadmap approved",
+              date: "2025",
+            },
+          ]}
+        />
+
+        {/* 11. Endorsements / Testimonial */}
+        <Testimonial
+          quote="He turned a vague 'we need AI' into an architecture our engineers could build and our risk team could sign off. The contract extraction system he built became our biggest client reference."
+          name="Delivery Director"
+          role="JMAN Group · Enterprise AI practice"
+          source="Internal review"
+        />
+      </section>
+
+      {/* 13. Contact */}
+      <ContactBand
+        eyebrow="08 — Contact"
+        title="Let's build something"
+        accent="agentic."
+        lede="Open to conversations about AI architecture, MCP, and taking agents from demo to production. Looking for remote roles with UK/US companies (60-90 day notice)."
+        email="sathishkumar05@gmail.com"
+        links={[
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/sathish-kumar-310976153/" },
+          { label: "GitHub", href: "https://github.com/vpsathish05" },
+          { label: "Medium", href: "https://medium.com/@vpsathish05" },
+          { label: "Résumé", href: "/sathish-portfolio/resume/output/Sathish_Kumar_V_Resume_v2.pdf" },
+        ]}
+      />
 
       {/* Theme Toggle */}
-      <div className="theme-toggle">
+      <div className="tools">
         <Button
           variant="secondary"
           size="sm"
           arrow={false}
-          onClick={() => setTheme(theme === "night" ? "paper" : "night")}
+          onClick={() => setTheme(theme === "obsidian" ? "paper" : "obsidian")}
         >
-          {theme === "night" ? "Light" : "Dark"}
+          {theme === "obsidian" ? "Paper theme" : "Obsidian theme"}
         </Button>
       </div>
 
       <style jsx global>{`
-        html, body { margin: 0; background: var(--bg); }
+        html, body { 
+          margin: 0; 
+          background: var(--bg); 
+        }
         .shell { 
           max-width: var(--content-max); 
           margin: 0 auto; 
@@ -499,35 +465,41 @@ export default function Portfolio() {
           display: grid; 
           gap: var(--space-9); 
         }
-        .shell > .sg-nav { position: sticky; top: var(--space-3); z-index: 10; }
-        .stack { display: grid; gap: var(--space-6); }
+        .shell > .sg-nav { 
+          position: sticky; 
+          top: var(--space-3); 
+          z-index: 10; 
+        }
+        .stack { 
+          display: grid; 
+          gap: var(--space-6); 
+        }
         .proof { 
           display: grid; 
           grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
           gap: var(--space-5); 
           align-items: start; 
         }
-        .sg-metrics-hero {
-          padding: var(--space-5);
-          background: var(--surface);
-          border-radius: var(--radius-md);
-          border: 1px solid var(--line);
-        }
-        .sg-grid-3 {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: var(--space-4);
-        }
-        .theme-toggle { 
+        .tools { 
           position: fixed; 
           right: var(--space-5); 
           bottom: var(--space-5); 
           z-index: 20; 
+          display: flex; 
+          gap: var(--space-2); 
         }
         @media (max-width: 768px) {
-          .shell { padding: var(--space-3); gap: var(--space-7); }
-          .proof { grid-template-columns: 1fr; }
-          .sg-grid-3 { grid-template-columns: 1fr; }
+          .shell { 
+            padding: var(--space-3); 
+            gap: var(--space-7); 
+          }
+          .proof { 
+            grid-template-columns: 1fr; 
+          }
+        }
+        @media print { 
+          .tools { display: none; } 
+          body { background: #fff; } 
         }
       `}</style>
     </div>

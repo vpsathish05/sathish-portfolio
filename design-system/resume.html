@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal — résumé (sample)</title>
+<link rel="stylesheet" href="./tokens.css">
+<link rel="stylesheet" href="./components/signal.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .shell { max-width: var(--content-max); margin: 0 auto; padding: var(--space-3) var(--space-5) var(--space-9); display: grid; gap: var(--space-9); }
+  .shell > .sg-nav { position: sticky; top: var(--space-3); z-index: 10; }
+  .stack { display: grid; gap: var(--space-6); }
+  .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--space-5); align-items: start; }
+  .three { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5); align-items: stretch; }
+  .tools { position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: 20; display: flex; gap: var(--space-2); }
+  @media print { .tools { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body class="sg-page" style="padding:0">
+<div id="root"></div>
+<!-- React 18.3.1 UMD, pinned -->
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="./components/signal.umd.js"></script>
+<script>
+var S = window.Signal, h = React.createElement;
+/* ALL CONTENT BELOW IS SAMPLE CONTENT. Replace with your own, anonymised work — see portfolio-resume-structure.md. */
+function useTheme(initial) {
+  var t = React.useState(document.documentElement.getAttribute('data-theme') || initial);
+  React.useEffect(function () { document.documentElement.setAttribute('data-theme', t[0]); }, [t[0]]);
+  return t;
+}
+function ThemeButton(p) {
+  return h(S.Button, { variant: 'secondary', size: 'sm', arrow: false, onClick: function () { p.set(p.theme === 'obsidian' ? 'paper' : 'obsidian'); } }, p.theme === 'obsidian' ? 'Paper theme' : 'Obsidian theme');
+}
+/* Print: A4 for a UK CV (2 pages), US Letter for a US résumé (1–2 pages). Change @page size below. */
+var st = document.createElement('style'); st.textContent = '@page { size: A4; }'; document.head.appendChild(st);
+function App() {
+  var th = useTheme('paper');
+  return h('div', { className: 'shell', style: { gap: 'var(--space-6)' } },
+    h('div', { className: 'sg-resume' },
+      h(S.ResumeHeader, { title: 'Lead AI Architect', name: 'Your Name', location: 'City, Country',
+        links: [{ label: 'you@example.com', href: 'mailto:you@example.com' }, { label: 'linkedin.com/in/yourname', href: '#' }, { label: 'yourname.dev', href: '#' }],
+        statement: 'AI architect who designs and ships agentic systems for enterprises \u2014 MCP integrations, retrieval and multi-agent workflows, with evaluation and governance built in from day one. Leads a delivery team across architecture, build and client engagement. Seeking a principal-level role shaping AI platforms.' }),
+      h(S.ResumeSection, { title: 'Core skills' }, h('p', null, 'Agentic architecture \u00b7 MCP server design \u00b7 RAG & hybrid search \u00b7 LLM evaluation \u00b7 AI governance \u00b7 Python \u00b7 SQL \u00b7 Cloud AI platforms \u00b7 Technical leadership \u00b7 Stakeholder management')),
+      h(S.ResumeSection, { title: 'Experience' },
+        h(S.ResumeRole, { role: 'Lead AI Architect', org: 'Company name', location: 'City', period: '2022 \u2013 Present', summary: 'Lead a team delivering AI solutions for enterprise clients.',
+          bullets: ['Architected a multi-agent support-triage platform over MCP, cutting routine handling time by 38% (sample).',
+            'Designed an evaluation framework adopted across 6 projects, raising answer faithfulness from 0.81 to 0.94 (sample).',
+            'Built and led a team of 5 engineers; introduced design reviews that halved rework on client deliveries (sample).',
+            'Shaped AI proposals with sales and leadership, converting pilots into multi-phase programmes (sample).'] }),
+        h(S.ResumeRole, { role: 'Senior Data Engineer', org: 'Company name', location: 'City', period: '2019 \u2013 2022',
+          bullets: ['Delivered governed data platforms that later became the foundation for AI use cases (sample).', 'Automated reporting pipelines, removing manual monthly effort (sample).'] })),
+      h(S.ResumeSection, { title: 'Certifications' }, h('p', null, 'Cloud AI Engineer \u2014 Associate (2025) \u00b7 Cloud Solutions Architect \u2014 Professional (2024)')),
+      h(S.ResumeSection, { title: 'Education' }, h('p', null, 'Bachelor of Engineering, Computer Science \u2014 University name (Year)')),
+      h(S.ResumeSection, { title: 'Publications & awards' }, h('p', null, 'Designing MCP servers agents can\u2019t misuse (article, 2026) \u00b7 From demo to production: evaluating agentic systems (talk, 2026) \u00b7 Hackathon podium finish (Year)'))),
+    h('div', { className: 'tools' }, h(ThemeButton, { theme: th[0], set: th[1] }), h(S.Button, { size: 'sm', onClick: function () { window.print(); } }, 'Print / Save PDF')));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>
+</body>
+</html>

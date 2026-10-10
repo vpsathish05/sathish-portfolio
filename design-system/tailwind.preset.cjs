@@ -2,7 +2,7 @@
 module.exports = {
   "darkMode": [
     "selector",
-    "[data-theme=\"night\"]"
+    "[data-theme=\"obsidian\"]"
   ],
   "theme": {
     "extend": {
@@ -22,6 +22,7 @@ module.exports = {
         "on-signal": "var(--on-signal)",
         "signal-soft": "var(--signal-soft)",
         "signal-tint": "var(--signal-tint)",
+        "sheen": "var(--sheen)",
         "current": "var(--current)",
         "current-ink": "var(--current-ink)",
         "on-current": "var(--on-current)",
@@ -44,8 +45,7 @@ module.exports = {
         "xs": "var(--radius-xs)",
         "sm": "var(--radius-sm)",
         "md": "var(--radius-md)",
-        "lg": "var(--radius-lg)",
-        "pill": "var(--radius-pill)"
+        "lg": "var(--radius-lg)"
       },
       "fontFamily": {
         "display": [
@@ -155,6 +155,10 @@ module.exports = {
       "boxShadow": {
         "card": "var(--shadow-card)",
         "glow": "var(--shadow-glow)"
+      },
+      "dropShadow": {},
+      "textShadow": {
+        "glow": "var(--glow-text)"
       },
       "maxWidth": {
         "content": "var(--content-max)",
