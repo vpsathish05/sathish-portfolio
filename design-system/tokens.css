@@ -1,0 +1,115 @@
+/* Signal — generated from tokens.json. Do not edit by hand; change tokens.json and regenerate. */
+:root, [data-theme="night"] {
+  --bg: #0e0f0c;
+  --surface: #161813;
+  --surface-raised: #1f221b;
+  --surface-sunk: #090a08;
+  --line: #2b2f27;
+  --line-strong: #6c7164;
+  --ink: #efeee6;
+  --ink-muted: #a9aa9c;
+  --ink-faint: #8f9083;
+  --signal: #ff9b2e;
+  --signal-strong: #ffb055;
+  --signal-ink: #ffb35c;
+  --on-signal: #160d02;
+  --signal-soft: #4d3014;
+  --signal-tint: #6b4318;
+  --current: #5ad7e0;
+  --current-ink: #7ee3ea;
+  --on-current: #031416;
+  --current-soft: #12383b;
+  --danger: #ff7a6b;
+  --focus: var(--current);
+  --shadow-card: 0 1px 0 #ffffff0d inset, 0 16px 40px #00000073;
+  --shadow-glow: 0 0 0 1px #ff9b2e59, 0 10px 40px #ff9b2e38;
+  color-scheme: dark;
+}
+[data-theme="paper"] {
+  --bg: #f3f0e8;
+  --surface: #fbfaf6;
+  --surface-raised: #ffffff;
+  --surface-sunk: #e9e5da;
+  --line: #dcd6c8;
+  --line-strong: #7f7a6c;
+  --ink: #15160f;
+  --ink-muted: #55564b;
+  --ink-faint: #66675b;
+  --signal: #e0680f;
+  --signal-strong: #f07d24;
+  --signal-ink: #9e4504;
+  --on-signal: #160d02;
+  --signal-soft: #ffe3c2;
+  --signal-tint: #f7b877;
+  --current: #0e7c86;
+  --current-ink: #0a6670;
+  --on-current: #ffffff;
+  --current-soft: #d3f1f3;
+  --danger: #b42318;
+  --focus: var(--current);
+  --shadow-card: 0 1px 2px #15160f14, 0 16px 40px #15160f17;
+  --shadow-glow: 0 0 0 1px #e0680f4d, 0 10px 32px #e0680f2e;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #f3f0e8;
+    --surface: #fbfaf6;
+    --surface-raised: #ffffff;
+    --surface-sunk: #e9e5da;
+    --line: #dcd6c8;
+    --line-strong: #7f7a6c;
+    --ink: #15160f;
+    --ink-muted: #55564b;
+    --ink-faint: #66675b;
+    --signal: #e0680f;
+    --signal-strong: #f07d24;
+    --signal-ink: #9e4504;
+    --on-signal: #160d02;
+    --signal-soft: #ffe3c2;
+    --signal-tint: #f7b877;
+    --current: #0e7c86;
+    --current-ink: #0a6670;
+    --on-current: #ffffff;
+    --current-soft: #d3f1f3;
+    --danger: #b42318;
+    --focus: var(--current);
+    --shadow-card: 0 1px 2px #15160f14, 0 16px 40px #15160f17;
+    --shadow-glow: 0 0 0 1px #e0680f4d, 0 10px 32px #e0680f2e;
+    color-scheme: light;
+  }
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 80px;
+  --space-9: 128px;
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --content-max: 1200px;
+  --prose-max: 680px;
+  --nav-height: 72px;
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-sans: Geist, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+.display-xl { font-family: var(--font-display); font-size: 120px; line-height: 0.92; font-weight: 400; letter-spacing: -0.02em; }
+.display-l { font-family: var(--font-display); font-size: 72px; line-height: 0.98; font-weight: 400; letter-spacing: -0.02em; }
+.display-m { font-family: var(--font-display); font-size: 56px; line-height: 1; font-weight: 400; letter-spacing: -0.015em; }
+.display-s { font-family: var(--font-display); font-size: 34px; line-height: 1.05; font-weight: 400; letter-spacing: -0.01em; }
+.title { font-family: var(--font-sans); font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.02em; }
+.heading { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 600; letter-spacing: -0.015em; }
+.lede { font-family: var(--font-sans); font-size: 20px; line-height: 30px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 16px; line-height: 26px; font-weight: 400; }
+.small { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 400; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+.code { font-family: var(--font-mono); font-size: 13px; line-height: 22px; font-weight: 400; }
+.tag { font-family: var(--font-mono); font-size: 12px; line-height: 12px; font-weight: 500; letter-spacing: 0.02em; }

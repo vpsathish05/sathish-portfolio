@@ -1,24 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
 import { generatePersonSchema, generateWebsiteSchema } from "@/lib/structured-data";
-import { ThemeProvider } from "@/components/theme-provider";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import "../../design-system/tokens.css";
+import "../../design-system/components/signal.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sathish Kumar V - AI Engineer | Data Engineer",
-  description: "AI Engineer with 5+ years building production-grade intelligent systems. Expert in LLMs, RAG architectures, Azure AI Foundry, AWS Bedrock, and data engineering.",
-  keywords: "AI Engineer, Data Engineer, LLMs, RAG, Azure AI Foundry, AWS Bedrock, Python, Next.js, Chennai",
+  metadataBase: new URL('https://vpsathish05.github.io'),
+  title: "Sathish Kumar V — AI Architect & Team Lead",
+  description: "AI COE Team Lead building agentic AI for the enterprise. MCP servers, multi-agent workflows, RAG architectures, and the guardrails that make them safe to ship.",
+  keywords: "AI Architect, Team Lead, MCP, Agentic AI, LLMs, RAG, Azure AI Foundry, AWS Bedrock, LangChain, LangGraph",
   authors: [{ name: "Sathish Kumar V" }],
   icons: {
     icon: [
@@ -27,8 +17,8 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Sathish Kumar V - AI Engineer | Data Engineer",
-    description: "AI Engineer building production-grade intelligent systems with LLMs and RAG architectures",
+    title: "Sathish Kumar V — AI Architect & Team Lead",
+    description: "AI COE Team Lead building agentic AI for the enterprise. MCP servers, multi-agent workflows, and RAG architectures.",
     url: "https://vpsathish05.github.io/sathish-portfolio",
     siteName: "Sathish Kumar Portfolio",
     images: [
@@ -36,7 +26,7 @@ export const metadata: Metadata = {
         url: "/sathish-portfolio/sathish-teams-img.png",
         width: 1200,
         height: 630,
-        alt: "Sathish Kumar V - AI Engineer",
+        alt: "Sathish Kumar V — AI Architect",
       },
     ],
     locale: "en_US",
@@ -44,20 +34,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sathish Kumar V - AI Engineer | Data Engineer",
-    description: "AI Engineer building production-grade intelligent systems with LLMs and RAG architectures",
+    title: "Sathish Kumar V — AI Architect & Team Lead",
+    description: "AI COE Team Lead building agentic AI for the enterprise.",
     images: ["/sathish-portfolio/sathish-teams-img.png"],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -70,7 +53,7 @@ export default function RootLayout({
   const websiteSchema = generateWebsiteSchema();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-theme="night" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -85,17 +68,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className="sg-page">
+        {children}
       </body>
     </html>
   );

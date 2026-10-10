@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal — demo home page</title>
+<link rel="stylesheet" href="./tokens.css">
+<link rel="stylesheet" href="./components/signal.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .shell { max-width: var(--content-max); margin: 0 auto; padding: var(--space-3) var(--space-5) var(--space-9); display: grid; gap: var(--space-9); }
+  .shell > .sg-nav { position: sticky; top: var(--space-3); z-index: 10; }
+  .stack { display: grid; gap: var(--space-6); }
+  .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--space-5); align-items: start; }
+  .theme-toggle { position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: 20; }
+</style>
+</head>
+<body class="sg-page" style="padding:0">
+<div id="root"></div>
+<!-- React 18.3.1 UMD, pinned -->
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="./components/signal.umd.js"></script>
+<script>
+var S = window.Signal, h = React.createElement;
+/* All content below is SAMPLE content. Replace with your own, anonymised work. */
+function App() {
+  var _t = React.useState(document.documentElement.getAttribute('data-theme') || 'night'), theme = _t[0], setTheme = _t[1];
+  React.useEffect(function () { document.documentElement.setAttribute('data-theme', theme); }, [theme]);
+  return h('div', { className: 'shell' },
+    h(S.NavBar, { name: 'Your Name', links: [{ label: 'Work', href: '#work', active: true }, { label: 'Systems', href: '#systems' }, { label: 'About', href: '#about' }, { label: 'Contact', href: '#contact' }], status: 'Shipping agents', cta: { label: 'Let\u2019s talk', href: '#contact' } }),
+    h(S.Hero, {
+      eyebrow: 'Lead AI Architect \u00b7 Agentic Systems', name: 'Your', accent: 'Name.',
+      statement: h(React.Fragment, null, 'I architect ', h('b', null, 'agentic AI for the enterprise'), ' \u2014 MCP servers, multi-agent workflows and the guardrails that make them safe to ship.'),
+      actions: h(React.Fragment, null, h(S.Button, { size: 'lg', href: '#work' }, 'See selected work'), h(S.Button, { size: 'lg', variant: 'secondary' }, 'Download CV')) }),
+    h('section', { id: 'work', className: 'stack' },
+      h(S.SectionHeader, { index: '01', label: 'Selected work', title: 'Systems that', accent: 'think in context.', lede: 'Three case studies \u2014 each with the architecture, a real agent run, and what broke on the way to production.' }),
+      h('div', { className: 'sg-grid-2' },
+        h(S.ProjectCard, { featured: true, index: '/01', kind: 'Agents \u00b7 Support', title: 'Support Triage Agent', summary: 'An agent that reads incoming tickets, checks the customer and policy over MCP, and drafts a cited resolution for a human to approve.', outcome: 'Routine tickets resolved in minutes, with a human on every decision.', tags: ['MCP', 'Agents', 'Python', 'Evaluation'] }),
+        h('div', { style: { display: 'grid', gap: 24, alignContent: 'start' } },
+          h(S.ProjectCard, { index: '/02', kind: 'RAG \u00b7 Knowledge', title: 'Policy Knowledge Assistant', summary: 'Answers staff questions from a policy library with page-level citations and refuses when the source is silent.', tags: ['RAG', 'Hybrid search', 'Guardrails'] }),
+          h(S.ProjectCard, { index: '/03', kind: 'Extraction \u00b7 Workflow', title: 'Document Intake Pipeline', summary: 'Turns unstructured documents into validated records, with confidence scores and a review queue.', tags: ['LLM extraction', 'Validation'] })))),
+    h('section', { id: 'systems', className: 'stack' },
+      h(S.SectionHeader, { index: '02', label: 'How it runs', title: 'Watch it', accent: 'think.', lede: 'A real (redacted) run of the triage agent, and the server behind it.' }),
+      h('div', { className: 'proof' },
+        h(S.AgentTrace, { live: true, title: 'trace \u00b7 support-triage', meta: 'run 4f2a \u00b7 6 steps \u00b7 3.1s', steps: [
+          { kind: 'plan', label: 'Understand the request', detail: '\u201cMy invoice shows a double charge for March.\u201d', ms: 210 },
+          { kind: 'mcp', label: 'search_customer', detail: 'crm.search_customer(email) \u2192 1 match', ms: 140 },
+          { kind: 'mcp', label: 'get_policy', detail: 'refunds.duplicate_charge \u2192 auto-approve below limit', ms: 95 },
+          { kind: 'tool', label: 'lookup_payments', detail: 'SELECT id, amount FROM payments WHERE customer_id = :id', ms: 1620 },
+          { kind: 'model', label: 'Draft reply with citations', ms: 940 },
+          { kind: 'result', label: 'Refund proposed \u00b7 sent for human approval', ms: 110 }] }),
+        h(S.Terminal, { title: '~/agents/support-mcp', lines: [
+          { cmd: 'uv run support-mcp --env staging' }, '\u25b8 loading tools \u00b7 crm, payments, policies',
+          { text: '\u2713 12 tools registered \u00b7 health_check passed (142ms)', tone: 'ok' },
+          { cmd: 'mcp call get_policy --topic refunds' }, '{ "rule": "duplicate_charge", "action": "auto_approve" }',
+          { text: '! policy cache is 26h old \u00b7 refresh SLA is 24h', tone: 'warn' }] })),
+      h('div', { className: 'sg-metrics' },
+        h(S.Metric, { value: '0.94', label: 'Answer faithfulness', note: 'Sample \u00b7 200-question eval set.' }),
+        h(S.Metric, { value: '1.2', unit: 's', label: 'p95 latency', note: 'Sample \u00b7 end to end.' }),
+        h(S.Metric, { value: '38', unit: '%', label: 'Less manual triage', note: 'Sample \u00b7 vs. baseline.' }))),
+    h('section', { id: 'about', className: 'stack' },
+      h(S.SectionHeader, { index: '03', label: 'About', title: 'The path', accent: 'so far.' }),
+      h(S.Timeline, { items: [
+        { period: 'Now', role: 'Lead AI Architect', org: 'Company name', current: true, summary: 'One outcome-led sentence about the work. Name the problem and the industry \u2014 never the client.' },
+        { period: 'Earlier', role: 'Senior Data Engineer', org: 'Company name', summary: 'What you built, for whom (by industry), and what changed because of it.' },
+        { period: 'Award', role: 'Hackathon podium', org: 'Event name' }] })),
+    h('div', { id: 'contact' }, h(S.ContactBand, { eyebrow: '04 \u2014 Contact', title: 'Let\u2019s build something', accent: 'agentic.', lede: 'Open to conversations about AI architecture, MCP, and taking agents from demo to production.', email: 'hello@example.com', links: [{ label: 'LinkedIn' }, { label: 'GitHub' }, { label: 'Writing' }] })),
+    h('div', { className: 'theme-toggle' }, h(S.Button, { variant: 'secondary', size: 'sm', arrow: false, onClick: function () { setTheme(theme === 'night' ? 'paper' : 'night'); } }, theme === 'night' ? 'Paper theme' : 'Night theme')));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>
+</body>
+</html>
