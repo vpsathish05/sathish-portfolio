@@ -3,14 +3,20 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { TechBadge } from "@/components/TechBadge";
-import { BotIcon, CodeIcon, BriefcaseIcon } from "lucide-react";
+import { BotIcon, CodeIcon, BriefcaseIcon, CpuIcon, ServerIcon, SearchIcon, DatabaseIcon } from "lucide-react";
 import { projects } from "@/data/portfolio";
 
-const projectIcons = {
+const projectIcons: Record<string, typeof BotIcon> = {
   "contract-extraction": BriefcaseIcon,
+  "enterprise-ai-platform": CpuIcon,
+  "ai-context-layer": ServerIcon,
+  "fabric-mcp-server": ServerIcon,
   "ai-chatbot": BotIcon,
-  "data-platform": CodeIcon
+  "intelligent-query": SearchIcon,
+  "data-platform": DatabaseIcon
 };
+
+const DefaultIcon = CodeIcon;
 
 export const ProjectsSection = () => (
   <section className="mb-16 relative z-10">
@@ -21,7 +27,7 @@ export const ProjectsSection = () => (
       <CardContent>
         <Accordion type="single" collapsible className="w-full" defaultValue="contract-extraction">
           {projects.map((project) => {
-            const IconComponent = projectIcons[project.id as keyof typeof projectIcons];
+            const IconComponent = projectIcons[project.id] || DefaultIcon;
             return (
               <AccordionItem key={project.id} value={project.id}>
                 <AccordionTrigger className="hover:bg-secondary transition-colors rounded-md px-4">
