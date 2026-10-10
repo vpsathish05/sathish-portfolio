@@ -44,3 +44,6 @@ next-env.d.ts
 
 # Resume - track source and output, ignore generated
 resume/generated/
+
+# Personal Knowledge Base - NEVER commit (contains confidential info)
+sk_okf/

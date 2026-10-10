@@ -6,6 +6,26 @@ description: Rules and validation requirements for the portfolio and job hunt pr
 
 # Portfolio Project Rules
 
+## 🔐 CONFIDENTIALITY - TOP PRIORITY
+
+**NEVER include these in any public file:**
+
+| Category | Examples | Replace With |
+|----------|----------|--------------|
+| Client Names | BC Partners, IDnow, Elevation Labs, CivicPlus, etc. | "Enterprise Client", "PE Firm", "Healthcare Company" |
+| Internal Products | JLens, Tenali AI, JMAN Agent | "Enterprise AI Platform", "Private AI Backend" |
+| Employer Name | JMAN Group, JMAN, JLABS | "Consulting Firm" or omit |
+| Project Codes | Project Horizon, DTaaS, IC Devil | "AI Platform Project" |
+| Colleague Names | Any team member names | "team member", "direct report" |
+
+**Before ANY commit:**
+```bash
+npx ts-node scripts/check-confidentiality.ts
+```
+
+**Protected files (NEVER commit):**
+- `sk_okf/` - Private knowledge base
+
 ## 🚨 CRITICAL: Always Validate Before Completion
 
 **Every task that modifies code MUST end with validation:**

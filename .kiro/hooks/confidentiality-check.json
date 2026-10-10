@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Confidentiality Check Before Git",
+      "trigger": "PreToolUse",
+      "description": "Scans for confidential client names, internal products, and colleague names before git commit",
+      "matcher": "execute_pwsh.*git (commit|push|add)",
+      "action": {
+        "type": "command",
+        "command": "cd \"d:\\S A T H I S H\\Projects\\sathish-portfolio\" && npx ts-node scripts/check-confidentiality.ts 2>&1",
+        "timeout": 30
+      }
+    }
+  ]
+}
