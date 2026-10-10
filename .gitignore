@@ -39,8 +39,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# kiro
-.kiro
+# Keep .kiro tracked for portfolio automation
+# .kiro
 
-# resume
-resume/
+# Resume - track source and output, ignore generated
+resume/generated/

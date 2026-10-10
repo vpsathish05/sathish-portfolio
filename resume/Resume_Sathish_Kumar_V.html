@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sathish Kumar V - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', sans-serif;
+            line-height: 1.5;
+            color: #2c3e50;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #2c3e50;
+        }
+
+        h1 {
+            font-size: 34px;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #34495e;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            font-size: 9.5px;
+            color: #555;
+        }
+
+        .contact a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 6px;
+        }
+
+        h2 {
+            font-size: 14px;
+            color: #fff;
+            background: #2c3e50;
+            padding: 6px 12px;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .summary {
+            font-size: 10.5px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .highlight {
+            background: #ecf0f1;
+            padding: 8px 12px;
+            border-left: 4px solid #e74c3c;
+            margin: 12px 0;
+            font-size: 10px;
+            font-weight: 600;
+            color: #c0392b;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 6px;
+            font-size: 10px;
+            margin-bottom: 8px;
+        }
+
+        .skills-grid strong {
+            color: #2c3e50;
+        }
+
+        .company-block {
+            margin-bottom: 14px;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .company-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .company-duration {
+            font-size: 9.5px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .role {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            border-left: 2px solid #3498db;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .role-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .role-date {
+            font-size: 9px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        ul {
+            margin-left: 18px;
+            margin-top: 4px;
+        }
+
+        li {
+            font-size: 10px;
+            margin-bottom: 3px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .project {
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 11px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .project-meta {
+            font-size: 9px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+
+        .tech {
+            font-size: 9px;
+            color: #3498db;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+
+        .education-item {
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            body {
+                padding: 20px 30px;
+            }
+
+            h2,
+            .highlight {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>SATHISH KUMAR V</h1>
+        <div class="subtitle">AI Architect | Data Engineer</div>
+        <div class="contact">
+            Chennai, India | +91 8056770991 | sathishkumar05@gmail.com<br>
+            <a href="https://linkedin.com/in/sathish-kumar-310976153">LinkedIn</a> |
+            <a href="https://github.com/vpsathish05">GitHub</a> |
+            <a href="https://medium.com/@vpsathish05">Medium</a> |
+            <a href="https://vpsathish05.github.io/sathish-portfolio">Portfolio</a>
+        </div>
+    </div>
+
+    <h2>Professional Summary</h2>
+    <p class="summary">
+        Versatile technology leader with 6+ years of progressive expertise across three critical domains: full-stack
+        development, data engineering, and AI architecture. Unique career trajectory demonstrates adaptability and
+        depth-began as C# .NET developer, advanced through full-stack engineering (5+ production applications), mastered
+        data engineering (5+ enterprise platforms), and now architect production AI systems (5+ intelligent solutions
+        over 2.5 years). Excel in hybrid roles spanning Project Manager, Solutions Architect, Technical Lead, and
+        hands-on Developer, bridging business strategy with technical execution. Specialize in Azure AI Foundry, AWS
+        Bedrock, and RAG architectures, consistently delivering solutions that reduce operational costs by 40-60% while
+        achieving 85-90% automation rates. Proven ability to translate complex AI capabilities into tangible business
+        outcomes through end-to-end ownership-from initial architecture to production deployment.
+    </p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <strong>AI:</strong>
+        <span>Azure AI Foundry • AWS Bedrock • RAG • LangChain • LangGraph • Agents • MCP • Databricks Agents • Agentic
+            AI • PaddleOCR • Vector Databases (Chroma, pgvector)</span>
+        <strong>Data Engineering:</strong>
+        <span>dbt • Azure Data Factory • Amazon Redshift • Databricks • Microsoft Fabric • SQL • Matillion ETL</span>
+        <strong>Full Stack:</strong>
+        <span>Python • TypeScript • JavaScript • C# • Next.js • React • Angular • Node.js • NestJS • FastAPI • .NET
+            Core</span>
+        <strong>Cloud & Tools:</strong>
+        <span>Azure • AWS (Textract, Kendra, Bedrock) • Docker • Git</span>
+    </div>
+
+    <h2>Professional Experience</h2>
+
+    <div class="company-block">
+        <div class="company-header">
+            <div class="company-name">JMAN Group, Chennai</div>
+            <div class="company-duration">Feb 2022 – Present (4+ years)</div>
+        </div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Solutions Consultant</div>
+                <div class="role-date">Oct 2025 – Present</div>
+            </div>
+            <ul>
+                <li>Architected AI solutions for 5+ enterprise clients, delivering intelligent automation systems using
+                    Azure AI Foundry and AWS Bedrock</li>
+                <li>Led technical design of Agentic AI systems and RAG architectures, reducing client operational costs
+                    by $2M+ annually</li>
+                <li>Designed document intelligence platforms using Amazon Textract and Kendra, processing 10K+ documents
+                    monthly</li>
+                <li>Mentored team of 10+ engineers on AI best practices and cloud architecture patterns</li>
+            </ul>
+        </div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Solution Enabler</div>
+                <div class="role-date">Apr 2024 – Nov 2025</div>
+            </div>
+            <ul>
+                <li>Engineered contract extraction platform reducing processing time from 260 hours to 26 minutes using
+                    PaddleOCR, GPT-4, and LangChain with 85-90% automation rate</li>
+                <li>Implemented RAG chatbot with vector databases (Chroma DB, Postgres pgvector) serving 1K+ daily
+                    queries</li>
+                <li>Built enterprise data platform processing 5M+ records daily using dbt, Azure Data Factory, and
+                    Redshift</li>
+                <li>Developed full-stack applications with Next.js, React, and NestJS, deployed to production serving
+                    10K+ users</li>
+            </ul>
+        </div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Senior Software Engineer</div>
+                <div class="role-date">Apr 2023 – Apr 2024</div>
+            </div>
+            <ul>
+                <li>Optimized ETL pipelines using dbt and Azure Data Factory, cutting processing time in half while
+                    maintaining high data quality</li>
+                <li>Developed complex data models in Amazon Redshift handling 2M+ records with significantly improved
+                    query performance</li>
+                <li>Built full-stack applications using Angular, React, and Node.js with enterprise-grade reliability
+                </li>
+                <li>Implemented comprehensive data quality monitoring, dramatically reducing data incidents</li>
+            </ul>
+        </div>
+
+        <div class="role">
+            <div class="role-header">
+                <div class="role-title">Software Engineer</div>
+                <div class="role-date">Feb 2022 – Apr 2023</div>
+            </div>
+            <ul>
+                <li>Developed 15+ RESTful APIs using Node.js and NestJS, handling 100K+ requests daily</li>
+                <li>Implemented ETL pipelines with Azure Data Factory processing 1M+ records daily</li>
+                <li>Containerized applications using Docker, significantly reducing deployment time</li>
+                <li>Built responsive UIs with Angular and Next.js, substantially improving user engagement</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="company-block">
+        <div class="company-header">
+            <div class="company-name">Elroi Software Solutions, Chennai</div>
+            <div class="company-duration">Sep 2021 – Feb 2022</div>
+        </div>
+        <div class="role">
+            <div class="role-title">Full Stack Developer</div>
+            <ul>
+                <li>Developed enterprise applications using C#, .NET Framework, and SQL Server for 500+ users</li>
+                <li>Built web applications with ASP.NET MVC and Entity Framework, optimizing page load performance</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="company-block">
+        <div class="company-header">
+            <div class="company-name">Qserve UAE, Chennai</div>
+            <div class="company-duration">Aug 2020 – Nov 2020</div>
+        </div>
+        <div class="role">
+            <div class="role-title">Full-Stack Developer</div>
+            <ul>
+                <li>Developed Retail Management System using .NET Core and SQL Server, managing 10K+ transactions
+                    monthly</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="company-block">
+        <div class="company-header">
+            <div class="company-name">RmKV Computask Pvt. Ltd., Chennai</div>
+            <div class="company-duration">Jul 2017 – Aug 2018</div>
+        </div>
+        <div class="role">
+            <div class="role-title">Software Developer</div>
+            <ul>
+                <li>Maintained enterprise ERP system for RmKV Group managing 20+ company locations with 1K+ daily users
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Key Projects</h2>
+
+    <div class="project">
+        <div class="project-title">Contract Intelligence Platform | Enterprise Client</div>
+        <div class="project-meta">Technical Lead | Published on Medium</div>
+        <ul>
+            <li>Engineered AI-powered contract extraction system achieving 85-90% straight-through processing automation
+            </li>
+            <li>Built multi-stage pipeline using PaddleOCR and Qwen SLM for complex table extraction from 200-page
+                contracts</li>
+            <li>Deployed GPU-accelerated inference on AWS EC2 with S3 storage integration for scalable document
+                processing</li>
+            <li>Integrated Salesforce and MongoDB for seamless data flow and contract lifecycle management</li>
+        </ul>
+        <div class="tech">Tech: FastAPI, AWS EC2 GPU, PaddleOCR, Qwen SLM, S3, Salesforce, MongoDB</div>
+    </div>
+
+    <div class="project">
+        <div class="project-title">AI Research Chatbot | Healthcare Client</div>
+        <div class="project-meta">Project Manager + Technical Lead</div>
+        <ul>
+            <li>Solved research bottleneck where clinicians spent hours manually reading papers from PubMed, Google
+                Scholar, and Semantic Scholar</li>
+            <li>Built RAG-based chatbot that retrieves, synthesizes, and curates research findings from multiple
+                academic sources via LLM</li>
+            <li>Implemented intelligent caching with vector database indexing-subsequent searches with same terms
+                retrieve instantly without re-extraction</li>
+            <li>Serving 1K+ daily queries, dramatically reducing research time from hours to minutes</li>
+        </ul>
+        <div class="tech">Tech: Next.js, Chroma DB, Postgres pgvector, LangChain, OpenAI API, PubMed API, Google Scholar
+            API, Semantic Scholar API</div>
+    </div>
+
+    <div class="project">
+        <div class="project-title">Enterprise Data Platform | Private Equity Client</div>
+        <div class="project-meta">Project Manager + Data Engineer</div>
+        <ul>
+            <li>Built medallion architecture data platform delivering 3 critical business reports: ARR, Pricing, and
+                Price List</li>
+            <li>Implemented SCD Type 2 for complete version history tracking across 20+ integrated data entities</li>
+            <li>Designed and orchestrated end-to-end data pipeline processing 5M+ records daily with optimized Redshift
+                models</li>
+            <li>Integrated data from 20+ source systems and delivered insights via Power BI dashboards for executive
+                decision-making</li>
+        </ul>
+        <div class="tech">Tech: dbt Cloud, Amazon Redshift, Azure Data Factory, Power BI, SCD Type 2</div>
+    </div>
+
+    <h2>Education</h2>
+    <div class="education-item"><strong>Master of Computer Applications (MCA)</strong> | University of Madras IDE |
+        2017-2020 | 70%</div>
+    <div class="education-item"><strong>Bachelor of Computer Applications (BCA)</strong> | Jairam Arts and Science
+        College | 2014-2017 | 66%</div>
+    <div class="education-item"><strong>Higher Secondary School (HSS)</strong> | Velasamy Chettiar HSS | 2014 | 65%</div>
+    <div class="education-item"><strong>Secondary School Leaving Certificate (SSLC)</strong> | Velasamy Chettiar HSS | 2012 | 66%</div>
+
+    <h2>Publications & Certifications</h2>
+    <ul>
+        <li><strong>Medium Publication:</strong> "Contract Intelligence at Scale: How OCR-LLM Turned 260 Hours Into 26
+            Minutes" (2025)</li>
+        <li>Active technical contributor on AI, LLMs, RAG architectures, and data engineering topics</li>
+    </ul>
+</body>
+
+</html>
