@@ -47,3 +47,6 @@ resume/generated/
 
 # Personal Knowledge Base - NEVER commit (contains confidential info)
 sk_okf/
+
+# Signal Design System source (already extracted to design-system/)
+signal-design-system/
