@@ -6,108 +6,132 @@ description: Rules and validation requirements for the portfolio and job hunt pr
 
 # Portfolio Project Rules
 
-## 🔐 CONFIDENTIALITY - TOP PRIORITY
+## Overview
 
-**NEVER include these in any public file:**
+Next.js 15 portfolio using Signal Design System v2 with 22 custom components.
+
+---
+
+## 🔐 Confidentiality
+
+**Never include in public files:**
 
 | Category | Examples | Replace With |
 |----------|----------|--------------|
-| Client Names | BC Partners, IDnow, Elevation Labs, CivicPlus, etc. | "Enterprise Client", "PE Firm", "Healthcare Company" |
-| Internal Products | JLens, Tenali AI, JMAN Agent | "Enterprise AI Platform", "Private AI Backend" |
-| Employer Name | JMAN Group, JMAN, JLABS | "Consulting Firm" or omit |
-| Project Codes | Project Horizon, DTaaS, IC Devil | "AI Platform Project" |
-| Colleague Names | Any team member names | "team member", "direct report" |
+| Client Names | BC Partners, IDnow, Elevation Labs | "Enterprise Client", "PE Firm" |
+| Internal Products | JLens, Tenali AI, JMAN Agent | "Enterprise Platform" |
+| Employer Details | JMAN Group specifics | Generic descriptions |
+| Colleague Names | Team member names | "team member" |
 
-**Before ANY commit:**
+**Before commit:**
 ```bash
 npx ts-node scripts/check-confidentiality.ts
 ```
 
-**Protected files (NEVER commit):**
-- `sk_okf/` - Private knowledge base
+---
 
-## 🚨 CRITICAL: Always Validate Before Completion
+## 🚨 Validation Requirements
 
-**Every task that modifies code MUST end with validation:**
+**Every code change MUST pass:**
 
 ```bash
 npm run validate && npm run build
 ```
 
-If ANY of these fail, fix the issues before marking the task complete.
-
-## Validation Commands
-
 | Command | Purpose | Must Pass |
 |---------|---------|-----------|
-| `npm run lint` | ESLint check | ✅ Yes (errors only) |
-| `npm run type-check` | TypeScript types | ✅ Yes |
-| `npm run test` | Jest tests | ✅ Yes |
-| `npm run build` | Production build | ✅ Yes |
-| `npm run validate` | All of above | ✅ Yes |
+| `npm run lint` | ESLint | ✅ |
+| `npm run type-check` | TypeScript | ✅ |
+| `npm run test` | Jest | ✅ |
+| `npm run build` | Production | ✅ |
+
+---
 
 ## Project Structure
 
 ```
-src/
-├── app/                 # Next.js pages
-├── components/          # React components
-│   └── __tests__/       # Component tests
-├── data/
-│   ├── portfolio.ts     # Main data file
-│   └── __tests__/       # Data validation tests
-├── lib/                 # Utilities
-└── types/               # TypeScript types
-
-docs/job-hunt/           # Job hunt documentation
-resume/source/           # Resume markdown files
-scripts/                 # Automation scripts
+src/app/page.tsx           # Main portfolio (Signal DS)
+src/app/layout.tsx         # SEO, metadata
+design-system/             # Signal Design System v2
+├── components/signal.js   # 22 React components
+├── components/signal.css  # Styles
+└── tokens.css             # Design tokens
+public/
+├── resume/                # PDF resume
+├── sathish-teams-img.png  # Profile photo
+└── favicon-*.png          # Favicons
 ```
+
+---
 
 ## Key Files
 
-- **Portfolio Data:** `src/data/portfolio.ts` - Single source of truth for all portfolio content
-- **Daily Context:** `resume/source/CONTEXT.md` - Personal context for resume updates
-- **Job Strategy:** `docs/job-hunt/STRATEGY.md` - Complete job hunt plan
-- **Application Tracker:** `docs/job-hunt/APPLICATION_TRACKER.md`
+| File | Purpose |
+|------|---------|
+| `src/app/page.tsx` | Portfolio page with Signal DS |
+| `design-system/components/signal.js` | 22 components |
+| `design-system/tokens.css` | Design tokens |
+| `public/resume/Sathish_Kumar_V_Resume_v2.pdf` | Resume |
+
+---
+
+## Signal Design System Components
+
+```
+NavBar, Hero, SectionHeader, Metric,
+CapabilityGrid, ProjectCard, AgentTrace, Terminal,
+ArchitectureStack, ProcessSteps, StackMatrix, Timeline,
+CredentialList, WritingList, Testimonial, ContactBand,
+Button, Tag
+```
+
+### Themes
+- **Obsidian** (dark) — default
+- **Paper** (light) — toggle in footer
+
+---
 
 ## Git Workflow
 
-1. Push to `main` triggers auto-deploy to GitHub Pages
-2. CI workflow runs: lint → type-check → test → build
-3. Deploy workflow builds and publishes the site
+1. Make changes
+2. Run `npm run validate && npm run build`
+3. Commit with descriptive message
+4. Push to `main` → auto-deploys to GitHub Pages
 
-**Before pushing:**
-```bash
-npm run validate && npm run build
-git add -A
-git commit -m "descriptive message"
-git push
-```
-
-## Test Requirements
-
-- Data validation tests ensure portfolio structure is valid
-- Component tests verify sections render correctly
-- Minimum coverage thresholds must be met
+---
 
 ## Common Tasks
 
-### Update Portfolio Content
-1. Edit `src/data/portfolio.ts`
-2. Run `npm run test` to validate data structure
-3. Run `npm run build` to verify site builds
-
-### Add New Experience/Project
-1. Edit `src/data/portfolio.ts`
-2. Follow existing data structure
-3. Run full validation
+### Update Content
+Edit `src/app/page.tsx` component props directly.
 
 ### Update Resume
-1. Edit files in `resume/source/`
-2. Update `resume/source/CONTEXT.md` with new context
-3. No build required for markdown changes
+1. Edit `resume/source/RESUME_ATS_OPTIMIZED.md`
+2. Generate PDF
+3. Copy to `public/resume/`
 
-### Update Job Hunt Docs
-1. Edit files in `docs/job-hunt/`
-2. No build required for markdown changes
+### Update Favicon
+```bash
+# Replace public/sathish-teams-img.png
+node scripts/generate-favicon.mjs
+```
+
+### Add Project
+Add `<ProjectCard>` in `src/app/page.tsx`:
+```tsx
+<ProjectCard
+  index="/08"
+  kind="Category"
+  title="Project Name"
+  summary="Description"
+  tags={["Tech1", "Tech2"]}
+  href="https://..."
+/>
+```
+
+---
+
+## Links
+
+- **Live:** https://vpsathish05.github.io/sathish-portfolio
+- **Repo:** https://github.com/vpsathish05/sathish-portfolio
