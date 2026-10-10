@@ -344,14 +344,14 @@ export default function Portfolio() {
               role: "AI Engineer → Product Owner",
               org: "Same firm",
               summary:
-                "Stopped being a resource, started owning outcomes. Led the contract extraction project that became our biggest reference. Started building JLens and Tenali AI — internal products that now serve the whole company.",
+                "Stopped being a resource, started owning outcomes. Led the contract extraction project that became our biggest reference. Started building our enterprise AI platform — internal products that now serve the whole company.",
             },
             {
               period: "2022–24",
               role: "Data Engineer",
               org: "Same firm",
               summary:
-                "Built data foundations. ETL pipelines, warehouses, dbt models. Learned that AI without clean data is expensive guessing. First client delivery work: Survitec, upReach.",
+                "Built data foundations. ETL pipelines, warehouses, dbt models. Learned that AI without clean data is expensive guessing. First client delivery work.",
             },
             {
               period: "2017–22",
