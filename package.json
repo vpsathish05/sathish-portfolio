@@ -17,7 +17,10 @@
     "validate": "npm run lint && npm run type-check && npm run test",
     "check-confidential": "npx ts-node scripts/check-confidentiality.ts",
     "precommit": "npm run check-confidential && npm run validate",
-    "prebuild": "npm run type-check"
+    "prebuild": "npm run type-check",
+    "resume:pdf": "npx ts-node scripts/generate-resume.ts",
+    "resume:word": "npx ts-node scripts/generate-resume-word.ts",
+    "resume:all": "npm run resume:pdf && npm run resume:word"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -51,11 +54,13 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "docx": "^9.9.0",
     "eslint": "^8",
     "eslint-config-next": "15.0.1",
     "jest": "^30.5.2",
     "jest-environment-jsdom": "^30.5.2",
     "postcss": "^8",
+    "puppeteer": "^25.13.0",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5"
