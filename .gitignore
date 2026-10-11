@@ -48,5 +48,8 @@ resume/generated/
 # Personal Knowledge Base - NEVER commit (contains confidential info)
 sk_okf/
 
+# Private Job Hunt - NEVER commit (confidential applications, salary, negotiations)
+.private/
+
 # Signal Design System source (already extracted to design-system/)
 signal-design-system/

@@ -12,7 +12,6 @@ import {
   Timeline,
   ContactBand,
   Button,
-  Tag,
   CapabilityGrid,
   ArchitectureStack,
   ProcessSteps,
